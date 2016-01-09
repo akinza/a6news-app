@@ -86,7 +86,7 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 
 
 // User Defined Constants
-defined('CSS')      OR define('CSS', "assets/css"); // highest automatically-assigned error code
-defined('IMAGES')      OR define('IMAGES', "assets/images"); // highest automatically-assigned error code
-defined('COMPONENTS')      OR define('COMPONENTS', "assets/bower_components"); // highest automatically-assigned error code
-// defined('CSS')      OR define('CSS', "assets/css"); // highest automatically-assigned error code
+defined('CSS')                OR define('CSS', "assets/css");
+defined('IMAGES')             OR define('IMAGES', "assets/images");
+defined('COMPONENTS')         OR define('COMPONENTS', "assets/bower_components");
+defined('JS')                 OR define('CSS', "assets/scripts");
