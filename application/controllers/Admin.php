@@ -5,9 +5,9 @@ class Admin extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('User_model');
-		$this->load->model('Role_model');
-		$this->load->model('Post_model');
+		$this->load->model('user_model');
+		$this->load->model('role_model');
+		$this->load->model('post_model');
 		$this->load->helper('url_helper');
 	}
 
@@ -18,6 +18,7 @@ class Admin extends CI_Controller {
 	public function users($action)	{
 		$data['sub_view'] = "";
 		if($action === "list"){
+			$data['users'] = $this->user_model->get_all_users();
 			$data['sub_view'] = "admin/user/list_user";
 		}
 		else if($action === 'add'){
