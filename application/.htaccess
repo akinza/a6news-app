@@ -7,7 +7,8 @@
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /
     RewriteCond $1 !^(index\.php|assets|modules|user_guide|robots\.txt)
-    RewriteRule ^(.*)$ index.php/$1 [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L,QSA]
 <IfModule>
