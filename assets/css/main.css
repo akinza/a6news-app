@@ -148,7 +148,29 @@ body {
   font-family: 'Roboto';
 }
 .footer {
-  margin-top: 50px;
   padding-top: 20px;
   border-top: solid 1px #eee;
+}
+.footer > .footer-text {
+  text-align: center;
+}
+.f8-sec-main .f8-sec-body .f8-sec-body-row {
+  margin: 0;
+}
+.f8-admin-container {
+  margin: 70px 0 0 0;
+}
+.f8-admin-container .f8-sec-admin-sidebar {
+  float: left;
+  height: 100%;
+  padding: 0;
+}
+.f8-admin-container .f8-sec-admin-sidebar .f8-sec-admin-menus {
+  padding-right: 20px;
+}
+.f8-admin-container .f8-sec-admin-body {
+  border-left: 3px solid #eee;
+  min-height: 700px;
+  height: 100%;
+  padding: 0;
 }
