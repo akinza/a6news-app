@@ -39,7 +39,8 @@ $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+// $config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -228,7 +229,7 @@ $config['log_threshold'] = 4;
 | application/logs/ directory. Use a full server path with trailing slash.
 |
 */
-$config['log_path'] = 'E:/SanjayRabidas/Projects/Git/logs/f8news/';
+$config['log_path'] = '';
 
 /*
 |--------------------------------------------------------------------------
