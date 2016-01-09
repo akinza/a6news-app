@@ -4,8 +4,8 @@
     <title>f8news :: Home</title>
   </head>
   <body>
-    <?php $this->load->view('header'); ?>
-    <?php $this->load->view('templates'); ?>
-    <?php $this->load->view('footer'); ?>
+    <?php $this->load->view('include/header'); ?>
+    <?php $this->load->view('include/templates'); ?>
+    <?php $this->load->view('include/footer'); ?>
   </body>
 </html>
