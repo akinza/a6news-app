@@ -19,6 +19,7 @@ class Admin extends CI_Controller {
 		$data['sub_view'] = "";
 		if($action === "list"){
 			$data['users'] = $this->user_model->get_all_users();
+			log_message("info", print_r($data['users']));
 			$data['sub_view'] = "admin/user/list_user";
 		}
 		else if($action === 'add'){
