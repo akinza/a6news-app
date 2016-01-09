@@ -2,9 +2,8 @@
   <div class="f8-sec-heading">
     Add New Users
   </div>
-<?php echo validation_errors(); ?>
-<?php echo form_open('news/create'); ?>
-  <!-- <form class="form-horizontal" method="post" action="#"> -->
+
+  <form class="form-horizontal" method="post" action="#">
     <div class="form-group">
       <label for="input-first-name" class="col-sm-2 control-label">First Name</label>
       <div class="col-sm-10">
