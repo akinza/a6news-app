@@ -28,3 +28,4 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 
 ## bower components
 assets/bower_components
+node_modules
