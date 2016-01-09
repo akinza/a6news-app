@@ -19,7 +19,8 @@ class Admin extends CI_Controller {
 		$data['sub_view'] = "";
 		if($action === "list"){
 			$data['users'] = $this->user_model->get_all_users();
-			log_message("info", print_r($data['users']));
+			$data['roles'] = $this->role_model->get_all_roles();
+
 			$data['sub_view'] = "admin/user/list_user";
 		}
 		else if($action === 'add'){
@@ -34,6 +35,7 @@ class Admin extends CI_Controller {
 	public function roles($action)	{
 		$data['sub_view'] = "";
 		if($action === "list"){
+			$data['roles'] = $this->role_model->get_all_roles();
 			$data['sub_view'] = "admin/role/list_role";
 		}
 		else if($action === 'add'){
@@ -49,6 +51,8 @@ class Admin extends CI_Controller {
 	public function posts($action)	{
 		$data['sub_view'] = "";
 		if($action === "list"){
+			$data['users'] = $this->user_model->get_all_users();
+			$data['posts'] = $this->post_model->get_all_posts();
 			$data['sub_view'] = "admin/post/list_post";
 		}
 		else if($action === 'add'){

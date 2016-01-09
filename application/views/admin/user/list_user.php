@@ -1,10 +1,10 @@
 <div class="f8-sec-inner-block">
   <table class="table table-default">
     <tr>
-      <td>UID</td>
-      <td>Name</td>
-      <td>Email ID</td>
-      <td>Role</td>
+      <th>UID</th>
+      <th>Name</th>
+      <th>Email ID</th>
+      <th>Role</th>
     </tr>
     <?php foreach ($users as $user) { ?>
       <tr>
