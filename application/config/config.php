@@ -25,6 +25,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $config['base_url'] = '';
 
+$config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
+$config['base_url'] .= "://".$_SERVER['HTTP_HOST'];
+$config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
+
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -213,7 +217,7 @@ $config['directory_trigger'] = 'd';
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 4;
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +228,7 @@ $config['log_threshold'] = 0;
 | application/logs/ directory. Use a full server path with trailing slash.
 |
 */
-$config['log_path'] = '';
+$config['log_path'] = 'E:/SanjayRabidas/Projects/Git/logs/f8news/';
 
 /*
 |--------------------------------------------------------------------------
@@ -511,3 +515,4 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+$config['base_url'] = "http://{$_SERVER['HTTP_HOST']}/f8news/";

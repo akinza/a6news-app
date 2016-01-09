@@ -89,4 +89,4 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 defined('CSS')                OR define('CSS', "assets/css");
 defined('IMAGES')             OR define('IMAGES', "assets/images");
 defined('COMPONENTS')         OR define('COMPONENTS', "assets/bower_components");
-defined('JS')                 OR define('CSS', "assets/scripts");
+defined('JS')                 OR define('JS', "assets/scripts");
