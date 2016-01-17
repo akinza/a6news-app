@@ -19,7 +19,7 @@
               <li><a href="#intl">International</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-              <li><a href="#signin">Sign in</a></li>
+              <li><a href="<?php echo base_url("auth/login"); ?>">Sign in</a></li>
           </ul>
         </div><!--/.nav-collapse -->
     </div>
