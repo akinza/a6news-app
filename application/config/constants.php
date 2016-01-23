@@ -90,3 +90,4 @@ defined('CSS')                OR define('CSS', "assets/css");
 defined('IMAGES')             OR define('IMAGES', "assets/images");
 defined('COMPONENTS')         OR define('COMPONENTS', "assets/bower_components");
 defined('JS')                 OR define('JS', "assets/scripts");
+defined('MODULE')                 OR define('MODULE', "modules");
