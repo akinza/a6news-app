@@ -32,7 +32,7 @@
           <button type="submit" class="btn btn-lg btn-primary btn-block">Sign In ...</button>
           <hr>
           <div class="form-group">
-            <p>Don't have account? <a class="btn btn-link" href="<?php echo base_url("auth/register"); ?>">Register</a></p>
+            <p>Already registered? <a class="btn btn-link" href="<?php echo base_url("auth/login"); ?>">Login</a></p>
           </div>
         </form>
       </div>

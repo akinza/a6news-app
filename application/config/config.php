@@ -229,7 +229,7 @@ $config['log_threshold'] = 4;
 | application/logs/ directory. Use a full server path with trailing slash.
 |
 */
-$config['log_path'] = '/home/akinza/workspace/logs/f8news/';
+$config['log_path'] = '';
 
 /*
 |--------------------------------------------------------------------------
