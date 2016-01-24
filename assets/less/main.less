@@ -19,15 +19,96 @@ body{
 
 // Section Main of App Home Page
 .f8-sec-main{
+  margin-top: 50px;
+  margin-bottom: 100px;
+  background: #ffffff;
   .f8-sec-top{
-
+    height: 300px;
+    background: #E5F3E7;
   }
   .f8-sec-body{
+    position: relative;
     .f8-sec-body-row{
       margin: 0;
-      .f8-sec-col-1{}
-      .f8-sec-col-2{}
-      .f8-sec-col-3{}
+      background: #E5F3E7;
+      .f8-sec-col-1{
+        background: #B2DDB7;
+
+        padding: 10px;
+        .f8-block-heading{
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+      .f8-sec-col-2{
+        background: #CCE8CF;
+        padding: 10px;
+        .f8-block-heading{
+          text-align: center;
+          text-transform: uppercase;
+        }
+        .post-md{
+          width: auto;
+          height: 300px;
+          background: #fff;
+          margin-bottom: 10px;
+          .post-image-block{
+            // display: inline-block;
+            // position: relative;
+            // vertical-align: top;
+            width: 100%;
+            // height: 180px;
+            margin: 0 0 4% 0;
+            padding: 0;
+          }
+          .post-content-block{
+            position: relative;
+            // height: 120px;
+            padding: 10px;
+            width: 100%;
+            p>a.post-slug{
+              cursor: pointer;
+            }
+            p>span.post-date{
+              color: #aaa;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      .f8-sec-col-3{
+        background: #E5F3E7;
+        padding: 10px;
+        .f8-block-heading{
+          text-align: center;
+          text-transform: uppercase;
+        }
+        .post-sm{
+          width: auto;
+          height: 80px;
+          background: #fff;
+          margin-bottom: 10px;
+          .post-image-block{
+            display: inline-block;
+            vertical-align: top;
+            width: 27.4%;
+            margin: 0 4% 0 0;
+            padding: 0;
+          }
+          .post-content-block{
+            display: inline-block;
+            // height: 80px;
+            width: 66%;
+            p>a.post-slug{
+              cursor: pointer;
+            }
+            p>span.post-date{
+              color: #aaa;
+              font-size: 12px;
+            }
+          }
+        }
+      }
     }
   }
 }

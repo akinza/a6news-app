@@ -15,7 +15,7 @@ class User_model extends CI_Model {
   }
 
   public function get_all_users(){
-          $query = $this->db->get('users');
+          $query = $this->db->get('f8users');
           return $query->result();
   }
 
@@ -26,7 +26,7 @@ class User_model extends CI_Model {
           $this->secret = $_POST['secret'];
           $this->role_id = $_POST['role_id'];
 
-          $this->db->insert('users', $this);
+          $this->db->insert('f8users', $this);
   }
 
   public function update_user(){
@@ -36,7 +36,7 @@ class User_model extends CI_Model {
           $this->secret = $_POST['secret'];
           $this->role_id = $_POST['role_id'];
 
-          $this->db->update('users', $this, array('uid' => $_POST['uid']));
+          $this->db->update('f8users', $this, array('uid' => $_POST['uid']));
   }
 }
 ?>
