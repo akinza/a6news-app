@@ -8,6 +8,9 @@
     <?php $this->load->view('include/header'); ?>
     <div class="container f8-sec-main">
       <section class="f8-sec-top">
+        <div class="banner-image-container">
+          <img src="<?php echo base_url(IMAGES.'/banner.jpg'); ?>">
+        </div>
       </section>
       <section class="f8-sec-body">
         <div class="f8-sec-body-row row">
@@ -48,7 +51,7 @@
             </div>
           </div>
           <div class="f8-sec-col-3 col-lg-3 col-md-3 col-sm-4 col-xs-12">
-            <div class="f8-block-heading"><h5>Headign SM</h5></div>
+            <div class="f8-block-heading"><h5>Heading SM</h5></div>
             <div class="f8-article-container" id="article-container-sm">
               <?php for($i = 0; $i<10; $i++) {?>
               <article class="post post-sm" id="post-yyyy-mm-dd-blah">

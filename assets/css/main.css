@@ -165,7 +165,12 @@ body {
 }
 .f8-sec-main .f8-sec-top {
   height: 300px;
-  background: #E5F3E7;
+  background: #FAFAFA;
+}
+.f8-sec-main .f8-sec-top .banner-image-container {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
 }
 .f8-sec-main .f8-sec-body {
   position: relative;
@@ -176,7 +181,7 @@ body {
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-row .f8-sec-col-1 {
   background: #B2DDB7;
-  padding: 10px;
+  padding: 20px;
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-row .f8-sec-col-1 .f8-block-heading {
   text-align: center;
@@ -184,7 +189,7 @@ body {
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-row .f8-sec-col-2 {
   background: #CCE8CF;
-  padding: 10px;
+  padding: 20px;
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-row .f8-sec-col-2 .f8-block-heading {
   text-align: center;
@@ -201,6 +206,9 @@ body {
   margin: 0 0 4% 0;
   padding: 0;
 }
+.f8-sec-main .f8-sec-body .f8-sec-body-row .f8-sec-col-2 .post-md .post-image-block a > img {
+  width: 100%;
+}
 .f8-sec-main .f8-sec-body .f8-sec-body-row .f8-sec-col-2 .post-md .post-content-block {
   position: relative;
   padding: 10px;
@@ -215,7 +223,7 @@ body {
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-row .f8-sec-col-3 {
   background: #E5F3E7;
-  padding: 10px;
+  padding: 20px;
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-row .f8-sec-col-3 .f8-block-heading {
   text-align: center;
