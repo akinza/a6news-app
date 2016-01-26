@@ -20,10 +20,6 @@
               <a class="list-group-item" href="<?php echo base_url('admin/posts/list');?>">Show All Posts</a>
               <a class="list-group-item" href="<?php echo base_url('admin/posts/add');?>">Add Post</a>
               <a class="list-group-item" href="<?php echo base_url('admin/posts/update');?>">Update Post</a>
-
-              <a class="list-group-item" href="<?php echo base_url('admin/posts/update');?>">Update Post</a>
-              <a class="list-group-item" href="<?php echo base_url('admin/posts/update');?>">Update Post</a>
-              <a class="list-group-item" href="<?php echo base_url('admin/posts/update');?>">Update Post</a>
             </div>
           </div>
         </section>

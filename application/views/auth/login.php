@@ -47,7 +47,7 @@
       </div>
     </section>
   </div>
-  <?php $this->load->view('include/footer'); ?>
+  <?php //$this->load->view('include/footer'); ?>
   <?php $this->load->view('include/templates'); ?>
   <?php $this->load->view('include/js_common'); ?>
 </body>

@@ -36,6 +36,8 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="<?php echo base_url("auth/login"); ?>">Sign in</a></li>
+        <!-- <li><a href="<?php echo base_url("auth/register"); ?>">Register</a></li> -->
+        <li><a href="<?php echo base_url("admin"); ?>">Admin Console</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>

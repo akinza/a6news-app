@@ -30,7 +30,7 @@
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
           </div>
           <button type="submit" class="btn btn-lg btn-primary btn-block">Sign In ...</button>
-          <hr>
+          <!-- <hr> -->
           <div class="form-group">
             <p>Already registered? <a class="btn btn-link" href="<?php echo base_url("auth/login"); ?>">Login</a></p>
           </div>
@@ -38,7 +38,7 @@
       </div>
     </section>
   </div>
-  <?php $this->load->view('include/footer'); ?>
+  <?php //$this->load->view('include/footer'); ?>
   <?php $this->load->view('include/templates'); ?>
   <?php $this->load->view('include/js_common'); ?>
 </body>
