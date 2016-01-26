@@ -150,6 +150,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto';
+  min-height: 100%;
 }
 .footer {
   padding-top: 20px;
@@ -161,7 +162,6 @@ body {
 .f8-sec-main {
   margin-top: 50px;
   margin-bottom: 100px;
-  background: #ffffff;
 }
 .f8-sec-main .f8-sec-top {
   height: 300px;
@@ -177,10 +177,8 @@ body {
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-row {
   margin: 0;
-  background: #E5F3E7;
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-row .f8-sec-col-1 {
-  background: #B2DDB7;
   padding: 20px;
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-row .f8-sec-col-1 .f8-block-heading {
@@ -188,7 +186,6 @@ body {
   text-transform: uppercase;
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-row .f8-sec-col-2 {
-  background: #CCE8CF;
   padding: 20px;
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-row .f8-sec-col-2 .f8-block-heading {
@@ -222,7 +219,6 @@ body {
   font-size: 12px;
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-row .f8-sec-col-3 {
-  background: #E5F3E7;
   padding: 20px;
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-row .f8-sec-col-3 .f8-block-heading {
@@ -301,6 +297,7 @@ body {
   -webkit-box-shadow: 0 0 50px 0 #6B6B6B;
   -moz-box-shadow: 0 0 50px 0 #6B6B6B;
   box-shadow: 0 0 50px 0 #6B6B6B;
+  background: #fff;
 }
 .f8-sec-login-main .f8-login-header {
   height: 50px;
@@ -321,6 +318,7 @@ body {
 .f8-sec-register-main {
   width: 400px;
   height: 500px;
+  background: #fff;
   border-radius: 5px;
   -webkit-box-shadow: 0 0 50px 0 #6B6B6B;
   -moz-box-shadow: 0 0 50px 0 #6B6B6B;
