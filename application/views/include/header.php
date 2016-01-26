@@ -11,7 +11,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<?php echo base_url("/"); ?>">f8news</a>
+      <a class="navbar-brand" href="<?php echo base_url("/"); ?>"><span style="color:orange; font-weight:bold;">Bharat</span><span style=" font-weight:bold;color:green;">Bhutan</span>.com</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
