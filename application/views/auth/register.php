@@ -18,8 +18,8 @@
             <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Last Name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <label for="inputLastName">Last Name</label>
+            <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
