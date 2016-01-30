@@ -34,9 +34,36 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="<?php echo base_url("auth/login"); ?>">Sign in</a></li>
         <!-- <li><a href="<?php echo base_url("auth/register"); ?>">Register</a></li> -->
-        <li><a href="<?php echo base_url("admin"); ?>">Admin Console</a></li>
+        <?php
+          if($this->ion_auth->logged_in()){
+            ?>
+              <li><a href="<?php echo base_url("admin"); ?>">Admin Console</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                aria-haspopup="true" aria-expanded="false"><?php echo $this->ion_auth->user()->row()->email ;?> <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="<?php echo base_url("/"); ?>">Profile</a></li>
+                  <li><a href="<?php echo base_url("/"); ?>">Change Password</a></li>
+                  <?php if($this->ion_auth->is_admin()) { ?>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="<?php echo base_url("/"); ?>">Create New User</a></li>
+                  <li><a href="<?php echo base_url("/"); ?>">Edit User</a></li>
+                  <li><a href="<?php echo base_url("/"); ?>">Create User Group</a></li>
+                  <li><a href="<?php echo base_url("/"); ?>">Edit User Group</a></li>
+                  <li><a href="<?php echo base_url("/"); ?>">Deactivate User</a></li>
+                  <?php } ?>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="<?php echo base_url("/auth/logout"); ?>">Logout</a></li>
+                </ul>
+              </li>
+            <?php
+          }else{
+            ?>
+              <li><a href="<?php echo base_url("auth/login"); ?>">Sign in</a></li>
+            <?php
+          }
+        ?>
         <li><a href="<?php echo base_url("admin"); ?>"></a></li>
       </ul>
     </div><!--/.nav-collapse -->
