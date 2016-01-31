@@ -40,8 +40,8 @@
         <button type="submit" class="btn btn-lg btn-primary btn-block">Sign In ...</button>
         <hr style="margin-top:15px; margin-bottom:5px;">
         <div class="form-group">
-          <p>Don't have account?<a class="btn btn-link" href="<?php echo base_url("auth/register"); ?>">Register</a></p>
-          <p><a class="" href="forgot_password">Forgot Password?</a></p>
+          <!-- <p>Don't have account?<a class="btn btn-link" href="<?php echo base_url("auth/register"); ?>">Register</a></p> -->
+          <p><a class="" href="<?php echo base_url('auth/forgot_password')?>">Forgot Password?</a></p>
         </div>
         <?php echo form_close();?>
       </div>

@@ -1,57 +1,100 @@
-<h1><?php echo lang('create_user_heading');?></h1>
-<p><?php echo lang('create_user_subheading');?></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>f8news-Admin</title>
+    <?php $this->load->view('include/css_common'); ?>
+  </head>
+  <body>
+    <?php $this->load->view('include/header'); ?>
+    <div class="container">
+      <div class="f8-admin-container row">
+        <section class="f8-sec-admin-sidebar  col-lg-2 col-md-3 col-sm-4 col-xs-12">
+          <div class="f8-sec-admin-menus">
+            <div class="list-group f8-menu">
+              <a class="list-group-item active" href="<?php echo base_url('admin/users/list');?>">Show Users</a>
+              <a class="list-group-item" href="<?php echo base_url('admin/users/add');?>">Add User</a>
+              <a class="list-group-item" href="<?php echo base_url('admin/users/update');?>">Update User</a>
+              <a class="list-group-item" href="<?php echo base_url('admin/roles/list');?>">Show User Roles</a>
+              <a class="list-group-item" href="<?php echo base_url('admin/roles/add');?>">Add User Role</a>
+              <a class="list-group-item" href="<?php echo base_url('admin/roles/update');?>">Update User Role</a>
+              <a class="list-group-item" href="<?php echo base_url('admin/posts/list');?>">Show All Posts</a>
+              <a class="list-group-item" href="<?php echo base_url('admin/posts/add');?>">Add Post</a>
+              <a class="list-group-item" href="<?php echo base_url('admin/posts/update');?>">Update Post</a>
+            </div>
+          </div>
+        </section>
+        <section class="f8-sec-admin-body  col-lg-10 col-md-9 col-sm-8 col-xs-12">
+          <div class="f8-sec-inner-block  col-lg-8 col-md-8 col-sm-8 col-xs-12">
+            <div class="f8-sec-heading">
+              Add New Users
+            </div>
+            <p><?php echo lang('create_user_subheading');?></p>
+            <div id="infoMessage"><?php echo $message;?></div>
+            <?php echo form_open("auth/create_user");?>
+              <div class="form-group">
+                <label for="input-first-name" class="col-sm-4 control-label">First Name</label>
+                <div class="col-sm-8">
+                  <input name="first_name" type="text" class="form-control" id="input-first-name" placeholder="First Name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="input-last-name" class="col-sm-4 control-label">Last Name</label>
+                <div class="col-sm-8">
+                  <input name="last_name" type="text" class="form-control" id="input-last-name" placeholder="Last Name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="input-email" class="col-sm-4 control-label">Email</label>
+                <div class="col-sm-8">
+                  <input name="email" type="eamil" class="form-control" id="input-email" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="input-phone" class="col-sm-4 control-label">Phone/ Mobile</label>
+                <div class="col-sm-8">
+                  <input name="phone" type="text" class="form-control" id="input-phone" placeholder="Phone">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="input-secret" class="col-sm-4 control-label">Password</label>
+                <div class="col-sm-8">
+                  <input name="password" type="password" class="form-control" id="input-secret" placeholder="Password">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="input-secret" class="col-sm-4 control-label">Confirm Password</label>
+                <div class="col-sm-8">
+                  <input name="password_confirm" type="password" class="form-control" id="input-secret" placeholder="Confirm Password">
+                </div>
+              </div>
+              <!-- <div class="form-group">
+                <label for="select-role" class="col-sm-4 control-label">Role</label>
+                <div class="col-sm-8">
+                  <select name="role_id" class="form-control">
+                    <option value="-1">Select User Role</option>
+                    <option value="1">Beta</option>
+                    <option value="2">Gamma</option>
+                  </select>
+                </div>
+              </div> -->
 
-<div id="infoMessage"><?php echo $message;?></div>
-
-<?php echo form_open("auth/create_user");?>
-
-      <p>
-            <?php echo lang('create_user_fname_label', 'first_name');?> <br />
-            <?php echo form_input($first_name);?>
-      </p>
-
-      <p>
-            <?php echo lang('create_user_lname_label', 'last_name');?> <br />
-            <?php echo form_input($last_name);?>
-      </p>
-      
-      <?php
-      if($identity_column!=='email') {
-          echo '<p>';
-          echo lang('create_user_identity_label', 'identity');
-          echo '<br />';
-          echo form_error('identity');
-          echo form_input($identity);
-          echo '</p>';
-      }
-      ?>
-
-      <p>
-            <?php echo lang('create_user_company_label', 'company');?> <br />
-            <?php echo form_input($company);?>
-      </p>
-
-      <p>
-            <?php echo lang('create_user_email_label', 'email');?> <br />
-            <?php echo form_input($email);?>
-      </p>
-
-      <p>
-            <?php echo lang('create_user_phone_label', 'phone');?> <br />
-            <?php echo form_input($phone);?>
-      </p>
-
-      <p>
-            <?php echo lang('create_user_password_label', 'password');?> <br />
-            <?php echo form_input($password);?>
-      </p>
-
-      <p>
-            <?php echo lang('create_user_password_confirm_label', 'password_confirm');?> <br />
-            <?php echo form_input($password_confirm);?>
-      </p>
-
-
-      <p><?php echo form_submit('submit', lang('create_user_submit_btn'));?></p>
-
-<?php echo form_close();?>
+              <div class="form-group">
+                <div class="col-sm-8 pull-right">
+                  <button type="submit" class="btn btn-primary btn-lg">Add User</button>
+                </div>
+              </div>
+              <?php echo form_close();?>
+          </div>
+        </section>
+      </div>
+    </div>
+    <?php $this->load->view('include/footer'); ?>
+    <?php $this->load->view('include/templates'); ?>
+    <?php $this->load->view('include/js_common'); ?>
+    <script>
+      $(document).ready(function(){
+        $('form').addClass("form-horizontal");
+      });
+    </script>
+  </body>
+</html>
