@@ -38,7 +38,15 @@
                   ?>
                 </div>
               </div>
-
+              <div class="form-group">
+                <label for="input-email" class="col-sm-4 control-label">Email</label>
+                <div class="col-sm-8">
+                  <?php
+                  $attribs_email  = array('type'=> "email", 'class' => "form-control", 'id' => "input-email", 'placeholder' => "Email ID");
+                  echo form_input($email, '', $attribs_email);
+                  ?>
+                </div>
+              </div>
               <div class="form-group">
                 <label for="input-phone" class="col-sm-4 control-label">Phone/ Mobile</label>
                 <div class="col-sm-8">

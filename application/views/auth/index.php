@@ -49,7 +49,7 @@
 						</tbody>
 					</table>
 					<hr>
-					<p><?php echo anchor('auth/create_user', lang('index_create_user_link'))?> | <?php echo anchor('auth/create_group', lang('index_create_group_link'))?></p>
+					<p><?php echo anchor(base_url('auth/create_user'), lang('index_create_user_link'))?> | <?php echo anchor(base_url('auth/create_group'), lang('index_create_group_link'))?></p>
 				</div>
 			</section>
 		</div>
