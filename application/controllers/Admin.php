@@ -32,6 +32,7 @@ class Admin extends CI_Controller {
 				$data['roles'] = $this->role_model->get_all_roles();
 
 				$data['sub_view'] = "admin/user/list_user";
+				redirect(base_url('auth/'), 'refresh');
 			}
 			else if($action === 'add'){
 				$data['sub_view'] = "admin/user/add_user";
