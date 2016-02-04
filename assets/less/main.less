@@ -19,11 +19,16 @@ body{
   }
 }
 
-
+.f8-nav-container{
+  margin: 0 auto;
+  max-width: 1500px;
+  width: 90%;
+}
 // Section Main of App Home Page
 .f8-sec-main{
-  margin-top: 50px;
-  margin-bottom: 100px;
+  margin: 50px auto;
+  max-width: 1500px;
+  width: 90%;
   // background: #ffffff;
   .f8-sec-top{
     // height: 300px;
@@ -270,17 +275,22 @@ body{
       .f8-grid-inner{
         .news-item-grid{
           // border-bottom: 2px solid #eee;
+          border-radius: 5px;
+
           margin-bottom: 20px;
           -webkit-box-shadow: 0 2px 5px 0 #808080;
           -moz-box-shadow: 0 2px 5px 0 #808080;
           box-shadow: 0 2px 5px 0 #808080;
           display: table;
           .news-item-image{
-            // border-radius: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
             // float: left;
             width: 100%;
             img{
               // border-radius: 5px;
+              border-top-left-radius: 5px;
+              border-top-right-radius: 5px;
               width: 100%;
             }
           }
@@ -289,6 +299,8 @@ body{
             padding: 20px;
             color: #333;
             font-size: 14px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
           }
         }
       }
