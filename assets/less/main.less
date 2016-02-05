@@ -1,4 +1,5 @@
 @import "roboto-fontface.less";
+@border-radius: 3px;
 input, label{
   font-family: 'Roboto';
 }
@@ -22,13 +23,13 @@ body{
 .f8-nav-container{
   margin: 0 auto;
   max-width: 1500px;
-  width: 90%;
+  width: 100%;
 }
 // Section Main of App Home Page
 .f8-sec-main{
   margin: 50px auto;
   max-width: 1500px;
-  width: 90%;
+  width: 100%;
   // background: #ffffff;
   .f8-sec-top{
     // height: 300px;
@@ -139,17 +140,16 @@ body{
   .f8-sec-admin-sidebar{
     float: left;
     height: 100%;
-    padding:0;
-    padding-top: 20px;
     .f8-sec-admin-menus{
       // padding-right: 20px;
+      margin-top: 40px;
       .f8-menu{
         > a.list-group-item{
-          border: none;
-          border-bottom: 1px solid #ddd;
-          border-top: 1px solid #fff;
-          border-left: 1px solid #ddd;
-          margin-bottom: 0;
+          // border: none;
+          // border-bottom: 1px solid #ddd;
+          // border-top: 1px solid #fff;
+          // border-left: 1px solid #ddd;
+          // margin-bottom: 0;
         }
       }
     }
@@ -181,7 +181,7 @@ body{
 .f8-sec-login-main{
   width: 400px;
   height: 450px;
-  border-radius: 5px;
+  border-radius: @border-radius;
   border: 1px solid #ddd;
   /* -webkit-box-shadow: 0 0 50px 0 #6B6B6B; */
   // -moz-box-shadow: 0 0 50px 0 #6B6B6B;
@@ -209,7 +209,7 @@ body{
 .f8-sec-register-main{
   width: 400px;
   height: 550px;
-  border-radius: 5px;
+  border-radius: @border-radius;
   border: 1px solid #ddd;
   background: rgb(255, 255, 255);
   .f8-register-header{
@@ -249,18 +249,18 @@ body{
     .f8-block-highlight-main{
       .news-item-highlight{
         // border: 1px solid #aaa;
-        // border-radius: 5px;
-        -webkit-box-shadow: 0 2px 5px 0 #808080;
-        -moz-box-shadow: 0 2px 5px 0 #808080;
-        box-shadow: 0 2px 5px 0 #808080;
+        // border-radius: @border-radius;
+        -webkit-box-shadow: 0 2px 5px 0 #d4d4d4;
+        -moz-box-shadow: 0 2px 5px 0 #d4d4d4;
+        box-shadow: 0 2px 5px 0 #d4d4d4;
         display: table;
         margin-bottom: 20px;
         .news-item-highlight-image{
-          // border-radius: 5px;
+          // border-radius: @border-radius;
           width: 100%;
           img{
             width: 100%;
-            // border-radius: 5px;
+            // border-radius: @border-radius;
           }
           .news-item-overlay{
             .news-item-highlight-text{
@@ -275,22 +275,22 @@ body{
       .f8-grid-inner{
         .news-item-grid{
           // border-bottom: 2px solid #eee;
-          border-radius: 5px;
+          border-radius: @border-radius;
 
           margin-bottom: 20px;
-          -webkit-box-shadow: 0 2px 5px 0 #808080;
-          -moz-box-shadow: 0 2px 5px 0 #808080;
-          box-shadow: 0 2px 5px 0 #808080;
+          -webkit-box-shadow: 0 2px 5px 0 #d4d4d4;
+          -moz-box-shadow: 0 2px 5px 0 #d4d4d4;
+          box-shadow: 0 2px 5px 0 #d4d4d4;
           display: table;
           .news-item-image{
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
+            border-top-left-radius: @border-radius;
+            border-top-right-radius: @border-radius;
             // float: left;
             width: 100%;
             img{
-              // border-radius: 5px;
-              border-top-left-radius: 5px;
-              border-top-right-radius: 5px;
+              // border-radius: @border-radius;
+              border-top-left-radius: @border-radius;
+              border-top-right-radius: @border-radius;
               width: 100%;
             }
           }
@@ -299,8 +299,8 @@ body{
             padding: 20px;
             color: #333;
             font-size: 14px;
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: @border-radius;
+            border-bottom-right-radius: @border-radius;
           }
         }
       }
@@ -312,16 +312,19 @@ body{
 .news-item{
   // border: 1px solid #aaa;
   margin-bottom: 20px;
-  -webkit-box-shadow: 0 2px 5px 0 #808080;
-  -moz-box-shadow: 0 2px 5px 0 #808080;
-  box-shadow: 0 2px 5px 0 #808080;
+  -webkit-box-shadow: 0 2px 5px 0 #d4d4d4;
+  -moz-box-shadow: 0 2px 5px 0 #d4d4d4;
+  box-shadow: 0 2px 5px 0 #d4d4d4;
   display: table;
+  border-radius: @border-radius;
   .news-item-image{
-    // border-radius: 5px;
+    // border-radius: @border-radius;
     width: 100%;
     img{
       width: 100%;
-      // border-radius: 5px;
+      border-top-left-radius: @border-radius;
+      border-top-right-radius: @border-radius;
+      // border-radius: @border-radius;
     }
     .news-item-overlay{
       .news-item-text{
@@ -335,5 +338,7 @@ body{
     padding: 20px;
     color: #333;
     font-size: 14px;
+    border-bottom-left-radius: @border-radius;
+    border-bottom-right-radius: @border-radius;
   }
 }

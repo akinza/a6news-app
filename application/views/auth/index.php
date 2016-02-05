@@ -6,7 +6,7 @@
 </head>
 <body>
 	<?php $this->load->view('include/header'); ?>
-	<div class="container">
+	<div class="f8-sec-main">
 		<div class="f8-admin-container row">
 			<section class="f8-sec-admin-sidebar  col-lg-2 col-md-3 col-sm-4 col-xs-12">
 				<?php $this->load->view('admin/sidebar_menu'); ?>
