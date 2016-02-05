@@ -776,6 +776,8 @@ class Auth extends CI_Controller {
 			'name'    => 'group_name',
 			'id'      => 'group_name',
 			'type'    => 'text',
+			'class'    => 'form-control',
+			'placeholder'    => 'Group Name',
 			'value'   => $this->form_validation->set_value('group_name', $group->name),
 			$readonly => $readonly,
 		);
@@ -783,6 +785,8 @@ class Auth extends CI_Controller {
 			'name'  => 'group_description',
 			'id'    => 'group_description',
 			'type'  => 'text',
+			'class'    => 'form-control',
+			'placeholder'    => 'Group Description',
 			'value' => $this->form_validation->set_value('group_description', $group->description),
 		);
 
