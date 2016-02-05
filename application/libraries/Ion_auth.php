@@ -526,4 +526,8 @@ class Ion_auth
 		return $check_all;
 	}
 
+	public function authorized($action){
+		
+	}
+
 }

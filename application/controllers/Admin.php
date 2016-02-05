@@ -24,51 +24,51 @@ class Admin extends CI_Controller {
 		}
 	}
 
-	public function users($action)	{
-		if($this->authorized()){
-			$data['sub_view'] = "";
-			if($action === "list"){
-				$data['users'] = $this->user_model->get_all_users();
-				$data['roles'] = $this->role_model->get_all_roles();
+	// public function users($action)	{
+	// 	if($this->authorized()){
+	// 		$data['sub_view'] = "";
+	// 		if($action === "list"){
+	// 			$data['users'] = $this->user_model->get_all_users();
+	// 			$data['roles'] = $this->role_model->get_all_roles();
+	//
+	// 			$data['sub_view'] = "admin/user/list_user";
+	// 			redirect(base_url('auth/'), 'refresh');
+	// 		}
+	// 		else if($action === 'add'){
+	// 			$data['sub_view'] = "admin/user/add_user";
+	// 		}
+	// 		else if($action === 'update') {
+	// 			$data['sub_view'] = "admin/user/update_user";
+	// 		}
+	// 		$this->load->view('admin/home', $data);
+	// 	}
+	// 	else{
+	// 		redirect(base_url('auth/login'), 'refresh');
+	// 	}
+	//
+	// }
 
-				$data['sub_view'] = "admin/user/list_user";
-				redirect(base_url('auth/'), 'refresh');
-			}
-			else if($action === 'add'){
-				$data['sub_view'] = "admin/user/add_user";
-			}
-			else if($action === 'update') {
-				$data['sub_view'] = "admin/user/update_user";
-			}
-			$this->load->view('admin/home', $data);
-		}
-		else{
-			redirect(base_url('auth/login'), 'refresh');
-		}
-
-	}
-
-	public function roles($action)	{
-		if($this->authorized()){
-			$data['sub_view'] = "";
-			if($action === "list"){
-				$data['roles'] = $this->role_model->get_all_roles();
-				$data['sub_view'] = "admin/role/list_role";
-			}
-			else if($action === 'add'){
-				$data['sub_view'] = "admin/role/add_role";
-			}
-			else if($action === 'update') {
-				$data['sub_view'] = "admin/role/update_role";
-			}
-			$this->load->view('admin/home', $data);
-		}
-		else{
-			redirect(base_url('auth/login'), 'refresh');
-		}
-
-
-	}
+	// public function roles($action)	{
+	// 	if($this->authorized()){
+	// 		$data['sub_view'] = "";
+	// 		if($action === "list"){
+	// 			$data['roles'] = $this->role_model->get_all_roles();
+	// 			$data['sub_view'] = "admin/role/list_role";
+	// 		}
+	// 		else if($action === 'add'){
+	// 			$data['sub_view'] = "admin/role/add_role";
+	// 		}
+	// 		else if($action === 'update') {
+	// 			$data['sub_view'] = "admin/role/update_role";
+	// 		}
+	// 		$this->load->view('admin/home', $data);
+	// 	}
+	// 	else{
+	// 		redirect(base_url('auth/login'), 'refresh');
+	// 	}
+	//
+	//
+	// }
 
 	public function posts($action)	{
 		if($this->authorized()){
@@ -89,7 +89,6 @@ class Admin extends CI_Controller {
 		else{
 			redirect(base_url('auth/login'), 'refresh');
 		}
-
-
 	}
+
 }

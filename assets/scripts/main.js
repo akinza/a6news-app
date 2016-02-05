@@ -47,7 +47,8 @@ var __init_ck = ( function() {
 	}
 } )();
 
-
-__init_ck();
-  CKEDITOR.replace( 'article-short' );
-  CKEDITOR.replace( 'article-full' );
+if($('#article-short').length && $('#article-full').length){
+	__init_ck();
+	CKEDITOR.replace( 'article-short' );
+	CKEDITOR.replace( 'article-full' );	
+}
