@@ -6,6 +6,7 @@ class News extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->database();
+		$this->load->model('news_model');
 		$this->load->library(array('ion_auth','form_validation', 'session'));
 		$this->load->helper(array('url','language','url_helper'));
 		$this->lang->load('admin');
@@ -16,35 +17,20 @@ class News extends CI_Controller {
 	}
 
 	public function index()	{
-		$this->load->view('home');
+		$data['news'] = $this->news_model->get_news();
+		$data['title'] = ucfirst("news");
+		$this->load->view('news/index', $data);
 	}
 
-	public function business()	{
-		$this->load->view('news/business');
-	}
-	public function international()	{
-		$this->load->view('news/international');
-	}
-	public function national()	{
-		$this->load->view('news/national');
-	}
-	public function social()	{
-		$this->load->view('news/social');
-	}
-	public function sports()	{
-		$this->load->view('news/sports');
-	}
-	public function tech()	{
-		$this->load->view('news/tech');
-	}
-
-
-	public function create_news(){
-		if($this->authorized()){
-			
+	public function view($slug){
+		$news = $this->news_model->get_news($slug);
+		$data['news'] = $news;
+		$data['title'] = ucfirst($slug);
+		if($slug == FALSE){
+			$this->load->view('news/index', $data);
 		}
 		else{
-			redirect(base_url('auth/login'), 'refresh');
+			$this->load->view('news/full_news', $data);
 		}
 	}
 }

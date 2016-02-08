@@ -16,20 +16,21 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="<?php echo base_url("/news/national"); ?>">National</a></li>
-        <li><a href="<?php echo base_url("/news/business"); ?>">Business</a></li>
-        <li><a href="<?php echo base_url("/news/social"); ?>">Social Media</a></li>
-        <li><a href="<?php echo base_url("/news/tech"); ?>">Tech</a></li>
-        <li><a href="<?php echo base_url("/news/sports"); ?>">Sports</a></li>
+        <li><a href="<?php echo base_url("/news"); ?>">News</a></li>
+        <li><a href="<?php echo base_url("/p/national"); ?>">National</a></li>
+        <li><a href="<?php echo base_url("/p/business"); ?>">Business</a></li>
+        <li><a href="<?php echo base_url("/p/social"); ?>">Social Media</a></li>
+        <li><a href="<?php echo base_url("/p/tech"); ?>">Tech</a></li>
+        <li><a href="<?php echo base_url("/p/sports"); ?>">Sports</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="<?php echo base_url("/news/international"); ?>">International</a></li>
-            <li><a href="<?php echo base_url("/news/international"); ?>">Culture</a></li>
-            <li><a href="<?php echo base_url("/news/international"); ?>">Movies</a></li>
-            <li><a href="<?php echo base_url("/news/international"); ?>">Music</a></li>
-            <li><a href="<?php echo base_url("/news/international"); ?>">Food</a></li>
-            <li><a href="<?php echo base_url("/news/international"); ?>">TV</a></li>
+            <li><a href="<?php echo base_url("/p/world"); ?>">World</a></li>
+            <li><a href="<?php echo base_url("/p/culture"); ?>">Culture</a></li>
+            <li><a href="<?php echo base_url("/p/movies"); ?>">Movies</a></li>
+            <li><a href="<?php echo base_url("/p/music"); ?>">Music</a></li>
+            <li><a href="<?php echo base_url("/p/food"); ?>">Food</a></li>
+            <li><a href="<?php echo base_url("/p/tv"); ?>">TV</a></li>
           </ul>
         </li>
       </ul>
