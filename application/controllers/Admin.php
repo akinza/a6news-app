@@ -76,15 +76,17 @@ class Admin extends CI_Controller {
 			if($action === "list"){
 				$data['users'] = $this->user_model->get_all_users();
 				$data['posts'] = $this->post_model->get_all_posts();
-				$data['sub_view'] = "admin/post/list_post";
+				// $data['sub_view'] = "admin/post/list_post";
+				$this->load->view('admin/post/list_post', $data);
 			}
 			else if($action === 'add'){
-				$data['sub_view'] = "admin/post/add_post";
+				// $data['sub_view'] = "admin/post/add_post";
+				$this->load->view('admin/post/add_post', $data);
 			}
 			else if($action === 'update') {
-				$data['sub_view'] = "admin/post/update_post";
+				// $data['sub_view'] = "admin/post/update_post";
+				$this->load->view('admin/post/update_post', $data);
 			}
-			$this->load->view('admin/home', $data);
 		}
 		else{
 			redirect(base_url('auth/login'), 'refresh');
