@@ -17,25 +17,25 @@
               Add New Article
             </div>
 
-            <form method="post" action="#">
+            <!-- <form method="post" action="#"> -->
+            <?php echo form_open("article/create");?>
               <div class="form-group">
                 <label for="input-post-title" class="control-label">Slug</label>
                 <!-- <div class="col-sm-10"> -->
-                <input name="article-title" type="text" class="form-control" id="article-title" placeholder="Title">
+                <input name="article_title" type="text" class="form-control" id="article-title" placeholder="Title">
                 <!-- </div> -->
               </div>
               <div class="form-group">
                 <label for="input-post-brief" class="control-label">Brief Post</label>
                 <!-- <div class="col-sm-10"> -->
-                <textarea name="article-short" type="text" class="form-control" id="article-short" rows="5" cols="80">
+                <textarea name="article_short" type="text" class="form-control" id="article-short" rows="5" cols="80">
                 </textarea>
                 <!-- </div> -->
               </div>
               <div class="form-group">
                 <label for="input-last-name" class="control-label">Complete Post</label>
                 <!-- <div class="col-sm-10"> -->
-                <textarea name="article-full" type="text" class="form-control" id="article-full" rows="10" cols="80">
-                </textarea>
+                <textarea name="article_full" type="text" class="form-control" id="article-full" rows="10" cols="80"></textarea>
                 <!-- </div> -->
               </div>
               <div class="form-group">

@@ -5,10 +5,16 @@ class Admin extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('user_model');
-		$this->load->model('role_model');
-		$this->load->model('post_model');
-		$this->load->helper('url_helper');
+		$this->load->database();
+		$this->load->library(array('ion_auth','form_validation', 'session'));
+		$this->load->helper(array('url','language', 'url_helper'));
+
+		$this->form_validation->set_error_delimiters(
+			$this->config->item('error_start_delimiter', 'ion_auth'),
+			$this->config->item('error_end_delimiter', 'ion_auth')
+		);
+
+		$this->lang->load('admin');
 	}
 
 	private function authorized() {
@@ -23,74 +29,4 @@ class Admin extends CI_Controller {
 			redirect(base_url('auth/login'), 'refresh');
 		}
 	}
-
-	// public function users($action)	{
-	// 	if($this->authorized()){
-	// 		$data['sub_view'] = "";
-	// 		if($action === "list"){
-	// 			$data['users'] = $this->user_model->get_all_users();
-	// 			$data['roles'] = $this->role_model->get_all_roles();
-	//
-	// 			$data['sub_view'] = "admin/user/list_user";
-	// 			redirect(base_url('auth/'), 'refresh');
-	// 		}
-	// 		else if($action === 'add'){
-	// 			$data['sub_view'] = "admin/user/add_user";
-	// 		}
-	// 		else if($action === 'update') {
-	// 			$data['sub_view'] = "admin/user/update_user";
-	// 		}
-	// 		$this->load->view('admin/home', $data);
-	// 	}
-	// 	else{
-	// 		redirect(base_url('auth/login'), 'refresh');
-	// 	}
-	//
-	// }
-
-	// public function roles($action)	{
-	// 	if($this->authorized()){
-	// 		$data['sub_view'] = "";
-	// 		if($action === "list"){
-	// 			$data['roles'] = $this->role_model->get_all_roles();
-	// 			$data['sub_view'] = "admin/role/list_role";
-	// 		}
-	// 		else if($action === 'add'){
-	// 			$data['sub_view'] = "admin/role/add_role";
-	// 		}
-	// 		else if($action === 'update') {
-	// 			$data['sub_view'] = "admin/role/update_role";
-	// 		}
-	// 		$this->load->view('admin/home', $data);
-	// 	}
-	// 	else{
-	// 		redirect(base_url('auth/login'), 'refresh');
-	// 	}
-	//
-	//
-	// }
-
-	public function posts($action)	{
-		if($this->authorized()){
-			$data['sub_view'] = "";
-			if($action === "list"){
-				$data['users'] = $this->user_model->get_all_users();
-				$data['posts'] = $this->post_model->get_all_posts();
-				// $data['sub_view'] = "admin/post/list_post";
-				$this->load->view('admin/post/list_post', $data);
-			}
-			else if($action === 'add'){
-				// $data['sub_view'] = "admin/post/add_post";
-				$this->load->view('admin/post/add_post', $data);
-			}
-			else if($action === 'update') {
-				// $data['sub_view'] = "admin/post/update_post";
-				$this->load->view('admin/post/update_post', $data);
-			}
-		}
-		else{
-			redirect(base_url('auth/login'), 'refresh');
-		}
-	}
-
 }
