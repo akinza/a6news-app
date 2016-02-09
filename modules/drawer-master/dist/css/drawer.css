@@ -325,6 +325,9 @@
 /*! .drawer-navbar modifier */
 .drawer-navbar--fixed {
   position: fixed;
+  -webkit-box-shadow: 0 10px 20px -10px #595959;
+  -moz-box-shadow: 0 10px 20px -10px #595959;
+box-shadow: 0 10px 20px -10px #595959;
 }
 
 .drawer-navbar-header {
