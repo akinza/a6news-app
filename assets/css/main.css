@@ -154,8 +154,8 @@ body {
   background: #fff;
 }
 .drawer-brand {
-  padding: 0;
-  margin-left: 10px;
+  padding-left: 20px !important;
+  margin-left: 0px !important;
 }
 .drawer-brand img {
   height: 56px;
