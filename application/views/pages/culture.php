@@ -4,7 +4,7 @@
     <title><?php echo $title; ?></title>
     <?php $this->load->view('include/css_common'); ?>
   </head>
-  <body>
+  <body class="drawer drawer--left drawer--navbarTopGutter">
     <?php $this->load->view('include/header'); ?>
     <div class="f8-sec-main">
       <section class="f8-sec-top"></section>

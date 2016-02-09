@@ -153,6 +153,14 @@ body {
   min-height: 100%;
   background: #fff;
 }
+.drawer-brand {
+  padding: 0;
+  margin-left: 10px;
+}
+.drawer-brand img {
+  height: 56px;
+  margin-top: -2px;
+}
 .footer {
   padding-top: 20px;
   border-top: solid 1px #eee;
@@ -166,7 +174,7 @@ body {
   width: 100%;
 }
 .f8-sec-main {
-  margin: 50px auto;
+  margin: 0px auto;
   max-width: 1500px;
   width: 100%;
 }
@@ -292,10 +300,12 @@ body {
   right: 0;
 }
 .f8-sec-login-main {
-  width: 400px;
-  height: 450px;
+  width: 90%;
+  max-width: 400px;
+  height: 400px;
   border-radius: 3px;
   border: 1px solid #ddd;
+  margin: 100px auto;
   /* -webkit-box-shadow: 0 0 50px 0 #6B6B6B; */
   /* box-shadow: 0 0 50px 0 #6B6B6B; */
   background: #ffffff;
@@ -319,11 +329,13 @@ body {
   padding: 20px 40px;
 }
 .f8-sec-register-main {
-  width: 400px;
+  width: 90%;
+  max-width: 400px;
   height: 550px;
   border-radius: 3px;
   border: 1px solid #ddd;
   background: #ffffff;
+  margin: 100px auto;
 }
 .f8-sec-register-main .f8-register-header {
   height: 50px;
@@ -425,4 +437,8 @@ body {
   font-size: 14px;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
+}
+textarea {
+  border: 1px solid #eee;
+  padding: 20px;
 }

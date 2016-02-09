@@ -4,10 +4,10 @@
   <title>f8news :: Sign Up</title>
   <?php $this->load->view('include/css_common'); ?>
 </head>
-<body>
+<body class="drawer drawer--left drawer--navbarTopGutter">
   <?php $this->load->view('include/header'); ?>
   <div class="container f8-sec-main">
-    <section class="f8-sec-register-main Absolute-Center">
+    <section class="f8-sec-register-main">
       <div class="f8-register-header">
         Register
       </div>

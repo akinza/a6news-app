@@ -4,10 +4,10 @@
   <title>f8news :: Login</title>
   <?php $this->load->view('include/css_common'); ?>
 </head>
-<body>
+<body class="drawer drawer--left drawer--navbarTopGutter">
   <?php $this->load->view('include/header'); ?>
   <div class="container f8-sec-main">
-    <section class="f8-sec-login-main Absolute-Center">
+    <section class="f8-sec-login-main">
       <div class="f8-login-header">
         Login
       </div>

@@ -11,7 +11,18 @@ body{
   // background: #163148;
   background: #fff;
 }
-
+.drawer-brand{
+  padding: 0;
+  // margin: 10px auto;
+  margin-left: 10px;
+  img{
+    height: 56px;
+    margin-top: -2px;
+  }
+}
+// .navbar-nav > li > a{
+//   line-height: 43px;
+// }
 .footer{
   padding-top: 20px;
   border-top: solid 1px #eee;
@@ -27,7 +38,8 @@ body{
 }
 // Section Main of App Home Page
 .f8-sec-main{
-  margin: 50px auto;
+  // margin: 50px auto;
+  margin: 0px auto;
   max-width: 1500px;
   width: 100%;
   // background: #ffffff;
@@ -179,10 +191,12 @@ body{
   top: 0; left: 0; bottom: 0; right: 0;
 }
 .f8-sec-login-main{
-  width: 400px;
-  height: 450px;
+  width: 90%;
+  max-width: 400px;
+  height: 400px;
   border-radius: @border-radius;
   border: 1px solid #ddd;
+  margin: 100px auto;
   /* -webkit-box-shadow: 0 0 50px 0 #6B6B6B; */
   // -moz-box-shadow: 0 0 50px 0 #6B6B6B;
   /* box-shadow: 0 0 50px 0 #6B6B6B; */
@@ -207,11 +221,13 @@ body{
   }
 }
 .f8-sec-register-main{
-  width: 400px;
+  width: 90%;
+  max-width: 400px;
   height: 550px;
   border-radius: @border-radius;
   border: 1px solid #ddd;
   background: rgb(255, 255, 255);
+  margin: 100px auto;
   .f8-register-header{
     height: 50px;
     padding: 10px 40px;
@@ -341,4 +357,9 @@ body{
     border-bottom-left-radius: @border-radius;
     border-bottom-right-radius: @border-radius;
   }
+}
+
+textarea{
+  border: 1px solid #eee;
+  padding: 20px;
 }
