@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>f8news :: Home</title>    
+    <title>f8news :: Home</title>
     <?php $this->load->view('include/css_common'); ?>
   </head>
   <body class="drawer drawer--left drawer--navbarTopGutter">
