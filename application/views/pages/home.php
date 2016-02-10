@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>f8news :: Home</title>
-    <link id="favicon" rel="shortcut icon" href="<?php echo base_url(IMAGES. '/logo_16.png'); ?>" type="image/png" />
+    <title>f8news :: Home</title>    
     <?php $this->load->view('include/css_common'); ?>
   </head>
   <body class="drawer drawer--left drawer--navbarTopGutter">
