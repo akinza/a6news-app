@@ -27,5 +27,5 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.sublime-project
 
 ## bower components
-assets/bower_components
+#assets/bower_components
 node_modules
