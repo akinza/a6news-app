@@ -38,7 +38,7 @@ class Article extends CI_Controller {
       if ($this->form_validation->run() == true) {
         $title = $this->input->post('article_title');
 				$slug = url_title($this->input->post('article_title'), 'dash', TRUE);
-        // $slug = $this->input->post('article_title');
+        $category = $this->input->post('news_category');
         $news_short = $this->input->post('article_short');
         $news_full = $this->input->post('article_full');
         $author = $this->ion_auth->user()->row()->user_id;

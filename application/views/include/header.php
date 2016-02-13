@@ -1,6 +1,6 @@
 <!-- Fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="f8-nav-container">
+  <div class="f8-nav-container container">
     <div class="nav-container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed pull-left"

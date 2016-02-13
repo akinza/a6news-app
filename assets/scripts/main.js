@@ -49,6 +49,6 @@ var __init_ck = ( function() {
 
 if($('#article-short').length && $('#article-full').length){
 	__init_ck();
-	CKEDITOR.replace( 'article-short' );
+	// CKEDITOR.replace( 'article-short' );
 	// CKEDITOR.replace( 'article-full' );
 }

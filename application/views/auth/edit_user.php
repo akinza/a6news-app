@@ -6,8 +6,8 @@
   </head>
   <body class="">
     <?php $this->load->view('include/header'); ?>
-    <div class="f8-sec-main">
-      <div class="f8-admin-container row">
+
+      <div class="f8-admin-container container">
         <section class="f8-sec-admin-sidebar  col-lg-2 col-md-3 col-sm-4 col-xs-12">
           <?php $this->load->view('admin/sidebar_menu'); ?>
         </section>
@@ -110,7 +110,7 @@
           </div>
         </section>
       </div>
-    </div>
+
     <?php $this->load->view('include/footer'); ?>
     <?php $this->load->view('include/templates'); ?>
     <?php $this->load->view('include/js_common'); ?>

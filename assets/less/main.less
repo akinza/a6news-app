@@ -21,9 +21,11 @@ body{
     // margin-top: -2px;
   }
 }
-// .navbar-nav > li > a{
-//   line-height: 43px;
-// }
+.navbar-nav > li{
+  &:hover{
+    background: #f8f8f8;
+  }
+}
 .footer{
   padding-top: 20px;
   border-top: solid 1px #eee;
@@ -34,14 +36,15 @@ body{
 
 .f8-nav-container{
   margin: 0 auto;
-  max-width: 1500px;
-  width: 100%;
+  // max-width: 1500px;
+  // width: 100%;
 }
 // Section Main of App Home Page
 .f8-sec-main{
-  margin: 68px auto;
-  max-width: 1500px;
-  width: 100%;
+  margin: 64px auto;
+  // max-width: 1500px;
+  // width: 100%;
+  padding-top: 20px;
   // background: #ffffff;
   .f8-sec-top{
     // height: 300px;
@@ -151,11 +154,12 @@ body{
           height: 150px;
           width: 100%;
           display: block;
+          padding: 15px 0;
           .news-thumb{
             position: relative;
-            height: 150px;
-            width: 150px;
-            background: url('https://graph.facebook.com/1745217960/picture?height=150&width=150');
+            height: 120px;
+            width: 120px;
+            background: url('https://graph.facebook.com/1745217960/picture?height=120&width=120');
             float: left;
             margin-right: 20px;
           }
@@ -163,7 +167,7 @@ body{
             position: relative;
             // display: inline-block;
             // float: left;
-            height: 150px;
+            height: 120px;
             .news-title{
               font-size: 20px;
               text-decoration: none;
@@ -176,12 +180,18 @@ body{
               color:#888;
             }
             .news-text{
-
+              height: 70px;
+              // overflow: hidden;
+              text-overflow: ellipsis;
+              word-wrap: break-word;
             }
           }
         }
       }
-      .f8-sec-sidebar{
+      .f8-sec-sidebar-col{
+        .f8-sec-sidebar-block{
+          background: #aaa;
+        }
       }
     }
   }
@@ -190,7 +200,7 @@ body{
 
 // Main container section of admin page
 .f8-admin-container{
-  margin: 50px 0 0 0;
+  margin: 64px auto 0 auto;
   .f8-sec-admin-sidebar{
     float: left;
     height: 100%;
@@ -210,7 +220,7 @@ body{
   }
   .f8-sec-admin-body{
     border-left: 3px solid #eee;
-    border-right: 1px solid #eee;
+    // border-right: 1px solid #eee;
     min-height: 550px;;
     height: 100%;
     padding: 0;

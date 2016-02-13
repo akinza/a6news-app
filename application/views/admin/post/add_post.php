@@ -6,8 +6,7 @@
   </head>
   <body>
     <?php $this->load->view('include/header'); ?>
-    <div class="f8-sec-main">
-      <div class="f8-admin-container row">
+      <div class="f8-admin-container container">
         <section class="f8-sec-admin-sidebar  col-lg-2 col-md-3 col-sm-4 col-xs-12">
           <?php $this->load->view('admin/sidebar_menu'); ?>
         </section>
@@ -26,16 +25,25 @@
                 <!-- </div> -->
               </div>
               <div class="form-group">
+                <!-- <label for="input-news-category" class="control-label">Slug</label> -->
+                <!-- <div class="col-sm-10"> -->
+                <select name="news_category" class="form-control"
+                id="input-news-category" placeholder="Title">
+                <option value="">Select Category</option>
+                </select>
+                <!-- </div> -->
+              </div>
+              <div class="form-group">
                 <label for="input-post-brief" class="control-label">Brief Post</label>
                 <!-- <div class="col-sm-10"> -->
-                <textarea name="article_short" type="text" class="form-control" id="article-short" rows="5" cols="80">
+                <textarea name="article_short" class="form-control" id="article-short" rows="3" cols="80" maxlength="200">
                 </textarea>
                 <!-- </div> -->
               </div>
               <div class="form-group">
                 <label for="input-last-name" class="control-label">Complete Post</label>
                 <!-- <div class="col-sm-10"> -->
-                <textarea name="article_full" type="text" class="form-control" id="article-full" rows="10" cols="80"></textarea>
+                <textarea name="article_full" class="form-control" id="article-full" rows="10" cols="80" placeholder="Story in short.."></textarea>
                 <!-- </div> -->
               </div>
               <div class="form-group">
@@ -49,7 +57,6 @@
           </div>
         </section>
       </div>
-    </div>
     <?php $this->load->view('include/footer'); ?>
     <?php $this->load->view('include/templates'); ?>
     <?php $this->load->view('include/js_common'); ?>
