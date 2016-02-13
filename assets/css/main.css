@@ -176,7 +176,7 @@ body {
   width: 100%;
 }
 .f8-sec-main {
-  margin: 70px auto;
+  margin: 68px auto;
   max-width: 1500px;
   width: 100%;
 }
@@ -265,6 +265,35 @@ body {
 .f8-sec-main .f8-sec-body .f8-sec-body-row .f8-sec-col-3 .post-sm .post-content-block p > span.post-date {
   color: #aaa;
   font-size: 12px;
+}
+.f8-sec-main .f8-sec-body .f8-sec-body-inner {
+  margin: 0 !important;
+}
+.f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-news-item {
+  margin-bottom: 15px;
+  height: 150px;
+  width: 100%;
+  display: block;
+}
+.f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-news-item .news-thumb {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background: url('https://graph.facebook.com/1745217960/picture?height=150&width=150');
+  float: left;
+  margin-right: 20px;
+}
+.f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-news-item .news-content {
+  position: relative;
+  height: 150px;
+}
+.f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-news-item .news-content .news-title {
+  font-size: 20px;
+  text-decoration: none;
+}
+.f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-news-item .news-content .news-time {
+  font-size: 11px;
+  color: #888;
 }
 .f8-admin-container {
   margin: 50px 0 0 0;

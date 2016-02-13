@@ -4,7 +4,7 @@
   <title>f8news :: Sign Up</title>
   <?php $this->load->view('include/css_common'); ?>
 </head>
-<body class="drawer drawer--left drawer--navbarTopGutter">
+<body class="">
   <?php $this->load->view('include/header'); ?>
   <div class="container f8-sec-main">
     <section class="f8-sec-register-main">

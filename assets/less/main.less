@@ -39,7 +39,7 @@ body{
 }
 // Section Main of App Home Page
 .f8-sec-main{
-  margin: 70px auto;
+  margin: 68px auto;
   max-width: 1500px;
   width: 100%;
   // background: #ffffff;
@@ -140,6 +140,48 @@ body{
             }
           }
         }
+      }
+    }
+    // For News Page two Column
+    .f8-sec-body-inner{
+      margin: 0 !important;
+      .f8-sec-main-col{
+        .f8-news-item{
+          margin-bottom: 15px;
+          height: 150px;
+          width: 100%;
+          display: block;
+          .news-thumb{
+            position: relative;
+            height: 150px;
+            width: 150px;
+            background: url('https://graph.facebook.com/1745217960/picture?height=150&width=150');
+            float: left;
+            margin-right: 20px;
+          }
+          .news-content{
+            position: relative;
+            // display: inline-block;
+            // float: left;
+            height: 150px;
+            .news-title{
+              font-size: 20px;
+              text-decoration: none;
+              &:hover{
+                // border-bottom: 1px solid #888;
+              }
+            }
+            .news-time{
+              font-size: 11px;
+              color:#888;
+            }
+            .news-text{
+
+            }
+          }
+        }
+      }
+      .f8-sec-sidebar{
       }
     }
   }
