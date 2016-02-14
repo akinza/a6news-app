@@ -56,3 +56,4 @@ $route['translate_uri_dashes'] = FALSE;
 $route['news/(:any)'] = 'news/view/$1';
 $route['news'] = 'news';
 $route['p/(:any)'] = 'home/view/$1';
+$route['user/create'] = 'auth/create_user';

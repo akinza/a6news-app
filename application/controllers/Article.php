@@ -103,5 +103,59 @@ class Article extends CI_Controller {
 			redirect(base_url('auth/login'), 'refresh');
 		}
 	}
+	public function create_category()	{
+		if($this->authorized()){
+				$this->form_validation->set_rules('article_title', $this->lang->line('create_group_validation_name_label'), 'required');
+				$this->form_validation->set_rules('article_short', $this->lang->line('create_group_validation_name_label'), 'required');
+				$this->form_validation->set_rules('article_full', $this->lang->line('create_group_validation_name_label'), 'required');
+
+	      if ($this->form_validation->run() == true) {
+	        $title = $this->input->post('article_title');
+					$slug = url_title($this->input->post('article_title'), 'dash', TRUE);
+	        $category = $this->input->post('news_category');
+	        $news_short = $this->input->post('article_short');
+	        $news_full = $this->input->post('article_full');
+	        $author = $this->ion_auth->user()->row()->user_id;
+	        $create_date = time();
+
+	        $this->news_model->insert_post($title, $slug, $news_short, $news_full, $create_date, NULL, $author);
+
+	        redirect(base_url('article'), 'refresh');
+	      }
+	      else{
+	        // set the flash data error message if there is one
+	        $this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+
+	        // pass the user to the view
+	        $this->data['article_title'] = array(
+	          'name'  => 'article_title',
+	          'id'    => 'article-title',
+	          'type'  => 'text',
+	          'class'  => 'form-control',
+	          'value' => $this->form_validation->set_value('article_title', $this->news_model->title),
+	        );
+	        $this->data['article_short'] = array(
+	          'name'  => 'article_short',
+	          'id'    => 'article-short',
+	          'type'  => 'textarea',
+	          'class'  => 'form-control',
+	          'value' => $this->form_validation->set_value('article_short', $this->news_model->news_short),
+	        );
+	        $this->data['article_full'] = array(
+	          'name'  => 'article_full',
+	          'id'    => 'article-full',
+	          'type'  => 'textarea',
+	          'class'  => 'form-control',
+	          'value' => $this->form_validation->set_value('article_full', $this->news_model->news_full),
+	        );
+	        $this->load->view('admin/post/add_post', $this->data);
+
+	      }
+		}
+		else{
+      $this->session->set_flashdata('message', "Sorry! You are not authorized to perform the task.");
+			redirect(base_url('auth/login'), 'refresh');
+		}
+	}
 
 }
