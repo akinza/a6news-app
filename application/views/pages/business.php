@@ -6,7 +6,7 @@
   </head>
   <body class="">
     <?php $this->load->view('include/header'); ?>
-    <div class="f8-sec-main">
+    <div class="f8-sec-main container">
       <section class="f8-sec-top"></section>
       <section class="f8-sec-body">
       </section>
