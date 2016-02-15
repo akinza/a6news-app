@@ -22,7 +22,7 @@
         ?>
         <table class="table table-default table-stripped" style="border-bottom: 2px solid #eee;">
           <thead>
-            <tr>
+            <tr style="background: rgba(139, 195, 74, 0.69); color:#fff;">
               <th>#</th>
               <th>Category Name</th>
               <th>Description</th>
@@ -34,7 +34,7 @@
             <?php foreach ($categories as $category): ?>
               <tr>
                 <td><?php echo $category->category_id; ?></td>
-                <td><?php echo $category->category_name; ?></td>
+                <td><b><?php echo $category->category_name; ?></b></td>
                 <td><?php echo $category->description; ?></td>
                 <td><a href="#">Edit</a></td>
                 <td><a href="#">Delete</a></td>
@@ -42,7 +42,7 @@
             <?php endforeach; ?>
           </tbody>
         </table>
-        <p><a class="btn btn-sm btn-primary" href="<?php echo base_url('article/create_category');?>">Add More News Category</a></p>
+        <p><a class="btn btn-primary" href="<?php echo base_url('article/create_category');?>">Add More News Category</a></p>
       </div>
     </section>
   </div>
