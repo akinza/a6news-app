@@ -20,7 +20,7 @@
               echo $message;
           }
         ?>
-        <table class="table table-default table-stripped">
+        <table class="table table-default table-stripped" style="border-bottom: 2px solid #eee;">
           <thead>
             <tr>
               <th>#</th>
