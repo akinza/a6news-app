@@ -178,7 +178,6 @@ body {
 }
 .f8-sec-main {
   margin: 64px auto;
-  padding-top: 20px;
 }
 .f8-sec-main .f8-sec-top {
   background: #FAFAFA;
@@ -190,6 +189,7 @@ body {
   width: 100%;
 }
 .f8-sec-main .f8-sec-body {
+  padding-top: 20px;
   position: relative;
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-row {

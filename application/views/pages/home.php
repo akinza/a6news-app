@@ -6,9 +6,7 @@
   </head>
   <body class="">
     <?php $this->load->view('include/header'); ?>
-    <div class="container f8-sec-main">
-      <main role="main">
-        <div class="f8-sec-main">
+        <div class="container f8-sec-main">
           <section class="f8-sec-top">
             <div class="banner-image-container">
               <img src="<?php echo base_url(IMAGES.'/banner.jpg'); ?>">
@@ -71,7 +69,7 @@
           </section>
         </div>
         <?php $this->load->view('include/footer'); ?>
-      </main>
+
     </div>
     <?php $this->load->view('include/templates'); ?>
     <?php $this->load->view('include/js_common'); ?>
