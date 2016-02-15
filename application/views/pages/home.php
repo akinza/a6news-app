@@ -9,7 +9,7 @@
         <div class="container f8-sec-main">
           <section class="f8-sec-top">
             <div class="banner-image-container">
-              <img src="<?php echo base_url(IMAGES.'/banner.jpg'); ?>">
+              <img src="<?php echo base_url(IMAGES.'/banner-1.jpg'); ?>">
             </div>
           </section>
           <section class="f8-sec-body">

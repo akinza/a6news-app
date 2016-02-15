@@ -62,7 +62,6 @@
             <?php
           }
         ?>
-        <li><a href="<?php echo base_url("admin"); ?>"></a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
