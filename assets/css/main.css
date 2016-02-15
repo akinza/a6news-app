@@ -315,7 +315,6 @@ body {
   margin-top: 40px;
 }
 .f8-admin-container .f8-sec-admin-body {
-  border-left: 3px solid #eee;
   min-height: 550px;
   height: 100%;
   padding: 0;
@@ -480,4 +479,9 @@ body {
 textarea {
   border: 1px solid #eee;
   padding: 20px;
+}
+input.form-control,
+textarea {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
 }
