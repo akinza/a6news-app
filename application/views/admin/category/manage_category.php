@@ -23,7 +23,7 @@
         <table class="table table-default table-stripped">
           <thead>
             <tr>
-              <td>#</th>
+              <th>#</th>
               <th>Category Name</th>
               <th>Description</th>
               <th>Edit</th>
