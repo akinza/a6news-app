@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.6.14, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.5.47, for debian-linux-gnu (i686)
 --
 -- Host: localhost    Database: f8news
 -- ------------------------------------------------------
--- Server version	5.6.14
+-- Server version	5.5.47-0ubuntu0.14.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,6 +14,32 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `category`
+--
+
+DROP TABLE IF EXISTS `category`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `category` (
+  `category_id` bigint(11) NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(20) NOT NULL,
+  `description` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`category_id`),
+  UNIQUE KEY `idx_cat_name` (`category_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `category`
+--
+
+LOCK TABLES `category` WRITE;
+/*!40000 ALTER TABLE `category` DISABLE KEYS */;
+INSERT INTO `category` VALUES (1,'India','News related to India'),(2,'Business','News related to business and economy of the nation and the world.'),(3,'Social Media','News and articles related to social media such as Facebook, Twitter etc.'),(4,'Sports','News related to sports.');
+/*!40000 ALTER TABLE `category` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `groups`
@@ -84,7 +110,7 @@ CREATE TABLE `news` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`),
   KEY `author` (`author`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,8 +119,31 @@ CREATE TABLE `news` (
 
 LOCK TABLES `news` WRITE;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
-INSERT INTO `news` VALUES (1,'Venmo went down after the Super Bowl, and some people think they know why','Venmo went down after the Super Bowl, and some people think they know why','<p>So you thought the dabbing quarterback with the million-dollar smile,&nbsp;<a href=\"http://mashable.com/2016/02/03/cam-newton-sunshine/\">Cam Newton,</a>&nbsp;was going to win, huh? Well now, if you put your money where your mouth was &mdash;&nbsp;that is, you made a bet on the game with your friends &mdash;&nbsp;it may be time to pay up.&nbsp;</p>\r\n','<p>So you thought the dabbing quarterback with the million-dollar smile,&nbsp;<a href=\"http://mashable.com/2016/02/03/cam-newton-sunshine/\">Cam Newton,</a>&nbsp;was going to win, huh? Well now, if you put your money where your mouth was &mdash;&nbsp;that is, you made a bet on the game with your friends &mdash;&nbsp;it may be time to pay up.&nbsp;</p>\r\n\r\n<p>But if you decided to do that via the payment app&nbsp;<a href=\"http://mashable.com/category/venmo/\">Venmo</a>, you were, at least temporarily, flat out of luck.</p>\r\n\r\n<p>Just minutes after&nbsp;<a href=\"http://mashable.com/category/super-bowl-50/\">Super Bowl 50</a>&nbsp;ended, the mobile payments service went down, or at least lagged, for many users. A number of them switched over to Twitter to voice their complaints &mdash;&nbsp;and their conspiracy theories.</p>\r\n\r\n<p><strong>SEE ALSO:&nbsp;<a href=\"http://mashable.com/2016/01/28/venmo-in-app-purchases/\">You can now make in-app purchases with Venmo</a></strong></p>\r\n\r\n<p>What theories? Well, some people (who have offered no proof whatsoever) think the down time has to do with bets being paid off now that the favorites to win the Super Bowl, the Carolina Panthers, have lost. That would presumably result in a ton of payment activity from all the people who were so confident about a Panthers win.&nbsp;</p>\r\n\r\n<p>Of course, Venmo didn&#39;t attribute the issue to any betting activity, nor did the company offer&nbsp;<em>any</em>explanation for the service interruption.</p>\r\n\r\n<p>But that didn&#39;t stop Venmo users on Twitter from speculating about the timing.</p>\r\n\r\n<p>We may never know what was behind the app&#39;s problems so soon after the Super Bowl.&nbsp;But if people were indeed using it to pay off bets, this wasn&#39;t a great advertisement for the service. (Or maybe it was.)</p>\r\n\r\n<p>Venmo did not immediately respond to a request for comment.</p>\r\n\r\n<p><em>Have something to add to this story? Share it in the comments.</em></p>\r\n','0000-00-00 00:00:00',NULL,1);
+INSERT INTO `news` VALUES (2,'supreme-court-freezes-obamas-climate-change-plan','Supreme Court freezes Obama\'s climate change plan','<p>WASHINGTON &mdash;&nbsp;A divided Supreme Court agreed Tuesday to halt enforcement of President Barack Obama&#39;s&nbsp;sweeping plan&nbsp;to address climate change until after legal challenges are resolved.</p>\r\n\r\n<p>The surprising move is a blow to the administration and a victory for the coalition of 27 mostly Republican-led states and industry opponents that call the regulations &quot;an unprecedented power grab.&quot;</p>\r\n','<p>WASHINGTON &mdash;&nbsp;A divided Supreme Court agreed Tuesday to halt enforcement of President Barack Obama&#39;s&nbsp;sweeping plan&nbsp;to address climate change until after legal challenges are resolved.</p>\r\n\r\n<p>The surprising move is a blow to the administration and a victory for the coalition of 27 mostly Republican-led states and industry opponents that call the regulations &quot;an unprecedented power grab.&quot;</p>\r\n\r\n<p>By temporarily freezing the rule the high court&#39;s order signals that opponents have made a strong argument against the plan, which aims to stave off the worst predicted impacts of climate change by reducing carbon dioxide emissions at existing power plants by about one-third by 2030. A federal appeals court last month refused to put it on hold.</p>\r\n\r\n<p>The appeals court is not likely to issue a ruling on the plan until months after it hears oral arguments begin on June 2. But any decision likely would be appealed to the Supreme Court, meaning resolution of the legal fight is not likely to happen until Obama leaves office.</p>\r\n\r\n<p>The high court&#39;s four liberal justices said Tuesday they would have denied the request for delay.</p>\r\n\r\n<p>Compliance with the new rules isn&#39;t required until 2022, but states must submit their plans to the Environmental Protection Administration by September or seek an extension.</p>\r\n\r\n<blockquote>The legal fight will likely be unresolved when Obama leaves office</blockquote>\r\n\r\n<p>Many states opposing the plan depend on economic activity tied to such fossil fuels as coal, oil and gas. They argued that power plants will have to spend billions of dollars to begin complying with a rule that may end up being overturned.</p>\r\n\r\n<p>Attorney General Patrick Morrisey of West Virginia, whose coal-dependent state is helping lead the legal fight, hailed the court&#39;s decision.</p>\r\n\r\n<p>&quot;We are thrilled that the Supreme Court realized the rule&#39;s immediate impact and froze its implementation, protecting workers and saving countless dollars as our fight against its legality continues,&quot; Morrisey said.</p>\r\n\r\n<p>Implementation of the rules is considered essential to the United States meeting emissions-reduction targets in a&nbsp;global climate agreement&nbsp;signed in Paris last month. The Obama administration and environmental groups also say the plan will spur new clean-energy jobs.</p>\r\n\r\n<p>To convince the high court to temporarily halt the plan, opponents had to convince the justices that there was a &quot;fair prospect&quot; the court would strike down the rule. The court also had to consider whether denying a stay would cause irreparable harm to the states and utility companies affected.</p>\r\n\r\n<p><em>Have something to add to this story? Share it in the comments.</em></p>\r\n','0000-00-00 00:00:00',NULL,1),(4,'supreme-court-freezes-obamas-climate','Supreme Court freezes Obama\'s climate ','<p>Supreme Court freezes Obama&#39;s climate change plan&nbsp;Supreme Court freezes Obama&#39;s climate change plan&nbsp;Supreme Court freezes Obama&#39;s climate change plan&nbsp;Supreme Court freezes Obama&#39;s climate change plan&nbsp;Supreme Court freezes Obama&#39;s climate change plan&nbsp;Supreme Court freezes Obama&#39;s climate change&nbsp;</p>\r\n','<p>Supreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change planSupreme Court freezes Obama&#39;s climate change plan</p>\r\n','0000-00-00 00:00:00',NULL,1);
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `news_category`
+--
+
+DROP TABLE IF EXISTS `news_category`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `news_category` (
+  `news_id` bigint(20) NOT NULL,
+  `category_id` bigint(20) NOT NULL,
+  PRIMARY KEY (`news_id`,`category_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `news_category`
+--
+
+LOCK TABLES `news_category` WRITE;
+/*!40000 ALTER TABLE `news_category` DISABLE KEYS */;
+/*!40000 ALTER TABLE `news_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -132,7 +181,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'127.0.0.1','administrator','$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36','','admin@admin.com','',NULL,NULL,NULL,1268889823,1454931647,1,'Admin','istrator','ADMIN','0'),(2,'::1',NULL,'$2y$08$7kjXO3aQj8iZnrr7XPnXb.br7BNK8tTxaAJhOvMtLh2p2NM2MNwlK',NULL,'rabidassanjay@gmail.com',NULL,NULL,NULL,NULL,1454910020,NULL,1,'Sanjay','Rabidas',NULL,'9545142899');
+INSERT INTO `users` VALUES (1,'127.0.0.1','administrator','$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36','','admin@admin.com','',NULL,NULL,'IlgdqwzwMHTwwvaCkTjMCO',1268889823,1455569403,1,'Admin','istrator','ADMIN','0'),(2,'::1',NULL,'$2y$08$7kjXO3aQj8iZnrr7XPnXb.br7BNK8tTxaAJhOvMtLh2p2NM2MNwlK',NULL,'rabidassanjay@gmail.com',NULL,NULL,NULL,NULL,1454910020,NULL,1,'Sanjay','Rabidas',NULL,'9545142899');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -175,4 +224,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-02-08 17:19:23
+-- Dump completed on 2016-02-16  8:21:01
