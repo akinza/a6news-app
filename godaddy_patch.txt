@@ -1,0 +1,95 @@
+diff --git a/.htaccess b/.htaccess
+index 8bc62b7..6f7083c 100644
+--- a/.htaccess
++++ b/.htaccess
+@@ -1,6 +1,9 @@
+-AddDefaultCharset utf-8
+-RewriteEngine On
++<IfModule mod_rewrite.c>
++Options +FollowSymLinks
++RewriteEngine on
++RewriteBase /
+ RewriteCond $1 !^(index\.php|assets|modules|user_guide|robots\.txt)
+ RewriteCond %{REQUEST_FILENAME} !-f
+ RewriteCond %{REQUEST_FILENAME} !-d
+-RewriteRule ^(.*)$ index.php/$1 [L,QSA]
++RewriteRule ^(.*)$ index.php?/$1 [QSA,L]
++</IfModule>
+diff --git a/application/.htaccess b/application/.htaccess
+index 70d63e1..6f7083c 100644
+--- a/application/.htaccess
++++ b/application/.htaccess
+@@ -1,14 +1,9 @@
+-<IfModule authz_core_module>
+-    Require all denied
+-</IfModule>
+-<IfModule !authz_core_module>
+-    Deny from all
+-</IfModule>
+-
+ <IfModule mod_rewrite.c>
+-    RewriteEngine On
+-    RewriteCond $1 !^(index\.php|assets|modules|user_guide|robots\.txt)
+-    RewriteCond %{REQUEST_FILENAME} !-f
+-    RewriteCond %{REQUEST_FILENAME} !-d
+-    RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+-<IfModule>
++Options +FollowSymLinks
++RewriteEngine on
++RewriteBase /
++RewriteCond $1 !^(index\.php|assets|modules|user_guide|robots\.txt)
++RewriteCond %{REQUEST_FILENAME} !-f
++RewriteCond %{REQUEST_FILENAME} !-d
++RewriteRule ^(.*)$ index.php?/$1 [QSA,L]
++</IfModule>
+diff --git a/application/config/config.php b/application/config/config.php
+index 72894f6..cd358c1 100644
+--- a/application/config/config.php
++++ b/application/config/config.php
+@@ -39,8 +39,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
+ | variable so that it is blank.
+ |
+ */
+-// $config['index_page'] = 'index.php';
+-$config['index_page'] = '';
++//$config['index_page'] = 'index.php';
++//$config['index_page'] = '';
+ 
+ /*
+ |--------------------------------------------------------------------------
+@@ -58,6 +58,7 @@ $config['index_page'] = '';
+ | WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
+ */
+ $config['uri_protocol']	= 'REQUEST_URI';
++//$config['uri_protocol']	= 'QUERY_STRING';
+ 
+ /*
+ |--------------------------------------------------------------------------
+@@ -517,7 +518,7 @@ $config['rewrite_short_tags'] = FALSE;
+ */
+ $config['proxy_ips'] = '';
+ // $config['base_url'] = "http://{$_SERVER['HTTP_HOST']}/f8news/";
+-$config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'].'/f8news/';
+-$config['index_page'] = 'index.php';
+-$config['uri_protocol'] = 'AUTO';
++$config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'].'/';
++$config['index_page'] = '';
++$config['uri_protocol'] = 'QUERY_STRING';
+ // $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-\=+';
+diff --git a/application/config/database.php b/application/config/database.php
+index 4f8f061..135396d 100644
+--- a/application/config/database.php
++++ b/application/config/database.php
+@@ -76,9 +76,9 @@ $query_builder = TRUE;
+ $db['default'] = array(
+ 	'dsn'	=> '',
+ 	'hostname' => 'localhost',
+-	'username' => 'root',
+-	'password' => 'root',
+-	'database' => 'f8news',
++	'username' => 'f8newsadmin',
++	'password' => 'f8newsadmin',
++	'database' => 'test_f8news',
+ 	'dbdriver' => 'mysqli',
+ 	'dbprefix' => '',
+ 	'pconnect' => FALSE,
