@@ -52,3 +52,11 @@ if($('#article-short').length && $('#article-full').length){
 	// CKEDITOR.replace( 'article-short' );
 	// CKEDITOR.replace( 'article-full' );
 }
+
+	$(document).ready(function(){
+		if($(".alert-success").length){
+			$(".alert-success").fadeOut(4000, function(){
+				$(".alert-success").hide();
+			});
+		}
+	});

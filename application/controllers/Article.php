@@ -5,8 +5,8 @@ class Article extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('news_model');
 		$this->load->database();
+		$this->load->model(array('news_model', 'category_model'));
 		$this->load->library(array('ion_auth','form_validation', 'session'));
 		$this->load->helper(array('url','language', 'url_helper'));
 
@@ -53,7 +53,7 @@ class Article extends CI_Controller {
       else{
         // set the flash data error message if there is one
         $this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
-
+				$this->data["categories"] = $this->category_model->get_all_categories();
         // pass the user to the view
         $this->data['article_title'] = array(
           'name'  => 'article_title',
@@ -113,14 +113,15 @@ class Article extends CI_Controller {
 	        $cat_name = $this->input->post('news_category_name');
 	        $cat_desc = $this->input->post('news_category_desc');
 
-	        $this->news_model->add_category($cat_name, $cat_desc);
+	        $this->category_model->add_category($cat_name, $cat_desc);
+					$this->data["categories"] = $this->category_model->get_all_categories();
 					$this->data['message'] = "<p class='alert alert-success'>Category created successfully</p>";
-					$this->load->view('admin/category/add_category', $this->data);
+					$this->load->view('admin/category/manage_category', $this->data);
 	      }
 	      else{
 	        // set the flash data error message if there is one
 	        $this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
-					$this->data["categories"] = $this->news_model->get_all_categories();
+					$this->data["categories"] = $this->category_model->get_all_categories();
 	        $this->load->view('admin/category/add_category', $this->data);
 	      }
 		}
@@ -131,7 +132,71 @@ class Article extends CI_Controller {
 	}
 
 	public function manage_category(){
-		$this->data["categories"] = $this->news_model->get_all_categories();
+		$this->data["categories"] = $this->category_model->get_all_categories();
 		$this->load->view('admin/category/manage_category', $this->data);
+	}
+
+	public function delete_category($category_id){
+		if($this->authorized()){
+			$this->category_model->delete_category($category_id);
+			redirect(base_url('article/manage_category'), 'refresh');
+		}
+		else{
+			$this->session->set_flashdata('message', "Sorry! You are not authorized to perform the task.");
+			redirect(base_url('auth/login'), 'refresh');
+		}
+	}
+	public function edit_category($category_id){
+		if($this->authorized()){
+			$this->form_validation->set_rules('news_category_name', "Category Name is required.", 'required');
+
+			if ($this->form_validation->run() == true) {
+				$cat_name = $this->input->post('news_category_name');
+				$cat_desc = $this->input->post('news_category_desc');
+
+				$this->category_model->update_category($category_id, $cat_name, $cat_desc);
+
+				$this->data["categories"] = $this->category_model->get_all_categories();
+
+				$this->data['message'] = "<p class='alert alert-success'>Category updated successfully</p>";
+				$this->load->view('admin/category/manage_category', $this->data);
+			}
+			else{
+				// set the flash data error message if there is one
+				$this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+				$categories = $this->category_model->get_all_categories();
+
+				// $category_data = $this->category_model->get_category($category_id);
+				$category_data = array();
+				foreach ($categories as $cat) {
+					if($cat->category_id == $category_id){
+						$category_data = $cat;
+					}
+				}
+				$this->data['category_id'] = $category_id;
+				$this->data["category_name"] = array(
+					'name' => 'news_category_name',
+					'type' => 'text',
+					'class' => 'form-control',
+					'id' => 'input-category-name',
+					'placeholder' => 'Category Name',
+					'value' => $category_data->category_name
+				);
+
+				$this->data["category_desc"] = array(
+					'name' => 'news_category_desc',
+					'type' => 'text',
+					'class' => 'form-control',
+					'id' => 'input-category-desc',
+					'placeholder' => 'Description',
+					'value' => $category_data->description
+				);
+				$this->load->view('admin/category/edit_category', $this->data);
+			}
+		}
+		else{
+			$this->session->set_flashdata('message', "Sorry! You are not authorized to perform the task.");
+			redirect(base_url('auth/login'), 'refresh');
+		}
 	}
 }

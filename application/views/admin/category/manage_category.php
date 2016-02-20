@@ -8,7 +8,7 @@
   <?php $this->load->view('include/header'); ?>
   <div class="f8-admin-container container">
     <section class="f8-sec-admin-sidebar  col-lg-3 col-md-3 col-sm-4 col-xs-12">
-      <?php $this->load->view('admin/sidebar_menu'); ?>
+      <?php $this->load->view('admin/inc/sidebar_menu'); ?>
     </section>
     <section class="f8-sec-admin-body  col-lg-9 col-md-9 col-sm-8 col-xs-12">
       <div class="f8-sec-inner-block">
@@ -20,10 +20,10 @@
               echo $message;
           }
         ?>
-        <table class="table table-default table-stripped" style="border-bottom: 2px solid #eee;">
+        <table class="table table-default table-hover" style="border-bottom: 2px solid #eee;">
           <thead>
-            <tr style="background: rgba(139, 195, 74, 0.69); color:#fff;">
-              <th>#</th>
+            <tr style="background: #2196F3; color:#fff;">
+              <!-- <th>#</th> -->
               <th>Category Name</th>
               <th>Description</th>
               <th>Edit</th>
@@ -33,11 +33,11 @@
           <tbody>
             <?php foreach ($categories as $category): ?>
               <tr>
-                <td><?php echo $category->category_id; ?></td>
+                <!-- <td><?php echo $category->category_id; ?></td> -->
                 <td><b><?php echo $category->category_name; ?></b></td>
                 <td><?php echo $category->description; ?></td>
-                <td><a href="#">Edit</a></td>
-                <td><a href="#">Delete</a></td>
+                <td><a href="<?php echo base_url('article/edit_category/'.$category->category_id);?>">Edit</a></td>
+                <td><a href="<?php echo base_url('article/delete_category/'.$category->category_id);?>">Delete</a></td>
               </tr>
             <?php endforeach; ?>
           </tbody>

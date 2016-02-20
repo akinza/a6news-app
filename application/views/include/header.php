@@ -11,7 +11,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<?php echo base_url("/"); ?>"><img height="50px" src="<?php echo base_url(IMAGES."/logo-new2.jpg"); ?>"></a>
+      <!-- <a class="navbar-brand" href="<?php echo base_url("/"); ?>"><img height="50px" src="<?php echo base_url(IMAGES."/logo-new2.jpg"); ?>"></a> -->
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">

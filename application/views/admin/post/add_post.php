@@ -8,7 +8,7 @@
     <?php $this->load->view('include/header'); ?>
       <div class="f8-admin-container container">
         <section class="f8-sec-admin-sidebar  col-lg-3 col-md-3 col-sm-4 col-xs-12">
-          <?php $this->load->view('admin/sidebar_menu'); ?>
+          <?php $this->load->view('admin/inc/sidebar_menu'); ?>
         </section>
         <section class="f8-sec-admin-body  col-lg-9 col-md-9 col-sm-8 col-xs-12">
           <div class="f8-sec-inner-block">
@@ -27,9 +27,10 @@
               <div class="form-group">
                 <!-- <label for="input-news-category" class="control-label">Slug</label> -->
                 <!-- <div class="col-sm-10"> -->
-                <select name="news_category" class="form-control"
-                id="input-news-category" placeholder="Title">
-                <option value="">Select Category</option>
+                <select name="news_category" class="form-control" id="input-news-category" placeholder="Title">
+                  <?php foreach ($categories as $category): ?>
+                    <option value="<?php echo $category->category_id; ?>"><?php echo $category->category_name; ?></option>
+                  <?php endforeach; ?>
                 </select>
                 <!-- </div> -->
               </div>

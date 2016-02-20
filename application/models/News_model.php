@@ -51,13 +51,20 @@ class News_model extends CI_Model {
     $this->db->update('news', $this, array('id' => $_POST['id']));
   }
 
-  public function add_category($cat_name, $cat_desc){
-    $this->db->insert('category', array('category_name' => $cat_name, 'description' => $cat_desc));
-  }
-
-  public function get_all_categories(){
-    $query = $this->db->get('category');
-    return $query->result();
-  }
+  // public function add_category($cat_name, $cat_desc){
+  //   $this->db->insert('category', array('category_name' => $cat_name, 'description' => $cat_desc));
+  // }
+  //
+  // public function get_all_categories(){
+  //   $query = $this->db->get('category');
+  //   return $query->result();
+  // }
+  // public function get_category($category_id){
+  //   $query = $this->db->get_where('category', array('category_id', $category_id));
+  //   return $query->row_array();
+  // }
+  // public function update_category($category_id, $cat_name, $cat_desc){
+  //   $this->db->update('category', $this, array('id' => $_POST['id']));
+  // }
 }
 ?>

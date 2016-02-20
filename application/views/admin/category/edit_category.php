@@ -13,25 +13,27 @@
     <section class="f8-sec-admin-body  col-lg-9 col-md-9 col-sm-8 col-xs-12">
       <div class="f8-sec-inner-block">
         <div class="f8-sec-heading">
-          Add News Category
+          Edit News Category
         </div>
         <?php
           if(isset($message)){
               echo $message;
           }
         ?>
-        <?php echo form_open("article/create_category");?>
+        <?php echo form_open("article/edit_category/".$category_id);?>
           <div class="form-group">
             <label for="input-category-name" class="control-label">Category Name</label>
-            <input name="news_category_name" type="text" class="form-control" id="input-category-name" placeholder="Category">
+            <?php echo form_input($category_name);?>
+            <!-- <input name="news_category_name" type="text" class="form-control" id="input-category-name" placeholder="Category"> -->
           </div>
           <div class="form-group">
             <label for="input-category-desc" class="control-label">Description</label>
-            <input name="news_category_desc" type="text" class="form-control" id="input-category-desc" placeholder="Description">
+            <?php echo form_input($category_desc);?>
+            <!-- <input name="news_category_desc" type="text" class="form-control" id="input-category-desc" placeholder="Description"> -->
           </div>
           <div class="form-group">
             <div class="">
-              <button type="submit" class="btn btn-warning">Create News Category</button>
+              <button type="submit" class="btn btn-primary">Update Category</button>
             </div>
           </div>
         </form>
