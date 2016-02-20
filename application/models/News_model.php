@@ -29,7 +29,7 @@ class News_model extends CI_Model {
     return $query->result();
   }
 
-  public function insert_post($title, $slug, $news_short, $news_full, $created, $modified=NULL, $author){
+  public function insert_post($title, $slug, $news_short, $news_full, $created, $modified=NULL, $author, $category_id){
     $this->title = $title;
     $this->slug = $slug;
     $this->news_short = $news_short;
@@ -39,6 +39,8 @@ class News_model extends CI_Model {
     $this->author = $author;
 
     $this->db->insert('news', $this);
+    $id = $this->db->insert_id();
+    $this->db->insert('news_category', array('news_id' => $id, 'category_id'=> $category_id));
   }
 
   public function update_post() {

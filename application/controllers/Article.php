@@ -45,8 +45,8 @@ class Article extends CI_Controller {
 				$dt = new DateTime();
 				$dt->format('Y-m-d H:i:s');
         $create_date = $dt;
-
-        $this->news_model->insert_post($title, $slug, $news_short, $news_full, $create_date, NULL, $author);
+				$category_id = $this->input->post('news_category');
+        $this->news_model->insert_post($title, $slug, $news_short, $news_full, $create_date, NULL, $author,$category_id);
 
         redirect(base_url('article'), 'refresh');
       }
