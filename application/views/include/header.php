@@ -18,12 +18,12 @@
         <li><a href="<?php echo base_url("/news"); ?>">News</a></li>
         <li><a href="<?php echo base_url("/p/national"); ?>">National</a></li>
         <li><a href="<?php echo base_url("/p/business"); ?>">Business</a></li>
-        <li><a href="<?php echo base_url("/p/social"); ?>">Social Media</a></li>
-        <li><a href="<?php echo base_url("/p/tech"); ?>">Tech</a></li>
         <li><a href="<?php echo base_url("/p/sports"); ?>">Sports</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
           <ul class="dropdown-menu">
+            <li><a href="<?php echo base_url("/p/tech"); ?>">Tech</a></li>
+            <li><a href="<?php echo base_url("/p/social"); ?>">Social Media</a></li>
             <li><a href="<?php echo base_url("/p/world"); ?>">World</a></li>
             <li><a href="<?php echo base_url("/p/culture"); ?>">Culture</a></li>
             <li><a href="<?php echo base_url("/p/movies"); ?>">Movies</a></li>
