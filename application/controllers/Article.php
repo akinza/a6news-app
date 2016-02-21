@@ -21,7 +21,7 @@ class Article extends CI_Controller {
 
 	public function index()	{
 		if($this->authorized()){
-      $data['news'] = $this->news_model->get_all_posts();
+      $data['posts'] = $this->news_model->get_all_posts();
       $this->load->view('admin/post/list_post', $data);
 		}
 		else{
@@ -105,6 +105,7 @@ class Article extends CI_Controller {
 			redirect(base_url('auth/login'), 'refresh');
 		}
 	}
+
 	public function create_category()	{
 		if($this->authorized()){
 				$this->form_validation->set_rules('news_category_name', "Category Name is required.", 'required');
