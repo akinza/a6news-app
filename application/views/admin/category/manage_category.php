@@ -37,7 +37,7 @@
                 <td><b><?php echo $category->category_name; ?></b></td>
                 <td><?php echo $category->description; ?></td>
                 <td><a href="<?php echo base_url('article/edit_category/'.$category->category_id);?>">Edit</a></td>
-                <td><a href="<?php echo base_url('article/delete_category/'.$category->category_id);?>">Delete</a></td>
+                <td><a onclick="return confirm('Are you sure you want to delete this record?');" href="<?php echo base_url('article/delete_category/'.$category->category_id);?>">Delete</a></td>
               </tr>
             <?php endforeach; ?>
           </tbody>
