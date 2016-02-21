@@ -166,13 +166,15 @@ class Article extends CI_Controller {
 				$this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
 				$categories = $this->category_model->get_all_categories();
 
-				// $category_data = $this->category_model->get_category($category_id);
-				$category_data = array();
-				foreach ($categories as $cat) {
-					if($cat->category_id == $category_id){
-						$category_data = $cat;
-					}
-				}
+				$category_data = $this->category_model->get_category($category_id);
+				print_r($category_data);
+
+				// $category_data = array();
+				// foreach ($categories as $cat) {
+				// 	if($cat->category_id == $category_id){
+				// 		$category_data = $cat;
+				// 	}
+				// }
 				$this->data['category_id'] = $category_id;
 				$this->data["category_name"] = array(
 					'name' => 'news_category_name',
@@ -180,7 +182,7 @@ class Article extends CI_Controller {
 					'class' => 'form-control',
 					'id' => 'input-category-name',
 					'placeholder' => 'Category Name',
-					'value' => $category_data->category_name
+					'value' => $category_data['category_name']
 				);
 
 				$this->data["category_desc"] = array(
@@ -189,7 +191,7 @@ class Article extends CI_Controller {
 					'class' => 'form-control',
 					'id' => 'input-category-desc',
 					'placeholder' => 'Description',
-					'value' => $category_data->description
+					'value' => $category_data['description']
 				);
 				$this->load->view('admin/category/edit_category', $this->data);
 			}
