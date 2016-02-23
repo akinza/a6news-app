@@ -527,7 +527,10 @@ class Ion_auth
 	}
 
 	public function authorized($action){
-		
-	}
 
+	}
+	public function getUserName($uid){
+		$row = $this->ion_auth_model->get_user_name($uid);
+		return $row->first_name." ".$row->last_name;
+	}
 }

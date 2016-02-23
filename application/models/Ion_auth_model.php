@@ -2252,4 +2252,8 @@ class Ion_auth_model extends CI_Model
 		// just return the string IP address now for better compatibility
 		return $ip_address;
 	}
+	public function get_user_name($uid){
+		$query = $this->db->query("SELECT * FROM users WHERE id = '".$uid."'");
+		return $query->row();
+	}
 }
