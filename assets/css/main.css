@@ -151,7 +151,7 @@ body {
   padding: 0;
   font-family: 'Roboto';
   min-height: 100%;
-  background: #4A6375;
+  background: #fff;
 }
 .drawer-brand,
 .navbar-brand {
@@ -291,6 +291,10 @@ body {
 .f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-news-item .news-content .news-title {
   font-size: 20px;
   text-decoration: none;
+  color: #6AA02B;
+}
+.f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-news-item .news-content .news-title:hover {
+  margin-bottom: 2px solid #6AA02B;
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-news-item .news-content .news-time {
   font-size: 11px;
@@ -301,8 +305,37 @@ body {
   text-overflow: ellipsis;
   word-wrap: break-word;
 }
-.f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-sidebar-col .f8-sec-sidebar-block {
-  background: #aaa;
+.f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-news-single .news-title {
+  font-size: 30px;
+  line-height: 35px;
+  text-decoration: none;
+  color: #6AA02B;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-news-single .news-title:hover {
+  margin-bottom: 2px solid #6AA02B;
+}
+.f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-news-single .news-time-author {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-news-single .news-time-author .news-date-time {
+  color: #bcbcbc;
+}
+.f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-news-single .news-time-author .news-author {
+  margin-left: 20px;
+  text-transform: uppercase;
+  color: #aaa;
+}
+.f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-news-single .news-body {
+  text-align: justify;
+}
+.f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-sidebar-col {
+  background: #eee;
+}
+.f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-sidebar-col .f8-sec-sidebar-blocks {
+  min-height: 700px;
 }
 .f8-admin-container {
   margin: 64px auto 0 auto;
@@ -487,11 +520,6 @@ textarea {
   border: 1px solid #eee;
   padding: 20px;
 }
-input.form-control,
-textarea {
-  padding-left: 20px !important;
-  padding-right: 20px !important;
-}
 .list-group-item {
   padding: 10px 15px !important;
 }
@@ -507,4 +535,10 @@ textarea {
   margin: 0 auto -60px;
   /* Pad bottom by footer height */
   padding: 0 0 60px;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  text-decoration: none;
+  color: #FFFFFF;
+  background-color: #2196F3;
 }

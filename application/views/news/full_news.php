@@ -14,14 +14,23 @@
         <div class="row f8-sec-body-inner">
           <div class="f8-sec-main-col col-lg-9 col-md-9 col-sm-8 col-xs-12">
             <div class="f8-sec-blocks">
-              <h2><?php echo $news['title']; ?></h2>
-              <div>
-                <?php echo $news['news_full']; ?>
+              <div class="f8-news-single">
+                <div class="news-title"><?php echo $news['title']; ?></div>
+                <div class="news-time-author">
+                  <span class="news-date-time"><?php echo $news['created']; ?></span>
+                  <span class="news-author">By <?php print_r($this->ion_auth->getUserName($news['author']));?></span>
+                </div>
+                <div class="news-body">
+                  <?php echo $news['news_full']; ?>
+                </div>
               </div>
             </div>
           </div>
           <div class="f8-sec-sidebar-col col-lg-3 col-md-3 col-sm-4 col-xs-12">
             <!--TODO: Show Related Articles & Ads-->
+            <div class="f8-sec-sidebar-blocks">
+
+            </div>
           </div>
         </div>
       </section>

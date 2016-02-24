@@ -17,17 +17,17 @@
             </div>
 
             <!-- <form method="post" action="#"> -->
-            <?php echo form_open("article/create");?>
+            <?php echo form_open_multipart("article/create");?>
               <div class="form-group">
                 <label for="input-post-title" class="control-label">Slug</label>
                 <!-- <div class="col-sm-10"> -->
-                <input name="article_title" type="text" class="form-control" id="article-title" placeholder="Title">
+                <input name="article_title" type="text" class="form-control" id="article-title" placeholder="Title" required="">
                 <!-- </div> -->
               </div>
               <div class="form-group">
                 <!-- <label for="input-news-category" class="control-label">Slug</label> -->
                 <!-- <div class="col-sm-10"> -->
-                <select name="news_category" class="form-control" id="input-news-category" placeholder="Title">
+                <select name="news_category" class="form-control" id="input-news-category" placeholder="Title" required="">
                   <?php foreach ($categories as $category): ?>
                     <option value="<?php echo $category->category_id; ?>"><?php echo $category->category_name; ?></option>
                   <?php endforeach; ?>
@@ -37,15 +37,20 @@
               <div class="form-group">
                 <label for="input-post-brief" class="control-label">Brief Post</label>
                 <!-- <div class="col-sm-10"> -->
-                <textarea name="article_short" class="form-control" id="article-short" rows="3" cols="80" maxlength="200">
+                <textarea name="article_short" class="form-control" id="article-short" rows="3" cols="80" maxlength="200" required="">
                 </textarea>
                 <!-- </div> -->
               </div>
               <div class="form-group">
                 <label for="input-last-name" class="control-label">Complete Post</label>
                 <!-- <div class="col-sm-10"> -->
-                <textarea name="article_full" class="form-control" id="article-full" rows="10" cols="80" placeholder="Story in short.."></textarea>
+                <textarea name="article_full" class="form-control" id="article-full" rows="10" cols="80" placeholder="Story in short.." required=""></textarea>
                 <!-- </div> -->
+              </div>
+              <div class="form-group">
+                <label for="imput-images" class="control-label">Upload Images</label>
+                <input type="file" name="images" class="form-control" multiple="true" id="imput-images" accept="image/*" required="">
+                <p class="help-block">Select one or more than one images to upload.</p>
               </div>
               <div class="form-group">
                 <div class="">
