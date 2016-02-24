@@ -37,14 +37,13 @@
               <div class="form-group">
                 <label for="input-post-brief" class="control-label">Brief Post</label>
                 <!-- <div class="col-sm-10"> -->
-                <textarea name="article_short" class="form-control" id="article-short" rows="3" cols="80" maxlength="200" required="">
-                </textarea>
+                <textarea name="article_short" class="form-control" id="article-short" rows="3" cols="80" maxlength="200" required=""></textarea>
                 <!-- </div> -->
               </div>
               <div class="form-group">
                 <label for="input-last-name" class="control-label">Complete Post</label>
                 <!-- <div class="col-sm-10"> -->
-                <textarea name="article_full" class="form-control" id="article-full" rows="10" cols="80" placeholder="Story in short.." required=""></textarea>
+                <textarea name="article_full" class="form-control" id="article-full" rows="10" cols="80" required=""></textarea>
                 <!-- </div> -->
               </div>
               <div class="form-group">
