@@ -177,6 +177,7 @@ body {
 }
 .f8-sec-main {
   margin: 64px auto;
+  background: #ffffff;
 }
 .f8-sec-main .f8-sec-top {
   background: #FAFAFA;
@@ -338,6 +339,7 @@ body {
 }
 .f8-admin-container {
   margin: 64px auto 0 auto;
+  background: #ddd;
 }
 .f8-admin-container .f8-sec-admin-sidebar {
   float: left;
@@ -523,6 +525,16 @@ textarea {
 }
 .list-group-item.active {
   padding: 15px !important;
+}
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
