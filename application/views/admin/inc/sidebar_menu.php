@@ -8,8 +8,8 @@
     <a class="list-group-item" href="<?php echo base_url('article/manage_category');?>">Manage Category</a>
   </div>
   <div class="list-group f8-menu">
-    <a class="list-group-item" href="<?php echo base_url('#');?>">Create Image Gallery</a>
-    <a class="list-group-item" href="<?php echo base_url('#');?>">View All Image Galleries</a>
+    <a class="list-group-item" href="<?php echo base_url('gallery/create');?>">Create Image Gallery</a>
+    <a class="list-group-item" href="<?php echo base_url('gallery');?>">View All Image Galleries</a>
   </div>
   <div class="list-group f8-menu">
     <a class="list-group-item" href="<?php echo base_url('#');?>">Upload Banner</a>

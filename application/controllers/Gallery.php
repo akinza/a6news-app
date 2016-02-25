@@ -28,17 +28,36 @@ class Gallery extends CI_Controller {
     if($this->authorized()){
       // Code to list galleries
       $this->load->library('upload');
-      $files = $_FILES;
-      $cpt = count($_FILES['userfile']['name']);
-      for($i=0; $i<$cpt; $i++) {
-        $_FILES['userfile']['name']= $files['userfile']['name'][$i];
-        $_FILES['userfile']['type']= $files['userfile']['type'][$i];
-        $_FILES['userfile']['tmp_name']= $files['userfile']['tmp_name'][$i];
-        $_FILES['userfile']['error']= $files['userfile']['error'][$i];
-        $_FILES['userfile']['size']= $files['userfile']['size'][$i];
+      $this->form_validation->set_rules('input_gallery_image', "Please Select Images", 'required');
+      if ($this->form_validation->run() == true){
+        $files = $_FILES;
+        $cpt = count($_FILES['userfile']['name']);
+        for($i=0; $i<$cpt; $i++) {
+          $_FILES['userfile']['name']= $files['userfile']['name'][$i];
+          $_FILES['userfile']['type']= $files['userfile']['type'][$i];
+          $_FILES['userfile']['tmp_name']= $files['userfile']['tmp_name'][$i];
+          $_FILES['userfile']['error']= $files['userfile']['error'][$i];
+          $_FILES['userfile']['size']= $files['userfile']['size'][$i];
 
-        $this->upload->initialize($this->set_upload_options());
-        $this->upload->do_upload();
+          $this->upload->initialize($this->set_upload_options());
+          $this->upload->do_upload();
+
+          // redirect to edit and refine recently uploaded images of gallery
+
+        }
+      } else {
+        $this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+        $this->data['GALLERY_UPLOAD_PATH'] = GALLERY_UPLOAD_PATH;
+
+        $this->data['input_gallery_image'] = array(
+          'name'  => 'input_gallery_image',
+          'id'    => 'input-gallery-image',
+          'type'  => 'file',
+          'class'  => 'form-control',
+          'required' => 'required',
+          'multiple' => ''
+        );
+        $this->load->view('admin/gallery/create', $this->data);
       }
     }
     else{
