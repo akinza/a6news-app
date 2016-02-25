@@ -18,7 +18,7 @@
                 <div class="news-title"><?php echo $news['title']; ?></div>
                 <div class="news-time-author">
                   <span class="news-date-time"><?php echo $news['created']; ?></span>
-                  <span class="news-author">By <?php print_r($this->ion_auth->getUserName($news['author']));?></span>
+                  <span class="news-author">By <?php echo $this->ion_auth->getUserName($news['author']); ?></span>
                 </div>
                 <div class="news-body">
                   <?php echo $news['news_full']; ?>

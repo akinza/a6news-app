@@ -16,45 +16,25 @@
           Manage News Articles
         </div>
         <?php if(isset($message)) { echo $message; } ?>
-        <table class="table table-default table-hover" style="border-bottom: 2px solid #eee;">
-          <thead>
-            <tr style="background: #2196F3; color:#fff;">
-              <!-- <th>Slug</th>
-              <th>Publish / Unpublish</th>
-              <th>Edit</th>
-              <th>Delete</th> -->
-            </tr>
-          </thead>
-          <tbody>
-            <?php foreach ($posts as $post): ?>
-              <tr>
-                <td>
-                  <div class="list-post">
-                    <h5><b><?php echo $post->slug; ?></b></h5>
-                    <p><b>Created on </b><?php echo $post->created; ?></p>
-                    <p>
-                      <a href="#">Delete</a>
-                      <span>|</span>
-                      <a href="#">Edit</a>
-                      <span>|</span>
-                      <a href="#">Unpublish</a>
-                    </p>
-                  </div>
-                </td>
-                <!-- <td><b><?php echo $post->slug; ?></b></td>
-                <td></td>
-                <td><a href="#">Edit</a></td>
-                <td><a onclick="return confirm('Are you sure you want to delete this record?');" href="#">Delete</a></td> -->
-              </tr>
-            <?php endforeach; ?>
-          </tbody>
-        </table>
+        <?php foreach ($posts as $post): ?>
+          <div class="list-post">
+            <p class="list-post-title"><b><?php echo $post->title; ?></b></p>
+            <p class="authoring-info"><?php echo "Created on &mdash; <span class='date'>" . $post->created ."</span> by <span class='author'>".$this->ion_auth->getUserName($post->author)."</span>"; ?></p>
+            <p>
+              <a href="#">Delete</a>
+              <span>|</span>
+              <a href="#">Edit</a>
+              <span>|</span>
+              <a href="#">Unpublish</a>
+            </p>
+          </div>
+        <?php endforeach; ?>
         <!-- <p><a class="btn btn-primary" href="<?php echo base_url('article/create_category');?>">Add More News Category</a></p> -->
       </div>
     </section>
   </div>
-<?php $this->load->view('include/footer'); ?>
-<?php $this->load->view('include/templates'); ?>
-<?php $this->load->view('include/js_common'); ?>
+  <?php $this->load->view('include/footer'); ?>
+  <?php $this->load->view('include/templates'); ?>
+  <?php $this->load->view('include/js_common'); ?>
 </body>
 </html>
