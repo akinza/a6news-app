@@ -5,8 +5,8 @@ class Gallery extends CI_Controller {
     parent::__construct();
     $this->load->database();
     $this->load->model(array('gallery_model'));
-    $this->load->library(array('ion_auth','form_validation', 'session'));
-    $this->load->helper(array('url','language', 'url_helper'));
+    $this->load->library(array('ion_auth','form_validation', 'session', 'upload'));
+    $this->load->helper(array('url','language', 'url_helper', 'form'));
 
     $this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
   }
@@ -27,10 +27,13 @@ class Gallery extends CI_Controller {
   public function create(){
     if($this->authorized()){
       // Code to list galleries
-      $this->load->library('upload');
-      $this->form_validation->set_rules('input_gallery_image', "Please Select Images", 'required');
-      if ($this->form_validation->run() == true){
+      // $this->form_validation->set_rules('input_gallery_image', "Please Select One or More Images", 'required');
+      if ($this->input->post()){
         $files = $_FILES;
+        echo "<pre>";
+        print_r($files);
+        echo "</pre>";
+
         $cpt = count($_FILES['userfile']['name']);
         for($i=0; $i<$cpt; $i++) {
           $_FILES['userfile']['name']= $files['userfile']['name'][$i];

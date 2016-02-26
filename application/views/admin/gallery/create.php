@@ -14,11 +14,12 @@
       <div class="f8-sec-inner-block">
         <div class="f8-sec-heading">Create Image Gallery</div>
         <?php if(isset($message)) { echo $message; } ?>
-        <?php          echo form_open("gallery/create");        ?>
+        <?php echo form_open_multipart("gallery/create"); ?>
 
           <div class="form-group">
             <label for="input-category-name" class="control-label">Select Images</label>
-            <?php echo form_input($input_gallery_image);?>
+            <!-- <?php echo form_input($input_gallery_image);?> -->
+            <?php echo form_upload('uploadedimages[]','','multiple'); ?>
           </div>
           <div class="form-group">
             <div class="">
