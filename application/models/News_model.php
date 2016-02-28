@@ -41,6 +41,7 @@ class News_model extends CI_Model {
     $this->db->insert('news', $this);
     $id = $this->db->insert_id();
     $this->db->insert('news_category', array('news_id' => $id, 'category_id'=> $category_id));
+    return $id;
   }
 
   public function update_post() {
@@ -53,6 +54,13 @@ class News_model extends CI_Model {
     $this->db->update('news', $this, array('id' => $_POST['id']));
   }
 
+  public function update_post_images($data, $id) {
+    $this->db->update('news', $data, array('id' => $id));
+  }
+
+  public function delete_post($id){
+    $this->db->query("DELETE FROM news WHERE id=".$id);
+  }
   // public function add_category($cat_name, $cat_desc){
   //   $this->db->insert('category', array('category_name' => $cat_name, 'description' => $cat_desc));
   // }

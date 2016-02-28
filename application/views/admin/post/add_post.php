@@ -48,7 +48,7 @@
               </div>
               <div class="form-group">
                 <label for="imput-images" class="control-label">Upload Images</label>
-                <input type="file" name="images" class="form-control" multiple="true" id="imput-images" accept="image/*" required="">
+                <input type="file" name="userfile[]" class="form-control" multiple="true" id="imput-images" accept="image/*" required="">
                 <p class="help-block">Select one or more than one images to upload.</p>
               </div>
               <div class="form-group">

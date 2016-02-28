@@ -47,8 +47,49 @@ class Article extends CI_Controller {
 		    $create_date = $dt->format('Y-m-d H:i:s');
 
 				$category_id = $this->input->post('news_category');
-				$this->news_model->insert_post($title, $slug, $news_short, $news_full, $create_date, NULL, $author,$category_id);
+				$post_id =  $this->news_model->insert_post($title, $slug, $news_short, $news_full, $create_date, NULL, $author,$category_id);
+				// Image Upload
+				$cpt = count($_FILES['userfile']['name']);
+        $this->data['post_id'] = $post_id;
+        $this->data['total_images'] = $cpt;
 
+        $images = "";
+
+        for($i=0; $i<$cpt; $i++) {
+          $filename = explode(".", $files['userfile']['name'][$i]);
+          $ext = $filename[count($filename) - 1];
+          // $_FILES['userfile']['name']= $files['userfile']['name'][$i];
+          $_FILES['userfile']['name']= "news_".$post_id."_".$i.".".$ext;
+          $_FILES['userfile']['type']= $files['userfile']['type'][$i];
+          $_FILES['userfile']['tmp_name']= $files['userfile']['tmp_name'][$i];
+          $_FILES['userfile']['error']= $files['userfile']['error'][$i];
+          $_FILES['userfile']['size']= $files['userfile']['size'][$i];
+
+          $this->load->library('upload', $this->set_upload_options());
+          $this->upload->initialize($this->set_upload_options());
+          // $this->upload->do_upload();
+          if ( ! $this->upload->do_upload())	{
+      			$error = array('error' => $this->upload->display_errors());
+            // echo "<pre>";
+            // print_r($error);
+            // echo "</pre>";
+            $this->data['message'] = "Could Not Upload Image";
+      			// $this->load->view('admin/gallery/upload_error');
+      		}
+      		else	{
+      			$data = array('upload_data' => $this->upload->data());
+            // echo "<pre>";
+            // print_r($data);
+            // echo "</pre>";
+            if($i !== 0){
+              $images = $images. ",";
+            }
+            $images = $images = $images. $data['upload_data']['file_name'];
+      			// $this->load->view('admin/gallery/upload_success');
+      		}
+        }
+				// Ends Image Uploads
+				$this->news_model->update_post_images(array('images' => $images ), $gallery_id);
 				redirect(base_url('article'), 'refresh');
 			}
 			else{
@@ -89,7 +130,7 @@ class Article extends CI_Controller {
 
 	public function edit()	{
 		if($this->authorized()){
-			$this->load->view('admin/post/update_post', $data);
+			redirect(base_url('article'), 'refresh');
 		}
 		else{
 			$this->session->set_flashdata('message', "Sorry! You are not authorized to perform the task.");
@@ -97,9 +138,11 @@ class Article extends CI_Controller {
 		}
 	}
 
-	public function delete()	{
+	public function delete($news_id)	{
 		if($this->authorized()){
-			$this->load->view('admin/post/update_post', $data);
+			$this->news_model->delete_post($news_id);
+			$this->data['message'] = "Post deleted successfully.";
+			redirect(base_url('article'), 'refresh');
 		}
 		else{
 			$this->session->set_flashdata('message', "Sorry! You are not authorized to perform the task.");
@@ -202,5 +245,17 @@ class Article extends CI_Controller {
 			$this->session->set_flashdata('message', "Sorry! You are not authorized to perform the task.");
 			redirect(base_url('auth/login'), 'refresh');
 		}
+	}
+	private function set_upload_options()  {
+		//upload an image options
+		$config = array();
+		$config['upload_path'] = "./assets/uploads/";
+		$config['allowed_types'] = 'gif|jpg|png|jpeg';
+		$config['max_size']      = '204800000';
+		// $config['max_width'] = '1920';
+		// $config['max_height'] = '1280';
+		$config['overwrite']     = TRUE;
+
+		return $config;
 	}
 }
