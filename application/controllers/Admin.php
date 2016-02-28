@@ -23,7 +23,8 @@ class Admin extends CI_Controller {
 
 	public function index()	{
 		if($this->authorized()){
-			$this->load->view('admin/home');
+			// $this->load->view('admin/home');
+			redirect(base_url('article'), 'refresh');
 		}
 		else{
 			redirect(base_url('auth/login'), 'refresh');
