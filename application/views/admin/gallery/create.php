@@ -14,12 +14,20 @@
       <div class="f8-sec-inner-block">
         <div class="f8-sec-heading">Create Image Gallery</div>
         <?php if(isset($message)) { echo $message; } ?>
-        <?php echo form_open_multipart("gallery/create"); ?>
+        <?php echo form_open_multipart(base_url("gallery/create")); ?>
 
           <div class="form-group">
+            <label for="gallery-name" class="control-label">Gallery Name</label>
+            <?php echo form_input($gallery_name);?>
+          </div>
+          <div class="form-group">
+            <label for="gallery-desc" class="control-label">Description</label>
+            <?php echo form_input($gallery_description);?>
+          </div>
+          <div class="form-group">
             <label for="input-category-name" class="control-label">Select Images</label>
-            <!-- <?php echo form_input($input_gallery_image);?> -->
-            <?php echo form_upload('uploadedimages[]','','multiple'); ?>
+            <?php echo form_input($input_gallery_image);?>
+            <p class="help">Please select one or more images jpg, jpeg, gif , png. Max Allowed Size 2MB.</p>
           </div>
           <div class="form-group">
             <div class="">

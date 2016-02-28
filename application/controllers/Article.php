@@ -42,9 +42,10 @@ class Article extends CI_Controller {
 				$news_short = $this->input->post('article_short');
 				$news_full = $this->input->post('article_full');
 				$author = $this->ion_auth->user()->row()->user_id;
+
 				$dt = new DateTime();
-				$dt->format('Y-m-d H:i:s');
-				$create_date = $dt;
+		    $create_date = $dt->format('Y-m-d H:i:s');
+
 				$category_id = $this->input->post('news_category');
 				$this->news_model->insert_post($title, $slug, $news_short, $news_full, $create_date, NULL, $author,$category_id);
 

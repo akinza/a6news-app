@@ -91,4 +91,4 @@ defined('IMAGES')             OR define('IMAGES', "assets/images");
 defined('COMPONENTS')         OR define('COMPONENTS', "assets/bower_components");
 defined('JS')                 OR define('JS', "assets/scripts");
 defined('MODULE')             OR define('MODULE', "modules");
-defined('GALLERY_UPLOAD_PATH')        OR define('GALLERY_UPLOAD_PATH', "./gallery_images");
+defined('UPLOADS')        OR define('UPLOADS', "assets/uploads/");
