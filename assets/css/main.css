@@ -333,9 +333,13 @@ body {
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-sidebar-col {
   background: #eee;
+  padding-top: 15px;
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-sidebar-col .f8-sec-sidebar-blocks {
   min-height: 700px;
+}
+.f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-sidebar-col .f8-sec-sidebar-block {
+  margin-bottom: 15px;
 }
 .f8-admin-container {
   margin: 64px auto 0 auto;
