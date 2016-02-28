@@ -271,7 +271,6 @@ body {
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-news-item {
   margin-bottom: 15px;
-  height: 150px;
   width: 100%;
   display: block;
   padding: 15px 0;
@@ -280,13 +279,11 @@ body {
   position: relative;
   height: 120px;
   width: 120px;
-  background: url('https://graph.facebook.com/1745217960/picture?height=120&width=120');
   float: left;
   margin-right: 20px;
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-news-item .news-content {
   position: relative;
-  height: 120px;
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-news-item .news-content .news-title {
   font-size: 20px;
@@ -301,7 +298,6 @@ body {
   color: #888;
 }
 .f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-news-item .news-content .news-text {
-  height: 70px;
   text-overflow: ellipsis;
   word-wrap: break-word;
 }

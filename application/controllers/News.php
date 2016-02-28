@@ -7,6 +7,7 @@ class News extends CI_Controller {
 		parent::__construct();
 		$this->load->database();
 		$this->load->model('news_model');
+		$this->load->model('category_model');
 		$this->load->library(array('ion_auth','form_validation', 'session'));
 		$this->load->helper(array('url','language','url_helper'));
 		$this->lang->load('admin');
@@ -19,6 +20,14 @@ class News extends CI_Controller {
 	public function index()	{
 		$data['news'] = $this->news_model->get_news();
 		$data['title'] = ucfirst("news");
+		$categories = $this->category_model->get_all_categories();
+		$data["categories"] = $categories;
+		foreach ($categories as $category) {
+			$data[$category->category_name] = $this->news_model->get_news_categorised($category->category_id);
+		}
+		// echo "<pre>";
+		// print_r($data) ;
+		// echo "</pre>";
 		$this->load->view('news/index', $data);
 	}
 

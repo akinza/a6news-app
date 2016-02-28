@@ -49,6 +49,7 @@ class Article extends CI_Controller {
 				$category_id = $this->input->post('news_category');
 				$post_id =  $this->news_model->insert_post($title, $slug, $news_short, $news_full, $create_date, NULL, $author,$category_id);
 				// Image Upload
+				$files = $_FILES;
 				$cpt = count($_FILES['userfile']['name']);
         $this->data['post_id'] = $post_id;
         $this->data['total_images'] = $cpt;
@@ -89,7 +90,7 @@ class Article extends CI_Controller {
       		}
         }
 				// Ends Image Uploads
-				$this->news_model->update_post_images(array('images' => $images ), $gallery_id);
+				$this->news_model->update_post_images(array('images' => $images ), $post_id);
 				redirect(base_url('article'), 'refresh');
 			}
 			else{
@@ -118,6 +119,18 @@ class Article extends CI_Controller {
 					'class'  => 'form-control',
 					'value' => $this->form_validation->set_value('article_full', $this->news_model->news_full),
 				);
+
+				$this->data['userfile'] = array(
+					'name'  => 'userfile[]',
+					'id'    => 'input-images',
+					'type'  => 'file',
+					'class'  => 'form-control',
+					'multiple' => 'true',
+					'accepts' => 'image/*',
+					'required' => 'required'
+				);
+
+
 				$this->load->view('admin/post/add_post', $this->data);
 
 			}
