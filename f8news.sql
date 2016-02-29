@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 28, 2016 at 05:52 PM
+-- Generation Time: Feb 29, 2016 at 08:12 AM
 -- Server version: 5.5.47-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `category_id` bigint(11) NOT NULL,
   `category_name` varchar(20) NOT NULL,
   `description` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `category`
@@ -38,10 +38,11 @@ CREATE TABLE IF NOT EXISTS `category` (
 
 INSERT INTO `category` (`category_id`, `category_name`, `description`) VALUES
 (1, 'India', 'News related to India'),
-(3, 'Social Media', 'News and articles related to social media such as Facebook, Twitter etc.'),
-(4, 'Sports', 'News related to sports local, national and international.'),
-(5, 'World', 'News across the globe'),
-(12, 'Bhutan', 'News articles related to Royal Bhutan');
+(12, 'Bhutan', 'News articles related to Royal Bhutan'),
+(13, 'World', 'News related to business and economy of the nation and the world.'),
+(14, 'Sports', 'News related to sports.'),
+(15, 'Local', 'Local Regional News and Articles'),
+(16, 'Business', 'News related to business and economy.');
 
 -- --------------------------------------------------------
 
@@ -115,16 +116,17 @@ CREATE TABLE IF NOT EXISTS `news` (
   `news_full` text NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `modified` timestamp NULL DEFAULT NULL,
-  `author` int(11) unsigned NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+  `author` int(11) unsigned NOT NULL,
+  `images` varchar(2000) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `news`
 --
 
-INSERT INTO `news` (`id`, `slug`, `title`, `news_short`, `news_full`, `created`, `modified`, `author`) VALUES
-(12, 'the-king-and-queen-of-bhutan-release-first-official-solo-portraits-of-their-son', 'The King and Queen of Bhutan release first official solo portraits of their son', ' Commemoration of His Majesty King Jigme Khesar Namgyel Wangchuck 36th birthday, the royal family of Bhutan have released the first official solo portraits of his son, His Royal Highness, The Gyalse.', '<p>In commemoration of His Majesty King Jigme Khesar Namgyel Wangchuck 36th birthday, the royal family of Bhutan have released the first official solo portraits of his son, His Royal Highness, The Gyalse.&nbsp;In commemoration of His Majesty King Jigme Khesar Namgyel Wangchuck 36th birthday, the royal family of Bhutan have released the first official solo portraits of his son, His Royal Highness, The Gyalse.&nbsp;In commemoration of His Majesty King Jigme Khesar Namgyel Wangchuck 36th birthday, the royal family of Bhutan have released the first official solo portraits of his son, His Royal Highness, The Gyalse.&nbsp;</p>\r\n\r\n<blockquote>\r\n<p>In commemoration of His Majesty King Jigme Khesar Namgyel Wangchuck 36th birthday, the royal family of Bhutan have released the first official solo portraits of his son, His Royal Highness, The Gyalse.&nbsp;</p>\r\n</blockquote>\r\n\r\n<p>In commemoration of His Majesty King Jigme Khesar Namgyel Wangchuck 36th birthday, the royal family of Bhutan have released the first official solo portraits of his son, His Royal Highness, The Gyalse.&nbsp;In commemoration of His Majesty King Jigme Khesar Namgyel Wangchuck 36th birthday, the royal family of Bhutan have released the first official solo portraits of his son, His Royal Highness, The Gyalse.&nbsp;In commemoration of His Majesty King Jigme Khesar Namgyel Wangchuck 36th birthday, the royal family of Bhutan have released the first official solo portraits of his son, His Royal Highness, The Gyalse.&nbsp;</p>\r\n\r\n<blockquote>\r\n<p>In commemoration of His Majesty King Jigme Khesar Namgyel Wangchuck 36th birthday, the royal family of Bhutan have released the first official solo portraits of his son, His Royal Highness, The Gyalse.&nbsp;</p>\r\n</blockquote>\r\n\r\n<p>In commemoration of His Majesty King Jigme Khesar Namgyel Wangchuck 36th birthday, the royal family of Bhutan have released the first official solo portraits of his son, His Royal Highness, The Gyalse.&nbsp;In commemoration of His Majesty King Jigme Khesar Namgyel Wangchuck 36th birthday, the royal family of Bhutan have released the first official solo portraits of his son, His Royal Highness, The Gyalse.&nbsp;In commemoration of His Majesty King Jigme Khesar Namgyel Wangchuck 36th birthday, the royal family of Bhutan have released the first official solo portraits of his son, His Royal Highness, The Gyalse.&nbsp;</p>\r\n', '2016-02-23 18:43:23', NULL, 1),
-(13, 'supreme-court-freezes-obamas-climate', 'Supreme Court freezes Obama''s climate ', 'Supreme Court freezes Obama''s climate Supreme Court freezes Obama''s climate Supreme Court freezes Obama''s climate Supreme Court freezes Obama''s climate Supreme Court freezes Obama''s climate Supreme', '<p>Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;</p>\r\n\r\n<p>Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;</p>\r\n\r\n<blockquote>\r\n<p>Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;</p>\r\n</blockquote>\r\n\r\n<p>Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;</p>\r\n\r\n<p>Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;</p>\r\n\r\n<p>Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;</p>\r\n', '2016-02-25 16:17:08', NULL, 1);
+INSERT INTO `news` (`id`, `slug`, `title`, `news_short`, `news_full`, `created`, `modified`, `author`, `images`) VALUES
+(13, 'supreme-court-freezes-obamas-climate', 'Supreme Court freezes Obama''s climate ', 'Supreme Court freezes Obama''s climate Supreme Court freezes Obama''s climate Supreme Court freezes Obama''s climate Supreme Court freezes Obama''s climate Supreme Court freezes Obama''s climate Supreme', '<p>Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;</p>\r\n\r\n<p>Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;</p>\r\n\r\n<blockquote>\r\n<p>Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;</p>\r\n</blockquote>\r\n\r\n<p>Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;</p>\r\n\r\n<p>Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;</p>\r\n\r\n<p>Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;Supreme Court freezes Obama&#39;s climate&nbsp;</p>\r\n', '2016-02-25 16:17:08', NULL, 1, ''),
+(17, 'first-news-on-bharatbhutanharatbhutan', 'First News on Bharatbhutanharatbhutan', 'First News on Bhutanharatbhutanharatbhutanharatbhutanharatbhutan', '<p>Hello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutan</p>\r\n\r\n<blockquote>\r\n<p>Hello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutan</p>\r\n</blockquote>\r\n\r\n<p>Hello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutanHello bhutan&nbsp;</p>\r\n', '2016-02-28 14:11:27', NULL, 1, 'news_17_0.JPG');
 
 -- --------------------------------------------------------
 
@@ -142,8 +144,7 @@ CREATE TABLE IF NOT EXISTS `news_category` (
 --
 
 INSERT INTO `news_category` (`news_id`, `category_id`) VALUES
-(13, 5),
-(12, 12);
+(17, 12);
 
 -- --------------------------------------------------------
 
@@ -176,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, 'cIZPc3vhpuX07nuqXTia0e', 1268889823, 1456661497, 1, 'Admin', 'istrator', 'ADMIN', '0'),
+(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, 'cIZPc3vhpuX07nuqXTia0e', 1268889823, 1456683057, 1, 'Admin', 'istrator', 'ADMIN', '0'),
 (2, '::1', NULL, '$2y$08$7kjXO3aQj8iZnrr7XPnXb.br7BNK8tTxaAJhOvMtLh2p2NM2MNwlK', NULL, 'rabidassanjay@gmail.com', NULL, NULL, NULL, NULL, 1454910020, NULL, 1, 'Sanjay', 'Rabidas', NULL, '9545142899'),
 (3, '::1', NULL, '$2y$08$fM9KEF7S1XvJKbil0CSWJ.2ymld6IWDVUsgrUvz/As72z1Xugxk/G', NULL, 'test@bharatbhutan.com', NULL, NULL, NULL, NULL, 1455957292, 1455957317, 1, 'Test', 'User', NULL, '1234567899');
 
@@ -272,7 +273,7 @@ ALTER TABLE `users_groups`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` bigint(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `category_id` bigint(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `gallery`
 --
@@ -292,7 +293,7 @@ ALTER TABLE `login_attempts`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `users`
 --
