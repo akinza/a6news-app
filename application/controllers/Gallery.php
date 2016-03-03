@@ -131,5 +131,16 @@ class Gallery extends CI_Controller {
     return $config;
   }
 
+  public function delete($gallery_id){
+    if($this->authorized()){
+      $this->gallery_model->delete($gallery_id);
+      // TODO : Delete Corresponding Images as well
+
+      redirect(base_url('gallery'), 'refresh');
+    }
+    else{
+      redirect(base_url('auth/login'), 'refresh');
+    }
+  }
 }
 ?>

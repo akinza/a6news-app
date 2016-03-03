@@ -32,7 +32,7 @@
                   <div class="help"><?php echo $gallery->description; ?></div>
                   <div>
                     <a href="#">Edit</a> |
-                    <a href="#">Delete</a> |
+                    <a href="<?php echo base_url('gallery/delete/' . $gallery->gallery_id); ?>" onclick="return confirm('Do you really want to delete this gallery?');">Delete</a> |
                     <a href="#">Unpublish</a>
                   </div>
                 </div>

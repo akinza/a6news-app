@@ -41,5 +41,8 @@ class Gallery_model extends CI_Model {
     return $query->result();
   }
 
+  public function delete($gallery_id){
+    $this->db->query("DELETE FROM gallery WHERE gallery_id = ".$gallery_id);
+  }
 }
 ?>

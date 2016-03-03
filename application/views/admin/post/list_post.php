@@ -21,7 +21,7 @@
             <p class="list-post-title"><b><?php echo $post->title; ?></b></p>
             <p class="authoring-info"><?php echo "Created on &mdash; <span class='date'>" . $post->created ."</span> by <span class='author'>".$this->ion_auth->getUserName($post->author)."</span>"; ?></p>
             <p>
-              <a href="<?php echo base_url('article/delete/' . $post->id ); ?>">Delete</a>
+              <a href="<?php echo base_url('article/delete/' . $post->id ); ?>" onclick="return confirm('Are You Sure?\n\nDo you really want to delete this article?\n\n\n')">Delete</a>
               <span>|</span>
               <a href="#">Edit</a>
               <span>|</span>
