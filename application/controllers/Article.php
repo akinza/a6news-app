@@ -85,7 +85,7 @@ class Article extends CI_Controller {
             if($i !== 0){
               $images = $images. ",";
             }
-            $images = $images = $images. $data['upload_data']['file_name'];
+            $images = $images. $data['upload_data']['file_name'];
       			// $this->load->view('admin/gallery/upload_success');
       		}
         }
