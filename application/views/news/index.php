@@ -23,23 +23,24 @@
               </div>
             </div>
             <!--/Top Latest News-->
+
             <?php foreach ($news as $news_item): ?>
-              <div class="f8-news-items">
-                <a class="news-title"
-                    href="<?php echo base_url('news/'.urlencode($news_item['slug'])); ?>">
-                  <?php echo $news_item['title']; ?>
-                </a>
-              </div>
-              <!-- <div class="f8-news-item">
-                <div class="news-content">
-                  <a class="news-title"
-                      href="<?php echo base_url('news/'.urlencode($news_item['slug'])); ?>">
-                    <?php echo $news_item['title']; ?>
-                  </a>
-                  <p><a href="<?php echo base_url('news/'.urlencode($news_item['slug'])); ?>">View article</a></p>
-                </div>
-              </div> -->
+              
             <?php endforeach; ?>
+
+            <?php foreach($categories as $news_category):?>
+              <div class="panel panel-default">
+                <div class="panel-heading"><?php echo $news_category->category_name; ?></div>
+                <div class="panel-body">
+                  <?php foreach($all_news[$news_category->category_name] as $news_group_item):?>
+                    <a class="news-title" href="<?php echo base_url('news/'.urlencode($news_group_item->slug)); ?>">
+                      <?php echo $news_group_item->title; ?>
+                    </a>
+                  <?php endforeach; ?>
+                </div>
+              </div>
+            <?php endforeach; ?>
+
           </div>
           <div class="f8-sec-sidebar-col col-lg-3 col-md-3 col-sm-4 col-xs-12">
             <?php for( $i = 0; $i<3; $i++ ) { ?>

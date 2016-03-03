@@ -64,7 +64,7 @@ class News_model extends CI_Model {
   }
 
   public function get_news_categorised($category_id){
-    $query = $this->db->query("SELECT * FROM news_category WHERE category_id = ".$category_id. " LIMIT 10,0");
+    $query = $this->db->query("SELECT * FROM news_category as NC, news as N, category as C WHERE NC.category_id = C.category_id AND N.id = NC.news_id AND NC.category_id = ".$category_id. " LIMIT 0,10");
     return $query->result();
   }
 }

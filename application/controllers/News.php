@@ -23,10 +23,11 @@ class News extends CI_Controller {
 		$categories = $this->category_model->get_all_categories();
 		$data["categories"] = $categories;
 		foreach ($categories as $category) {
-			$data[$category->category_name] = $this->news_model->get_news_categorised($category->category_id);
+			$data['all_news'][$category->category_name] = $this->news_model->get_news_categorised($category->category_id);
 		}
+		// 
 		// echo "<pre>";
-		// print_r($data) ;
+		// print_r($data['all_news']) ;
 		// echo "</pre>";
 		$this->load->view('news/index', $data);
 	}
