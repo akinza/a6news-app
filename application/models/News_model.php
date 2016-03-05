@@ -67,5 +67,11 @@ class News_model extends CI_Model {
     $query = $this->db->query("SELECT * FROM news_category as NC, news as N, category as C WHERE NC.category_id = C.category_id AND N.id = NC.news_id AND NC.category_id = ".$category_id. " LIMIT 0,10");
     return $query->result();
   }
+
+  public function update_publishing_state($id, $publish){
+    $data = array( 'publish' => $publish );
+    $this->db->where('id', $id);
+    $this->db->update('news', $data);
+  }
 }
 ?>

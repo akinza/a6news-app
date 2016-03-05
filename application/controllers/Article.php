@@ -271,4 +271,8 @@ class Article extends CI_Controller {
 
 		return $config;
 	}
+	public function update_publishing_state($id, $publish){
+		$this->news_model->update_publishing_state($id, $publish);
+		redirect(base_url('article'), 'refresh');
+	}
 }

@@ -25,7 +25,18 @@
               <span>|</span>
               <a href="#">Edit</a>
               <span>|</span>
-              <a href="#">Unpublish</a>
+              <?php
+                $publish = '1';
+                if($post->publish){
+                 $publish = '0';
+                 $publish_label = "Unpublish";
+                }
+                else{
+                 $publish = '1';
+                 $publish_label = "Publish";
+                }
+              ?>
+              <a href="<?php echo base_url('article/update_publishing_state/' . $post->id . '/' . $publish ); ?>" onclick="return confirm('Are You Sure?\n\n')"><?php echo $publish_label;?></a>
             </p>
           </div>
         <?php endforeach; ?>
