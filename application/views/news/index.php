@@ -25,7 +25,7 @@
             <!--/Top Latest News-->
 
             <?php foreach ($news as $news_item): ?>
-              
+
             <?php endforeach; ?>
 
             <?php foreach($categories as $news_category):?>
@@ -33,9 +33,11 @@
                 <div class="panel-heading"><?php echo $news_category->category_name; ?></div>
                 <div class="panel-body">
                   <?php foreach($all_news[$news_category->category_name] as $news_group_item):?>
-                    <a class="news-title" href="<?php echo base_url('news/'.urlencode($news_group_item->slug)); ?>">
-                      <?php echo $news_group_item->title; ?>
-                    </a>
+                    <p>
+                      <a class="news-title" href="<?php echo base_url('news/'.urlencode($news_group_item->slug)); ?>">
+                        <?php echo $news_group_item->title; ?>
+                      </a>
+                    </p>
                   <?php endforeach; ?>
                 </div>
               </div>

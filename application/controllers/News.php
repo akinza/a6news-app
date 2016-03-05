@@ -25,7 +25,7 @@ class News extends CI_Controller {
 		foreach ($categories as $category) {
 			$data['all_news'][$category->category_name] = $this->news_model->get_news_categorised($category->category_id);
 		}
-		// 
+		//
 		// echo "<pre>";
 		// print_r($data['all_news']) ;
 		// echo "</pre>";
