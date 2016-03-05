@@ -54,7 +54,7 @@
               <div class="form-group">
                 <div class="">
                   <button type="submit" class="btn btn-warning">Publish</button>
-                  <button type="button" class="btn btn-default">Preview</button>
+                  <!-- <button type="button" class="btn btn-default">Preview</button> -->
                 </div>
               </div>
             </div>
