@@ -29,6 +29,12 @@
                 </div> -->
                 <div class="f8-block-highlight-grid col-lg-12 col-md-12">
                   <div class="f8-grid-inner row">
+                    <div class="f8-block-heading col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <h4>
+                        News Headlines
+                        <a href="<?php echo base_url('news') ;?>" class="pull-right">View All</a>
+                      </h4>
+                    </div>
                     <?php for( $i = 0; $i<3; $i++ ) { ?>
                       <div class="f8-block-highlight-grid-item col-lg-4 col-md-4 col-sm-6 col-xs-12">
                         <div class="news-item-grid" data-target="">
@@ -46,6 +52,12 @@
                 </div>
               </div>
               <div class="f8-block f8-block-news-national row">
+                <div class="f8-block-heading col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <h4>
+                    National
+                    <a href="#more" class="pull-right">View All</a>
+                  </h4>
+                </div>
                 <?php for( $i = 0; $i<4; $i++ ) { ?>
                   <div class="f8-block-highlight-grid-item col-lg-3 col-md-3 col-sm-4 col-xs-12">
                     <div class="news-item" data-target="">
@@ -59,6 +71,15 @@
                     </div>
                   </div>
                 <?php }?>
+              </div>
+              <div class="f8-block f8-block-gallery row">
+                <div class="f8-block-heading col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <h4>
+                    Image Galleries
+                    <a href="<?php echo base_url('gallery/view'); ?>" class="pull-right">View All Galleries</a>
+                  </h4>
+                </div>
+                <div class="f8-block-title col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
               </div>
               <div class="f8-block f8-block-news-regional row"></div>
               <div class="f8-block f8-block-news-sports row"></div>
