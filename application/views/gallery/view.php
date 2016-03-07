@@ -13,8 +13,11 @@
       <div class="row f8-sec-body-inner">
         <div class="f8-sec-main-col col-lg-9 col-md-9 col-sm-8 col-xs-12">
           <div class="f8-block-heading">
-            <h4><?php echo $gallery_info->gallery_name; ?></h4>
+            <h4 class="gallery-heading"><?php echo $gallery_info->gallery_name; ?></h4>
             <p><?php echo $gallery_info->description; ?></p>
+            <em class="create-date">
+              <?php echo "Created on ". $gallery_info->created_on; ?>
+            </em>
           </div>
 
           <div class="gallery-grid">

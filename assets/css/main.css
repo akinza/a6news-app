@@ -279,6 +279,9 @@ body {
 .f8-sec-main .f8-sec-body .f8-sec-body-inner {
   margin: 0 !important;
 }
+.f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-block-heading {
+  margin-bottom: 15px;
+}
 .f8-sec-main .f8-sec-body .f8-sec-body-inner .f8-sec-main-col .f8-news-item {
   margin-bottom: 15px;
   width: 100%;
@@ -594,7 +597,8 @@ textarea {
   padding: 20px !important;
 }
 .gallery-item {
-  max-height: 115px;
+  min-height: 115px;
+  max-height: 150px;
   overflow: hidden;
 }
 .gallery-item img {
@@ -611,4 +615,19 @@ textarea {
 }
 .gallery-description {
   margin-bottom: 15px;
+}
+.gallery-heading {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+#lightgallery .gallery-item {
+  margin-bottom: 15px;
+  border-radius: 3px;
+}
+#lightgallery .gallery-item img {
+  border-radius: 3px;
+}
+.create-date {
+  border-left: 3px solid #FF9800;
+  padding-left: 5px;
 }
