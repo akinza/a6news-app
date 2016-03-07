@@ -142,5 +142,34 @@ class Gallery extends CI_Controller {
       redirect(base_url('auth/login'), 'refresh');
     }
   }
+
+  public function view($gallery_id = FALSE){
+    $data = array();
+    if($gallery_id === FALSE){
+      // View all galleries
+      $data['type'] = 'all';
+      $data['gallery_infos'] = $this->gallery_model->get_galleries();
+      $this->load->view('gallery/index', $data);
+    }
+    else {
+      // View Single Gallery
+      $data['type'] = 'single';
+      $data['gallery_info'] = $this->gallery_model->get_gallery($gallery_id);
+      $this->load->view('gallery/view', $data);
+    }
+  }
+
+  // Ajax Call handler
+  public function get_gallery_info($gallery_id = FALSE){
+    $data = array();
+    if($gallery_id === FALSE) {
+      // get all
+      echo json_encode($this->gallery_model->get_galleries());
+    }
+    else {
+      // get specific gallery
+      echo json_encode ($this->gallery_model->get_gallery($gallery_id));
+    }
+  }
 }
 ?>

@@ -593,3 +593,22 @@ textarea {
   bottom: 0px;
   padding: 20px !important;
 }
+.gallery-item {
+  max-height: 115px;
+  overflow: hidden;
+}
+.gallery-item img {
+  opacity: 0.8;
+}
+.gallery-item img:hover {
+  opacity: 1;
+}
+.gallery-caption {
+  font-weight: bold;
+  text-transform: capitalize;
+  background: #e8e8e8;
+  text-align: center;
+}
+.gallery-description {
+  margin-bottom: 15px;
+}
