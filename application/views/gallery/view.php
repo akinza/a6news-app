@@ -13,11 +13,23 @@
       <div class="row f8-sec-body-inner">
         <div class="f8-sec-main-col col-lg-9 col-md-9 col-sm-8 col-xs-12">
           <div class="f8-block-heading">
-            <h4>Image Galleries</h4>
+            <h4><?php echo $gallery_info->gallery_name; ?></h4>
+            <p><?php echo $gallery_info->description; ?></p>
           </div>
 
-          <div class="well gallery-grid">
-
+          <div class="gallery-grid">
+            <div class="row" id="lightgallery">
+              <?php
+                $images = explode(',' , $gallery_info->images);
+                foreach($images as $image):
+              ?>
+                <!-- <div class="gallery-item col-lg-3 col-md-4 col-sm-4 col-xs-12"> -->
+                  <a href="<?php echo base_url('assets/uploads/' . $image) ; ?>" class="gallery-item col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <img width="100%" src="<?php echo base_url('assets/uploads/' . $image) ; ?>">
+                  </a>
+                <!-- </div> -->
+              <?php endforeach; ?>
+            </div>
           </div>
         </div>
         <div class="f8-sec-sidebar-col col-lg-3 col-md-3 col-sm-4 col-xs-12">
@@ -33,6 +45,7 @@
   <?php $this->load->view('include/footer'); ?>
   <?php $this->load->view('include/templates'); ?>
   <?php $this->load->view('include/js_common'); ?>
+  <script src="<?php echo base_url( COMPONENTS."/lightgallery/dist/js/lightgallery.min.js" );?>"></script>
   <script src="<?php echo base_url( COMPONENTS."/lightgallery/dist/js/lg-thumbnail.min.js" );?>"></script>
   <script src="<?php echo base_url( COMPONENTS."/lightgallery/dist/js/lg-fullscreen.min.js" );?>"></script>
   <script src="<?php echo base_url( JS."/custom-gallery.js" );?>"></script>

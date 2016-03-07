@@ -33,7 +33,7 @@ class Gallery_model extends CI_Model {
 
   public function get_gallery($gallery_id){
     $query = $this->db->query("SELECT * FROM gallery WHERE gallery_id = ".$gallery_id );
-    return $query->row_array();
+    return $query->row();
   }
 
   public function get_galleries(){

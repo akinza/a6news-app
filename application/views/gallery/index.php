@@ -3,7 +3,6 @@
 <head>
   <title>bharatbhutan | Image Gallery</title>
   <?php $this->load->view('include/css_common'); ?>
-  <link rel="stylesheet" href="<?php echo base_url(COMPONENTS."/lightgallery/dist/css/lightgallery.min.css"); ?>">
 </head>
 <body class="">
   <?php $this->load->view('include/header'); ?>
@@ -53,8 +52,5 @@
   <?php $this->load->view('include/footer'); ?>
   <?php $this->load->view('include/templates'); ?>
   <?php $this->load->view('include/js_common'); ?>
-  <script src="<?php echo base_url( COMPONENTS."/lightgallery/dist/js/lg-thumbnail.min.js" );?>"></script>
-  <script src="<?php echo base_url( COMPONENTS."/lightgallery/dist/js/lg-fullscreen.min.js" );?>"></script>
-  <script src="<?php echo base_url( JS."/custom-gallery.js" );?>"></script>
 </body>
 </html>
