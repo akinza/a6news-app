@@ -22,7 +22,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function index()	{
-		if($this->authorized()){
+		if($this->ion_auth->logged_in()){
 			// $this->load->view('admin/home');
 			redirect(base_url('article'), 'refresh');
 		}

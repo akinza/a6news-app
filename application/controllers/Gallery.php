@@ -16,7 +16,7 @@ class Gallery extends CI_Controller {
   }
 
   public function index()	{
-    if($this->authorized()){
+    if($this->ion_auth->logged_in()){
       // Code to list galleries
       $data['galleries'] = $this->gallery_model->get_galleries();
       $this->load->view('admin/gallery/manage', $data);
@@ -27,7 +27,7 @@ class Gallery extends CI_Controller {
   }
 
   public function create(){
-    if($this->authorized()){
+    if($this->ion_auth->logged_in()){
       // Code to list galleries
       $this->form_validation->set_rules('gallery_name', "Please enter valid gallery name", 'required');
       $this->form_validation->set_rules('gallery_description', "Please enter gallery description", 'required');

@@ -20,7 +20,7 @@ class Article extends CI_Controller {
 	}
 
 	public function index()	{
-		if($this->authorized()){
+		if($this->ion_auth->logged_in()){
 			$data['posts'] = $this->news_model->get_all_posts();
 			$this->load->view('admin/post/list_post', $data);
 		}
@@ -30,7 +30,7 @@ class Article extends CI_Controller {
 	}
 
 	public function create()	{
-		if($this->authorized()) {
+		if($this->ion_auth->logged_in()) {
 			$this->form_validation->set_rules('article_title', $this->lang->line('create_group_validation_name_label'), 'required');
 			$this->form_validation->set_rules('article_short', $this->lang->line('create_group_validation_name_label'), 'required');
 			$this->form_validation->set_rules('article_full', $this->lang->line('create_group_validation_name_label'), 'required');
@@ -164,7 +164,7 @@ class Article extends CI_Controller {
 	}
 
 	public function create_category()	{
-		if($this->authorized()){
+		if($this->ion_auth->logged_in()){
 			$this->form_validation->set_rules('news_category_name', "Category Name is required.", 'required');
 
 			if ($this->form_validation->run() == true) {
