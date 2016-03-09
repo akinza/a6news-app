@@ -7,36 +7,38 @@
 <body>
   <?php $this->load->view('include/header'); ?>
   <div class="f8-admin-container container">
-    <section class="f8-sec-admin-sidebar  col-lg-3 col-md-3 col-sm-4 col-xs-12">
-      <?php $this->load->view('admin/inc/sidebar_menu'); ?>
-    </section>
-    <section class="f8-sec-admin-body  col-lg-9 col-md-9 col-sm-8 col-xs-12">
-      <div class="f8-sec-inner-block">
-        <div class="f8-sec-heading">Create Image Gallery</div>
-        <?php if(isset($message)) { echo $message; } ?>
-        <?php echo form_open_multipart(base_url("gallery/create")); ?>
+    <div class="row">
+      <section class="f8-sec-admin-sidebar  col-lg-3 col-md-3 col-sm-4 col-xs-12">
+        <?php $this->load->view('admin/inc/sidebar_menu'); ?>
+      </section>
+      <section class="f8-sec-admin-body  col-lg-9 col-md-9 col-sm-8 col-xs-12">
+        <div class="f8-sec-inner-block">
+          <div class="f8-sec-heading">Create Image Gallery</div>
+          <?php if(isset($message)) { echo $message; } ?>
+          <?php echo form_open_multipart(base_url("gallery/create")); ?>
 
-          <div class="form-group">
-            <label for="gallery-name" class="control-label">Gallery Name</label>
-            <?php echo form_input($gallery_name);?>
-          </div>
-          <div class="form-group">
-            <label for="gallery-desc" class="control-label">Description</label>
-            <?php echo form_input($gallery_description);?>
-          </div>
-          <div class="form-group">
-            <label for="input-category-name" class="control-label">Select Images</label>
-            <?php echo form_input($input_gallery_image);?>
-            <p class="help">Please select one or more images jpg, jpeg, gif , png. Max Allowed Size 2MB.</p>
-          </div>
-          <div class="form-group">
-            <div class="">
-              <button type="submit" class="btn btn-primary">Create Image Gallery</button>
+            <div class="form-group">
+              <label for="gallery-name" class="control-label">Gallery Name</label>
+              <?php echo form_input($gallery_name);?>
             </div>
-          </div>
-        </form>
-      </div>
-    </section>
+            <div class="form-group">
+              <label for="gallery-desc" class="control-label">Description</label>
+              <?php echo form_input($gallery_description);?>
+            </div>
+            <div class="form-group">
+              <label for="input-category-name" class="control-label">Select Images</label>
+              <?php echo form_input($input_gallery_image);?>
+              <p class="help">Please select one or more images jpg, jpeg, gif , png. Max Allowed Size 2MB.</p>
+            </div>
+            <div class="form-group">
+              <div class="">
+                <button type="submit" class="btn btn-primary">Create Image Gallery</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
   </div>
   <?php $this->load->view('include/footer'); ?>
   <?php $this->load->view('include/templates'); ?>
