@@ -75,9 +75,31 @@
               <div class="f8-block f8-block-gallery row">
                 <div class="f8-block-heading col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <h4>
-                    Image Galleries
-                    <a href="<?php echo base_url('gallery/view'); ?>" class="pull-right">View All Galleries</a>
+                    Top Image Galleries
+                    <a href="<?php echo base_url('gallery/view'); ?>" class="pull-right">View More</a>
                   </h4>
+                  <?php foreach ($galleries as $gallery) {
+                        $images = explode(',' , $gallery->images);
+                    ?>
+                    <div class="f8-block-highlight-grid-item col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                      <div class="news-item" data-target="">
+                        <div class="news-item-image">
+                          <!-- <img class="news-img" src="<?php echo base_url(IMAGES.'/news-'.($i+1).'.jpg'); ?>"> -->
+                          <!-- <div class="news-item-overlay"></div> -->
+                          <a href="<?php echo base_url('gallery/view/'. $gallery->gallery_id); ?>" >
+                            <img class="news-img" width="100%" src="<?php echo base_url('assets/uploads/' . $images[0]) ; ?>">
+                          </a>
+                        </div>
+                        <div class="news-item-slug" data-target="<?php echo base_url('gallery/view/'. $gallery->gallery_id); ?>">
+                          <strong>
+                            <?php echo $gallery->gallery_name; ?>
+                          </strong>
+                          <br>
+                          <?php echo $gallery->description; ?>
+                        </div>
+                      </div>
+                    </div>
+                  <?php }?>
                 </div>
                 <div class="f8-block-title col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
               </div>

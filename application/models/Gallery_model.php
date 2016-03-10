@@ -44,5 +44,10 @@ class Gallery_model extends CI_Model {
   public function delete($gallery_id){
     $this->db->query("DELETE FROM gallery WHERE gallery_id = ".$gallery_id);
   }
+
+  public function get_latest_galleries($limit = 10){
+    $query = $this->db->query("SELECT * FROM `gallery` ORDER BY `gallery_id` DESC LIMIT " . $limit);
+    return $query->result();
+  }
 }
 ?>

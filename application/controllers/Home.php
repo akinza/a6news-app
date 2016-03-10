@@ -6,10 +6,13 @@ class Home extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->helper('url_helper');
+		$this->load->model(array('gallery_model'));
 	}
 
 	public function index()	{
-		$this->load->view('pages/home');
+		$data = array();
+		$data['galleries'] = $this->gallery_model->get_latest_galleries();
+		$this->load->view('pages/home', $data);
 	}
 
 	public function view($page = 'home') {
@@ -18,6 +21,10 @@ class Home extends CI_Controller {
       show_404();
     }
     $data['title'] = ucfirst($page); // Capitalize the first letter
+		if($page == 'home'){
+			// Fetch Latest few Image Galleries, Say Limit 10
+			$data['galleries'] = $this->gallery_model->get_latest_galleries();
+		}
     $this->load->view('pages/'.$page, $data);
 	}
 }
