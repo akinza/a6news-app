@@ -15,7 +15,7 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="<?php echo base_url("/home"); ?>">Home</a></li>
+        <li><a href="<?php echo base_url("/home"); ?>">Home</a></li>
         <li><a href="<?php echo base_url("/news"); ?>">News</a></li>
         <li><a href="<?php echo base_url("/p/national"); ?>">National</a></li>
         <li><a href="<?php echo base_url("/p/business"); ?>">Business</a></li>
