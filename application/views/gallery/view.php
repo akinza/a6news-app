@@ -16,7 +16,10 @@
             <h4 class="gallery-heading"><?php echo $gallery_info->gallery_name; ?></h4>
             <p><?php echo $gallery_info->description; ?></p>
             <em class="create-date">
-              <?php echo "Created on ". $gallery_info->created_on; ?>
+              <?php
+                $date = date_create($gallery_info->created_on);
+                echo "Created on ". date_format($date, 'l g:ia \, jS F Y');
+              ?>
             </em>
           </div>
 

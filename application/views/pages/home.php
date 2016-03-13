@@ -23,19 +23,36 @@
                   <a href="<?php echo base_url('news') ;?>" class="pull-right">View All</a>
                 </h4>
               </div>
-              <?php for( $i = 0; $i<3; $i++ ) { ?>
+              <?php
+                foreach ($headlines as $news_headline):
+                  $images = explode(',' , $news_headline->images);
+              ?>
                 <div class="f8-block-highlight-grid-item col-lg-4 col-md-4 col-sm-6 col-xs-12">
                   <div class="news-item-grid" data-target="">
                     <div class="news-item-image">
-                      <img class="news-img" src="<?php echo base_url(IMAGES.'/news-'.($i+1).'.jpg'); ?>">
+                      <a href="<?php echo base_url('news/'. $news_headline->slug); ?>" >
+                        <img class="news-img" src="<?php echo base_url('assets/uploads/' . $images[0]) ; ?>">
+                      </a>
                       <!-- <div class="news-item-overlay"></div> -->
                     </div>
                     <div class="news-item-text" data-target="">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.
+                      <a class="title" href="<?php echo base_url('news/'. $news_headline->slug); ?>" >
+                        <strong><?php echo $news_headline->title; ?></strong><br>
+                      </a>
+                      <p><?php echo $news_headline->news_short; ?></p>
+                      <span class="news-date-time">
+                        <?php
+                          $date = date_create($news_headline->created);
+                          echo date_format($date, 'l g:ia \, jS F Y');
+                        ?>
+                      </span>
+                      <span class="news-category"><?php echo $news_headline->category_name; ?></span>
                     </div>
                   </div>
                 </div>
-                <?php }?>
+              <?php
+                endforeach;
+              ?>
               </div>
             </div>
           </div>
@@ -67,7 +84,7 @@
                   <a href="<?php echo base_url('gallery/view'); ?>" class="pull-right">View More</a>
                 </h4>
               </div>
-                <?php foreach ($galleries as $gallery) {
+                <?php foreach ($galleries as $gallery) :
                   $images = explode(',' , $gallery->images);
                   ?>
                 <div class="f8-block-highlight-grid-item col-lg-3 col-md-3 col-sm-4 col-xs-12">
@@ -88,7 +105,9 @@
                     </div>
                   </div>
                 </div>
-                <?php }?>
+                <?php
+                  endforeach;
+                ?>
 
                 <div class="f8-block-title col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
               </div>

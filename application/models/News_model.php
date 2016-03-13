@@ -64,7 +64,7 @@ class News_model extends CI_Model {
   }
 
   public function get_news_categorised($category_id){
-    $query = $this->db->query("SELECT * FROM news_category as NC, news as N, category as C WHERE NC.category_id = C.category_id AND N.id = NC.news_id AND NC.category_id = ".$category_id. " LIMIT 0,10");
+    $query = $this->db->query("SELECT * FROM news_category as NC, news as N, category as C WHERE NC.category_id = C.category_id AND N.id = NC.news_id AND NC.category_id = ".$category_id. " ORDER BY NC.news_id DESC LIMIT 0,10");
     return $query->result();
   }
 
@@ -72,6 +72,12 @@ class News_model extends CI_Model {
     $data = array( 'publish' => $publish );
     $this->db->where('id', $id);
     $this->db->update('news', $data);
+  }
+
+  public function get_news_headlines($limit = 3) {
+    $query = $this->db->query("SELECT * FROM news_category AS NC, news AS N, category AS C WHERE NC.category_id = C.category_id AND N.id = NC.news_id ORDER BY NC.news_id DESC LIMIT " . $limit);
+    // $query = $this->db->query("SELECT * FROM `news` ORDER BY `id` DESC LIMIT " . $limit);
+    return $query->result();
   }
 }
 ?>

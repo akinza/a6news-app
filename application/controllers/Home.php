@@ -6,12 +6,13 @@ class Home extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->helper('url_helper');
-		$this->load->model(array('gallery_model'));
+		$this->load->model(array('gallery_model', 'news_model', 'category_model'));
 	}
 
 	public function index()	{
 		$data = array();
 		$data['galleries'] = $this->gallery_model->get_latest_galleries();
+		$data['headlines'] = $this->news_model->get_news_headlines();
 		$this->load->view('pages/home', $data);
 	}
 
