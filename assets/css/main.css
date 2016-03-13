@@ -510,6 +510,8 @@ body {
 .f8-sec-blocks .f8-block-highlight .f8-block-highlight-grid .f8-grid-inner .news-item-grid .news-item-image {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+  height: 250px;
+  overflow: hidden;
   width: 100%;
 }
 .f8-sec-blocks .f8-block-highlight .f8-block-highlight-grid .f8-grid-inner .news-item-grid .news-item-image img {
