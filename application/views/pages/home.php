@@ -46,7 +46,7 @@
                           echo date_format($date, 'l g:ia \, jS F Y');
                         ?>
                       </span>
-                      <span class="news-category"><?php echo $news_headline->category_name; ?></span>
+                      <a href="<?php echo base_url('p/'. url_title($news_headline->category_name, 'dash', TRUE)); ?>"><span class="label label-default"><?php echo $news_headline->category_name; ?></span></a>
                     </div>
                   </div>
                 </div>

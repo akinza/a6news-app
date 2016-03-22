@@ -543,8 +543,8 @@ body {
   color: #bcbcbc;
 }
 .f8-sec-blocks .f8-block-highlight .f8-block-highlight-grid .f8-grid-inner .news-item-grid .news-category {
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-left: 5px;
+  padding: 5px;
   text-transform: uppercase;
   color: #aaa;
   border-left: 3px solid #ff4433;
