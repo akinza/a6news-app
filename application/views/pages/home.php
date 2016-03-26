@@ -20,7 +20,7 @@
               <div class="f8-block-heading col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h4>
                   News Headlines
-                  <a href="<?php echo base_url('news') ;?>" class="pull-right"><span class="glyphicon glyphicon-plus"></span></a>
+                  <a href="<?php echo base_url('news') ;?>" class="pull-right"><span class="more-text">More</span></a>
                 </h4>
               </div>
               <?php
@@ -60,7 +60,7 @@
             <div class="f8-block-heading col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <h4>
                 National
-                <a href="#more" class="pull-right"><span class="glyphicon glyphicon-plus"></span></a>
+                <a href="#more" class="pull-right"><span class="more-text">More</span></a>
               </h4>
             </div>
             <?php for( $i = 0; $i<4; $i++ ) { ?>
@@ -81,7 +81,7 @@
               <div class="f8-block-heading col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h4>
                   Top Image Galleries
-                  <a href="<?php echo base_url('gallery/view'); ?>" class="pull-right"><span class="glyphicon glyphicon-plus"></span></a>
+                  <a href="<?php echo base_url('gallery/view'); ?>" class="pull-right"><span class="more-text">More</span></a>
                 </h4>
               </div>
                 <?php foreach ($galleries as $gallery) :
