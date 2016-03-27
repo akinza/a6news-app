@@ -3,7 +3,7 @@
   <div class="f8-nav-container container">
     <div class="nav-container">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#navbar" aria-expanded="false"        aria-controls="navbar">
+        <button type="button" class="navbar-toggle collapsed pull-left"        data-toggle="collapse" data-target="#navbar" aria-expanded="false"        aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -13,20 +13,10 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
+        <?php
+          $categories = $this->category_model->get_all_categories();
+        ?>
         <li><a href="<?php echo base_url("/home"); ?>">Home</a></li>
-        <li><a href="<?php echo base_url("/news"); ?>">News</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <?php
-              $categories = $this->category_model->get_all_categories();
-              foreach($categories as $cat):
-            ?>
-              <li><a href="<?php echo base_url('/p/'.url_title($cat->category_name, 'dash', TRUE)); ?>"><?php echo $cat->category_name; ?></a></li>
-            <?php endforeach; ?>
-          </ul>
-        </li>
-        <!-- <li><a href="<?php echo base_url("/home"); ?>">Home</a></li>
         <li><a href="<?php echo base_url("/news"); ?>">News</a></li>
         <li><a href="<?php echo base_url("/p/national"); ?>">National</a></li>
         <li><a href="<?php echo base_url("/p/business"); ?>">Business</a></li>
@@ -43,7 +33,7 @@
             <li><a href="<?php echo base_url("/p/food"); ?>">Food</a></li>
             <li><a href="<?php echo base_url("/p/tv"); ?>">TV</a></li>
           </ul>
-        </li>-->
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <!-- <li><a href="<?php echo base_url("auth/register"); ?>">Register</a></li> -->

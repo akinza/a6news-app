@@ -16,16 +16,16 @@ class Home extends CI_Controller {
 		$this->load->view('pages/home', $data);
 	}
 
-	public function view($page = 'home') {
-    if ( ! file_exists(APPPATH.'/views/pages/'.$page.'.php')) {
+	public function view($page = 'default') {
+		$data['title'] = ucfirst($page); // Capitalize the first letter
+		$data['galleries'] = $this->gallery_model->get_latest_galleries();
+		$data['category'] = $page;
+		if ( ! file_exists(APPPATH.'/views/pages/'.$page.'.php')) {
       // Whoops, we don't have a page for that!
-      show_404();
-    }
-    $data['title'] = ucfirst($page); // Capitalize the first letter
-		if($page == 'home'){
-			// Fetch Latest few Image Galleries, Say Limit 10
-			$data['galleries'] = $this->gallery_model->get_latest_galleries();
+      // show_404();
+			$this->load->view('pages/default', $data);
+    } else{
+    	$this->load->view('pages/'.$page, $data);
 		}
-    $this->load->view('pages/'.$page, $data);
 	}
 }
