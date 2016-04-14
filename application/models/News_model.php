@@ -79,5 +79,9 @@ class News_model extends CI_Model {
     // $query = $this->db->query("SELECT * FROM `news` ORDER BY `id` DESC LIMIT " . $limit);
     return $query->result();
   }
+  public function get_categorized_news_headlines($category_id, $limit = 4) {
+    $query = $this->db->query("SELECT * FROM news_category as NC, news as N, category as C WHERE NC.category_id = C.category_id AND N.id = NC.news_id AND NC.category_id = ".$category_id. " ORDER BY NC.news_id DESC LIMIT ".$limit);
+    return $query->result();
+  }
 }
 ?>
