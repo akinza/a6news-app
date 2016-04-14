@@ -9,7 +9,7 @@
   </div>
   <div class="list-group f8-menu">
     <a class="list-group-item" href="<?php echo base_url('gallery/create');?>">Create Image Gallery</a>
-    <a class="list-group-item" href="<?php echo base_url('gallery');?>">View All Image Galleries</a>
+    <a class="list-group-item" href="<?php echo base_url('gallery/manage');?>">Manage Image Galleries</a>
   </div>
   <div class="list-group f8-menu">
     <a class="list-group-item" href="<?php echo base_url('#');?>">Upload Banner</a>
