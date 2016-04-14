@@ -19,7 +19,7 @@ class News extends CI_Controller {
 
 	public function index()	{
 		$data['news'] = $this->news_model->get_news();
-		$data['title'] = ucfirst("news");
+		$data['title'] = ucfirst("news &mdash; BharatBhutan");
 		$categories = $this->category_model->get_all_categories();
 		$data["categories"] = $categories;
 		foreach ($categories as $category) {

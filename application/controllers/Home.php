@@ -17,7 +17,7 @@ class Home extends CI_Controller {
 	}
 
 	public function view($page = 'default') {
-		$data['title'] = ucfirst($page); // Capitalize the first letter
+		$data['title'] = ucfirst($page) . " &mdash; BharatBhutan" ; // Capitalize the first letter
 		$data['galleries'] = $this->gallery_model->get_latest_galleries();
 		$data['category'] = $page;
 		if ( ! file_exists(APPPATH.'/views/pages/'.$page.'.php')) {

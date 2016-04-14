@@ -16,6 +16,12 @@ class Gallery extends CI_Controller {
   }
 
   public function index()	{
+    // View all galleries
+    $data['type'] = 'all';
+    $data['gallery_infos'] = $this->gallery_model->get_galleries();
+    $this->load->view('gallery/index', $data);
+  }
+  public function manage()	{
     if($this->ion_auth->logged_in()){
       // Code to list galleries
       $data['galleries'] = $this->gallery_model->get_galleries();
