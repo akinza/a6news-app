@@ -122,9 +122,9 @@ class Auth extends CI_Controller {
 		{
 			redirect(base_url('auth/login'), 'refresh');
 		}
-		else{
-			redirect(base_url('/'));
-		}
+		// else{
+		// 	redirect(base_url('/'));
+		// }
 
 		$user = $this->ion_auth->user()->row();
 
@@ -168,11 +168,11 @@ class Auth extends CI_Controller {
 
 			$change = $this->ion_auth->change_password($identity, $this->input->post('old'), $this->input->post('new'));
 
-			if ($change)
-			{
+			if ($change){
 				//if the password was successfully changed
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
-				$this->logout();
+				// $this->logout();
+				redirect(base_url('auth/change_password'), 'refresh');
 			}
 			else
 			{

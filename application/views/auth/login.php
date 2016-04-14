@@ -17,6 +17,7 @@
           echo '<div class="" role="alert">'.$message.'</div>';
         }
         ?>
+        <div id="infoMessage"><?php echo $message;?></div>
         <?php echo form_open("auth/login");?>
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
