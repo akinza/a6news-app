@@ -124,5 +124,17 @@
       </div>
       <?php $this->load->view('include/templates'); ?>
       <?php $this->load->view('include/js_common'); ?>
+      <script type="text/template" id="news-item-tpl">
+        <div class="f8-block-highlight-grid-item col-lg-3 col-md-3 col-sm-4 col-xs-12">
+          <div class="news-item" data-target="{{target-url}}">
+            <div class="news-item-image">
+              <img class="news-img" src="{{url}}">
+            </div>
+            <div class="news-item-slug" data-target="{{target-url}}">
+              {{title}}
+            </div>
+          </div>
+        </div>
+      </script>
     </body>
     </html>
