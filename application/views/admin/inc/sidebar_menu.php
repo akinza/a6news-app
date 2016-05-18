@@ -1,6 +1,6 @@
 <div class="f8-sec-admin-menus">
   <div class="list-group f8-menu">
-    <a class="list-group-item active" href="<?php echo base_url('article/create');?>"><span class="glyphicon glyphicon-edit" style="color:orange; font-weight: bold;"></span> <b>Write News Article</b></a>
+    <a class="list-group-item" href="<?php echo base_url('article/create');?>"><span class="glyphicon glyphicon-edit" style="color:orange; font-weight: bold;"></span> <b>Write News Article</b></a>
   </div>
   <div class="list-group f8-menu">
     <a class="list-group-item" href="<?php echo base_url('article');?>">Manage Posts</a>
