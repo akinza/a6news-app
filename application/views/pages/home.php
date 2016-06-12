@@ -56,6 +56,7 @@
               </div>
             </div>
           </div>
+          <?php /*
           <div class="f8-block f8-block-news-national row">
             <div class="f8-block-heading col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <h4>
@@ -77,6 +78,8 @@
               </div>
               <?php }?>
             </div>
+            */ ?>
+            
             <div class="f8-block f8-block-gallery row">
               <div class="f8-block-heading col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h4>
@@ -118,6 +121,7 @@
               <div class="f8-block f8-block-video-highlight row"></div>
             </div>
           </section>
+
         </div>
         <?php $this->load->view('include/footer'); ?>
 
