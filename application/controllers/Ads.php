@@ -5,7 +5,7 @@ class Ads extends CI_Controller {
     parent::__construct();
     $this->load->database();
     $this->load->model(array('ad_model'));
-    $this->load->library(array('ion_auth','form_validation', 'session', ));
+    $this->load->library(array('ion_auth','form_validation', 'session'));
     $this->load->helper(array('url','language', 'url_helper', 'form'));
 
     $this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
@@ -19,7 +19,7 @@ class Ads extends CI_Controller {
     // View all ads
     $data['type'] = 'all';
     $data['ad_infos'] = $this->ad_model->get_ads();
-    $this->load->view('ad/index', $data);
+    $this->load->view('admin/ad/manage', $data);
   }
   public function manage()	{
     if($this->ion_auth->logged_in()){

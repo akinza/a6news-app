@@ -3,6 +3,12 @@
     <a class="list-group-item" href="<?php echo base_url('article/create');?>"><span class="glyphicon glyphicon-edit" style="color:orange; font-weight: bold;"></span> <b>Write News Article</b></a>
   </div>
   <div class="list-group f8-menu">
+    <a class="list-group-item" href="<?php echo base_url('ads/create');?>">
+      <span class="glyphicon glyphicon-usd" style="color:orange; font-weight: bold;"></span>
+      New Advertisement
+    </a>
+  </div>
+  <div class="list-group f8-menu">
     <a class="list-group-item" href="<?php echo base_url('article');?>">Manage Posts</a>
     <a class="list-group-item" href="<?php echo base_url('article/create_category');?>">Add News Category</a>
     <a class="list-group-item" href="<?php echo base_url('article/manage_category');?>">Manage Category</a>
