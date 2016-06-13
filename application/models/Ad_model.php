@@ -45,7 +45,7 @@ class Ad_model extends CI_Model {
     $this->db->query("DELETE FROM ad WHERE ad_id = ".$ad_id);
   }
 
-  public function get_latest_galleries($limit = 4){
+  public function get_latest_ads($limit = 4){
     $query = $this->db->query("SELECT * FROM `ad` ORDER BY `ad_id` DESC LIMIT " . $limit);
     return $query->result();
   }

@@ -16,15 +16,15 @@ class Ads extends CI_Controller {
   }
 
   public function index()	{
-    // View all galleries
+    // View all ads
     $data['type'] = 'all';
-    $data['ad_infos'] = $this->ad_model->get_galleries();
+    $data['ad_infos'] = $this->ad_model->get_ads();
     $this->load->view('ad/index', $data);
   }
   public function manage()	{
     if($this->ion_auth->logged_in()){
-      // Code to list galleries
-      $data['galleries'] = $this->ad_model->get_galleries();
+      // Code to list ads
+      $data['ads'] = $this->ad_model->get_ads();
       $this->load->view('admin/ad/manage', $data);
     }
     else{
@@ -34,7 +34,7 @@ class Ads extends CI_Controller {
 
   public function create(){
     if($this->ion_auth->logged_in()){
-      // Code to list galleries
+      // Code to list ads
       $this->form_validation->set_rules('ad_name', "Please enter valid ad name", 'required');
       $this->form_validation->set_rules('ad_description', "Please enter ad description", 'required');
 
@@ -152,9 +152,9 @@ class Ads extends CI_Controller {
   public function view($ad_id = FALSE){
     $data = array();
     if($ad_id === FALSE){
-      // View all galleries
+      // View all ads
       $data['type'] = 'all';
-      $data['ad_infos'] = $this->ad_model->get_galleries();
+      $data['ad_infos'] = $this->ad_model->get_ads();
       $this->load->view('ad/index', $data);
     }
     else {
@@ -170,7 +170,7 @@ class Ads extends CI_Controller {
     $data = array();
     if($ad_id === FALSE) {
       // get all
-      echo json_encode($this->ad_model->get_galleries());
+      echo json_encode($this->ad_model->get_ads());
     }
     else {
       // get specific ad
