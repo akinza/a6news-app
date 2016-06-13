@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>f8news :: Login</title>
+  <title>BHARATBHUTAN :: Login</title>
   <?php $this->load->view('include/css_common'); ?>
 </head>
 <body class="">

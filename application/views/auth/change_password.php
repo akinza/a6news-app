@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>f8news-Admin</title>
+    <title>BHARATBHUTAN-Admin</title>
     <?php $this->load->view('include/css_common'); ?>
   </head>
   <body class="">

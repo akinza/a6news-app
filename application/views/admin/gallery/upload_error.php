@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>f8news-Create Gallery</title>
+  <title>BHARATBHUTAN-Create Gallery</title>
   <?php $this->load->view('include/css_common'); ?>
 </head>
 <body>
