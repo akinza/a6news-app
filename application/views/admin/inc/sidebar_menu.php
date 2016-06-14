@@ -2,6 +2,12 @@
   <div class="list-group f8-menu">
     <a class="list-group-item" href="<?php echo base_url('article/create');?>"><span class="glyphicon glyphicon-edit" style="color:orange; font-weight: bold;"></span> <b>Write News Article</b></a>
   </div>
+  <div class="list-group f8-menu ">
+    <a class="list-group-item" href="<?php echo base_url('video/create');?>">
+      <span class="fa fa-youtube" style="color:red;"></span>
+      Create Video Post
+    </a>
+  </div>
   <div class="list-group f8-menu">
     <a class="list-group-item" href="<?php echo base_url('ads/create');?>">
       <span class="glyphicon glyphicon-usd" style="color:orange; font-weight: bold;"></span>

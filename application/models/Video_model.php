@@ -1,5 +1,5 @@
 <?php
-class Ad_model extends CI_Model {
+class Video_model extends CI_Model {
   public $video_id;
   public $video_name;
   public $description;

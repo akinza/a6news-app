@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Gallery extends CI_Controller {
+class Video extends CI_Controller {
   public function __construct(){
     parent::__construct();
     $this->load->database();
-    $this->load->model(array('gallery_model', 'ad_model', 'video_model'));
+    $this->load->model(array( 'ad_model', 'video_model'));
     $this->load->library(array('ion_auth','form_validation', 'session', ));
     $this->load->helper(array('url','language', 'url_helper', 'form'));
 
@@ -16,17 +16,17 @@ class Gallery extends CI_Controller {
   }
 
   public function index()	{
-    // View all galleries
+    // View all videos
     $data['type'] = 'all';
-    $data['gallery_infos'] = $this->gallery_model->get_galleries();
+    $data['video_infos'] = $this->video_model->get_videos();
     $data['ads_infos'] = $this->ad_model->get_ads();
-    $this->load->view('gallery/index', $data);
+    $this->load->view('video/index', $data);
   }
   public function manage()	{
     if($this->ion_auth->logged_in()){
-      // Code to list galleries
-      $data['galleries'] = $this->gallery_model->get_galleries();
-      $this->load->view('admin/gallery/manage', $data);
+      // Code to list videos
+      $data['videos'] = $this->video_model->get_videos();
+      $this->load->view('admin/video/manage', $data);
     }
     else{
       redirect(base_url('auth/login'), 'refresh');
@@ -35,9 +35,9 @@ class Gallery extends CI_Controller {
 
   public function create(){
     if($this->ion_auth->logged_in()){
-      // Code to list galleries
-      $this->form_validation->set_rules('gallery_name', "Please enter valid gallery name", 'required');
-      $this->form_validation->set_rules('gallery_description', "Please enter gallery description", 'required');
+      // Code to list videos
+      $this->form_validation->set_rules('video_name', "Please enter valid gallery name", 'required');
+      $this->form_validation->set_rules('video_description', "Please enter gallery description", 'required');
 
       if ($this->form_validation->run()){
         $files = $_FILES;
@@ -46,78 +46,37 @@ class Gallery extends CI_Controller {
         // echo "</pre>";
         //
         // Inserting Gallery Details into database
-        $gallery_id = $this->gallery_model->insert_gallery();
-        $cpt = count($_FILES['userfile']['name']);
-        $this->data['gallery_id'] = $gallery_id;
-        $this->data['total_images'] = $cpt;
+        $video_id = $this->video_model->insert_video();
+        $this->data['video_id'] = $video_id;
 
-        $images = "";
-
-        for($i=0; $i<$cpt; $i++) {
-          $filename = explode(".", $files['userfile']['name'][$i]);
-          $ext = $filename[count($filename) - 1];
-          // $_FILES['userfile']['name']= $files['userfile']['name'][$i];
-          $_FILES['userfile']['name']= $gallery_id."_".$i.".".$ext;
-          $_FILES['userfile']['type']= $files['userfile']['type'][$i];
-          $_FILES['userfile']['tmp_name']= $files['userfile']['tmp_name'][$i];
-          $_FILES['userfile']['error']= $files['userfile']['error'][$i];
-          $_FILES['userfile']['size']= $files['userfile']['size'][$i];
-
-          $this->load->library('upload', $this->set_upload_options());
-          $this->upload->initialize($this->set_upload_options());
-          // $this->upload->do_upload();
-          if ( ! $this->upload->do_upload())	{
-      			$error = array('error' => $this->upload->display_errors());
-            // echo "<pre>";
-            // print_r($error);
-            // echo "</pre>";
-            $this->data['message'] = "Could Not Upload Image";
-      			$this->load->view('admin/gallery/upload_error');
-      		}
-      		else	{
-      			$data = array('upload_data' => $this->upload->data());
-            $this->data['image_'.$i] = array();
-            $this->data['image_'.$i] = $data;
-            // echo "<pre>";
-            // print_r($data);
-            // echo "</pre>";
-            if($i !== 0){
-              $images = $images. ",";
-            }
-            $images = $images = $images. $data['upload_data']['file_name'];
-      			// $this->load->view('admin/gallery/upload_success');
-      		}
-        }
-        $this->gallery_model->update_gallery(array('images' => $images ), $gallery_id);
-        $this->data['gallery_info'] = $this->gallery_model->get_gallery($gallery_id);
-        $this->load->view('admin/gallery/upload_success', $this->data);
+        $this->data['video_info'] = $this->video_model->get_video($video_id);
+        $this->load->view('admin/video/upload_success', $this->data);
       } else {
         $this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
 
-        $this->data['gallery_name'] =  array(
-          'name' => 'gallery_name',
-          'id' => 'gallery-name',
+        $this->data['video_name'] =  array(
+          'name' => 'video_name',
+          'id' => 'video-name',
           'class' => 'form-control',
           'type' => 'text',
           'required' => 'required',
           'autofocus' => 'true'
         );
-        $this->data['gallery_description'] =  array(
-          'name' => 'gallery_description',
-          'id' => 'gallery-desc',
+        $this->data['video_description'] =  array(
+          'name' => 'video_description',
+          'id' => 'video-desc',
           'class' => 'form-control',
           'type' => 'text',
           'required' => 'required'
         );
-        $this->data['input_gallery_image'] = array(
-          'name'  => 'userfile[]',
-          'id'    => 'input-gallery-image',
-          'type'  => 'file',
+        $this->data['input_video_link'] = array(
+          'name'  => 'input_video_link',
+          'id'    => 'input-video-link',
+          'type'  => 'text',
           'class'  => 'form-control',
-          'required' => 'required',
-          'multiple' => ''
+          'required' => 'required'
         );
-        $this->load->view('admin/gallery/create', $this->data);
+        $this->load->view('admin/video/create', $this->data);
       }
     }
     else{
@@ -138,46 +97,46 @@ class Gallery extends CI_Controller {
     return $config;
   }
 
-  public function delete($gallery_id){
+  public function delete($video_id){
     if($this->authorized()){
-      $this->gallery_model->delete($gallery_id);
+      $this->video_model->delete($video_id);
       // TODO : Delete Corresponding Images as well
 
-      redirect(base_url('gallery'), 'refresh');
+      redirect(base_url('video/manage'), 'refresh');
     }
     else{
       redirect(base_url('auth/login'), 'refresh');
     }
   }
 
-  public function view($gallery_id = FALSE){
+  public function view($video_id = FALSE){
     $data = array();
-    if($gallery_id === FALSE){
-      // View all galleries
+    if($video_id === FALSE){
+      // View all videos
       $data['type'] = 'all';
-      $data['gallery_infos'] = $this->gallery_model->get_galleries();
+      $data['video_infos'] = $this->video_model->get_videos();
           $data['ads_infos'] = $this->ad_model->get_ads();
       $this->load->view('gallery/index', $data);
     }
     else {
       // View Single Gallery
       $data['type'] = 'single';
-      $data['gallery_info'] = $this->gallery_model->get_gallery($gallery_id);
+      $data['video_info'] = $this->video_model->get_video($video_id);
                 $data['ads_infos'] = $this->ad_model->get_ads();
       $this->load->view('gallery/view', $data);
     }
   }
 
   // Ajax Call handler
-  public function get_gallery_info($gallery_id = FALSE){
+  public function get_video_info($video_id = FALSE){
     $data = array();
-    if($gallery_id === FALSE) {
+    if($video_id === FALSE) {
       // get all
-      echo json_encode($this->gallery_model->get_galleries());
+      echo json_encode($this->video_model->get_videos());
     }
     else {
       // get specific gallery
-      echo json_encode ($this->gallery_model->get_gallery($gallery_id));
+      echo json_encode ($this->video_model->get_video($video_id));
     }
   }
 }
