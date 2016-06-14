@@ -155,13 +155,13 @@ class Ads extends CI_Controller {
       // View all ads
       $data['type'] = 'all';
       $data['ad_infos'] = $this->ad_model->get_ads();
-      $this->load->view('ad/index', $data);
+      redirect(base_url('ad/index'), "refresh");
     }
     else {
       // View Single ad
       $data['type'] = 'single';
       $data['ad_info'] = $this->ad_model->get_ad($ad_id);
-      $this->load->view('ad/view', $data);
+      $this->load->view('admin/ad/view', $data);
     }
   }
 

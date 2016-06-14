@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Home&mdash;BharatBhutan</title>
-  <?php $this->load->view('include/css_common'); ?>
-</head>
+  <head>
+    <title>Home&mdash;BharatBhutan</title>
+    <?php $this->load->view('include/css_common'); ?>
+  </head>
 <body class="">
   <?php $this->load->view('include/header'); ?>
   <div class="container f8-sec-main">
@@ -79,7 +79,7 @@
               <?php }?>
             </div>
             */ ?>
-            
+
             <div class="f8-block f8-block-gallery row">
               <div class="f8-block-heading col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h4>
@@ -141,4 +141,4 @@
         </div>
       </script>
     </body>
-    </html>
+</html>

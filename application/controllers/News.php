@@ -6,8 +6,7 @@ class News extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->database();
-		$this->load->model('news_model');
-		$this->load->model('category_model');
+		$this->load->model(array('news_model', 'category_model', 'ad_model'));
 		$this->load->library(array('ion_auth','form_validation', 'session'));
 		$this->load->helper(array('url','language','url_helper'));
 		$this->lang->load('admin');
@@ -29,6 +28,7 @@ class News extends CI_Controller {
 		// echo "<pre>";
 		// print_r($data['all_news']) ;
 		// echo "</pre>";
+		$data['ads_infos'] = $this->ad_model->get_ads();
 		$this->load->view('news/index', $data);
 	}
 
@@ -36,6 +36,7 @@ class News extends CI_Controller {
 		$news = $this->news_model->get_news($slug);
 		$data['news'] = $news;
 		$data['title'] = ucfirst($slug);
+		$data['ads_infos'] = $this->ad_model->get_ads();
 		if($slug == FALSE){
 			$this->load->view('news/index', $data);
 		}

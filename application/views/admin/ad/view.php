@@ -13,7 +13,7 @@
       </section>
       <section class="f8-sec-admin-body  col-lg-9 col-md-9 col-sm-8 col-xs-12">
         <div class="f8-sec-inner-block">
-          <div class="f8-sec-heading">Customize Your Ads - <?php echo $ad_info->ad_name ; ?></div>
+          <div class="f8-sec-heading"><?php echo $ad_info->ad_name ; ?></div>
           <?php if(isset($message)) { echo $message; } ?>
           <div class="ads-detail-container row">
             <div class="f8-ad-image col-md-4">

@@ -40,11 +40,13 @@
 
         </div>
         <div class="f8-sec-sidebar-col col-lg-3 col-md-3 col-sm-4 col-xs-12">
-          <?php for( $i = 0; $i<3; $i++ ) { ?>
+          <?php foreach($ads_infos as $ad_info): ?>
             <div class="well well-sm f8-sec-sidebar-block">
-              <img width="100%" class="" src="<?php echo base_url(IMAGES.'/news-'.($i+1).'.jpg'); ?>">
+              <img src="<?php echo base_url(UPLOADS  .  explode(',', $ad_info->images)[0]) ; ?>" width="100%">
+              <h4><?php echo $ad_info->ad_name ; ?></h4>
+              <p><?php echo $ad_info->description ; ?></p>
             </div>
-          <?php }?>
+          <?php endforeach; ?>
         </div>
       </div>
     </section>

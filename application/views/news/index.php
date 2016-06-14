@@ -27,29 +27,34 @@
             <?php foreach ($news as $news_item): ?>
 
             <?php endforeach; ?>
-
+            <div class="row">
+            </div>
             <?php foreach($categories as $news_category):?>
-              <div class="panel panel-default">
-                <div class="panel-heading"><?php echo $news_category->category_name; ?></div>
-                <div class="panel-body">
-                  <?php foreach($all_news[$news_category->category_name] as $news_group_item):?>
-                    <p>
-                      <a class="news-title" href="<?php echo base_url('news/'.urlencode($news_group_item->slug)); ?>">
-                        <?php echo $news_group_item->title; ?>
-                      </a>
-                    </p>
-                  <?php endforeach; ?>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="panel panel-default">
+                  <div class="panel-heading"><?php echo $news_category->category_name; ?></div>
+                  <div class="panel-body">
+                    <?php foreach($all_news[$news_category->category_name] as $news_group_item):?>
+                      <p>
+                        <a class="news-title" href="<?php echo base_url('news/'.urlencode($news_group_item->slug)); ?>">
+                          <?php echo $news_group_item->title; ?>
+                        </a>
+                      </p>
+                    <?php endforeach; ?>
+                  </div>
                 </div>
               </div>
             <?php endforeach; ?>
 
           </div>
           <div class="f8-sec-sidebar-col col-lg-3 col-md-3 col-sm-4 col-xs-12">
-            <?php for( $i = 0; $i<3; $i++ ) { ?>
+            <?php foreach($ads_infos as $ad_info): ?>
               <div class="well well-sm f8-sec-sidebar-block">
-                <img width="100%" class="" src="<?php echo base_url(IMAGES.'/news-'.($i+1).'.jpg'); ?>">
+                <img src="<?php echo base_url(UPLOADS  .  explode(',', $ad_info->images)[0]) ; ?>" width="100%">
+                <h4><?php echo $ad_info->ad_name ; ?></h4>
+                <p><?php echo $ad_info->description ; ?></p>
               </div>
-            <?php }?>
+            <?php endforeach; ?>
           </div>
         </div>
       </section>

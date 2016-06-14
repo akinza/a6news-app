@@ -4,7 +4,7 @@ class Gallery extends CI_Controller {
   public function __construct(){
     parent::__construct();
     $this->load->database();
-    $this->load->model(array('gallery_model'));
+    $this->load->model(array('gallery_model', 'ad_model'));
     $this->load->library(array('ion_auth','form_validation', 'session', ));
     $this->load->helper(array('url','language', 'url_helper', 'form'));
 
@@ -19,6 +19,7 @@ class Gallery extends CI_Controller {
     // View all galleries
     $data['type'] = 'all';
     $data['gallery_infos'] = $this->gallery_model->get_galleries();
+    $data['ads_infos'] = $this->ad_model->get_ads();
     $this->load->view('gallery/index', $data);
   }
   public function manage()	{
@@ -155,12 +156,14 @@ class Gallery extends CI_Controller {
       // View all galleries
       $data['type'] = 'all';
       $data['gallery_infos'] = $this->gallery_model->get_galleries();
+          $data['ads_infos'] = $this->ad_model->get_ads();
       $this->load->view('gallery/index', $data);
     }
     else {
       // View Single Gallery
       $data['type'] = 'single';
       $data['gallery_info'] = $this->gallery_model->get_gallery($gallery_id);
+                $data['ads_infos'] = $this->ad_model->get_ads();
       $this->load->view('gallery/view', $data);
     }
   }
