@@ -8,4 +8,6 @@
 <!-- <link rel="stylesheet" href="<?php echo base_url( MODULE."/drawer-master/dist/css/sandbox.css");?>"> -->
 <!-- <link rel="stylesheet" href="<?php echo base_url(COMPONENTS."/bootstrap/dist/css/journal.bootstrap.min.css"); ?>" > -->
 <link rel="stylesheet" href="<?php echo base_url(COMPONENTS."/bootstrap/dist/css/bootstrap.min.css"); ?>">
+<link rel="stylesheet" href="<?php echo base_url(COMPONENTS."/font-awesome/css/font-awesome.min.css"); ?>">
+<link rel="stylesheet" href="<?php echo base_url(CSS."/metisMenu.min.css"); ?>">
 <link rel="stylesheet" href="<?php echo base_url(CSS."/main.css"); ?>">

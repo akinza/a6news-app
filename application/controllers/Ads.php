@@ -56,7 +56,7 @@ class Ads extends CI_Controller {
           $filename = explode(".", $files['userfile']['name'][$i]);
           $ext = $filename[count($filename) - 1];
           // $_FILES['userfile']['name']= $files['userfile']['name'][$i];
-          $_FILES['userfile']['name']= $ad_id."_".$i.".".$ext;
+          $_FILES['userfile']['name']= "ads_".$ad_id."_".$i.".".$ext;
           $_FILES['userfile']['type']= $files['userfile']['type'][$i];
           $_FILES['userfile']['tmp_name']= $files['userfile']['tmp_name'][$i];
           $_FILES['userfile']['error']= $files['userfile']['error'][$i];
@@ -142,7 +142,7 @@ class Ads extends CI_Controller {
       $this->ad_model->delete($ad_id);
       // TODO : Delete Corresponding Images as well
 
-      redirect(base_url('ad'), 'refresh');
+      redirect(base_url('ads/manage'), 'refresh');
     }
     else{
       redirect(base_url('auth/login'), 'refresh');

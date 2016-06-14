@@ -6,7 +6,7 @@
 </head>
 <body>
   <?php $this->load->view('include/header'); ?>
-  <div class="f8-admin-container container">
+  <div class="f8-admin-container container-fluid">
     <div class="row">
       <section class="f8-sec-admin-sidebar  col-lg-3 col-md-3 col-sm-4 col-xs-12">
         <?php $this->load->view('admin/inc/sidebar_menu'); ?>
@@ -15,7 +15,7 @@
         <div class="f8-sec-inner-block">
           <div class="f8-sec-heading">Create Image ad</div>
           <?php if(isset($message)) { echo $message; } ?>
-          <?php echo form_open_multipart(base_url("ad/create")); ?>
+          <?php echo form_open_multipart(base_url("ads/create")); ?>
 
             <div class="form-group">
               <label for="ad-name" class="control-label">Ad Name</label>

@@ -8,6 +8,7 @@
     "bootstrap-drawer": "~1.0.4",
     "jquery": "~2.2.0",
     "drawer": "~3.1.0",
-    "lightgallery": "~1.2.14"
+    "lightgallery": "~1.2.14",
+    "font-awesome": "~4.6.3"
   }
 }

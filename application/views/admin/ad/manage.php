@@ -6,7 +6,7 @@
 </head>
 <body>
   <?php $this->load->view('include/header'); ?>
-  <div class="f8-admin-container container">
+  <div class="f8-admin-container container-fluid">
     <div class="row">
       <section class="f8-sec-admin-sidebar  col-lg-3 col-md-3 col-sm-4 col-xs-12">
         <?php $this->load->view('admin/inc/sidebar_menu'); ?>
@@ -24,7 +24,7 @@
               </tr>
             </thead>
             <tbody>
-              <?php foreach ($galleries as $ad): ?>
+              <?php foreach ($ads as $ad): ?>
               <tr>
                 <td style="width:120px;padding-top:20px;"><img src="<?php echo base_url(UPLOADS  .  explode(',', $ad->images)[0]) ; ?>" height="" width="100px"></td>
                 <td>
