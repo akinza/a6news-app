@@ -516,8 +516,8 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
-// $config['base_url'] = "http://{$_SERVER['HTTP_HOST']}/f8news/";
-$config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'].'/bharatbhutan/';
+$config['base_url'] = "http://{$_SERVER['HTTP_HOST']}/f8news/";
+// $config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'].'/bharatbhutan/';
 $config['index_page'] = 'index.php';
 $config['uri_protocol'] = 'AUTO';
 // $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-\=+';
