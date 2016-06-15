@@ -13,13 +13,13 @@
       </section>
       <section class="f8-sec-admin-body  col-lg-9 col-md-9 col-sm-8 col-xs-12">
         <div class="f8-sec-inner-block">
-          <div class="f8-sec-heading">Customize Your Video - <?php echo $video_info->video_name ; ?></div>
+          <div class="f8-sec-heading">Your Video - <?php echo $video_info->video_name ; ?></div>
           <?php if(isset($message)) { echo $message; } ?>
           <div class="ads-detail-container row">
             <div class="f8-ad-image col-md-4">
               <iframe width="560" height="315" src="<?php echo $video_info->video_link ; ?>" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="f8-ads-details col-md-8">
+            <div class="f8-ads-details col-md-8" style="padding-bottom:30px;">
               <h4><?php echo $video_info->video_name ; ?></h4>
               <p><?php echo $video_info->description ; ?></p>
               <p>
@@ -28,8 +28,10 @@
                 echo "<em>Created on ". date_format($date, 'l g:ia \, jS F Y') . "</em>";
                 ?>
               </p>
+
               <a href="<?php echo base_url("video/create"); ?>" class="btn btn-primary">Create More Video Content</a>
-              <a href="<?php echo base_url("video/manage"); ?>" class="btn btn-primary">View all Videos</a>
+              <a href="<?php echo base_url("video/manage"); ?>" class="btn btn-default">View all Videos</a>
+              <br>
             </div>
           </div>
         </div>

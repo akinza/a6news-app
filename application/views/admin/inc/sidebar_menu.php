@@ -26,6 +26,11 @@
   </div>
 
   <div class="list-group f8-menu">
+    <a class="list-group-item" href="<?php echo base_url('video/create');?>">Create Videos</a>
+    <a class="list-group-item" href="<?php echo base_url('video/manage');?>">Manage Videos</a>
+  </div>
+
+  <div class="list-group f8-menu">
     <a class="list-group-item" href="<?php echo base_url('ads/create');?>">Create Ads</a>
     <a class="list-group-item" href="<?php echo base_url('ads/manage');?>">Manage Ads</a>
   </div>

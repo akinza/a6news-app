@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>bharatbhutan | Image Gallery</title>
+  <title>bharatbhutan | Image video</title>
   <?php $this->load->view('include/css_common'); ?>
 </head>
 <body class="">
@@ -12,27 +12,32 @@
       <div class="row f8-sec-body-inner">
         <div class="f8-sec-main-col col-lg-9 col-md-9 col-sm-8 col-xs-12">
           <div class="f8-block-heading">
-            <h4>Image Galleries</h4>
+            <h4>Videos</h4>
           </div>
 
-          <div class="gallery-grid">
+          <div class="video-grid">
             <div class="row">
               <?php
-                foreach($gallery_infos as $gallery_info):
-                $images = explode(',' , $gallery_info->images);
+                foreach($video_infos as $video_info):
               ?>
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                  <div class="gallery-item">
-                    <a href="<?php echo base_url('gallery/view/'. $gallery_info->gallery_id); ?>" >
-                      <img width="100%" src="<?php echo base_url('assets/uploads/' . $images[0]) ; ?>">
+                  <div style="background:#fff;padding:8px;">
+                    <div class="video-item">
+                      <a href="<?php echo base_url('video/view/'. $video_info->video_id); ?>" >
+                      <img width="100%" src="https://img.youtube.com/vi/<?php echo $video_info->youtube_video_id ; ?>/0.jpg">
+                      <!-- <iframe width="600" height="400" src="<?php echo $video_info->video_link ; ?>" frameborder="0" allowfullscreen></iframe> -->
                     </a>
+                    </div>
+                    <div class="video-caption h5">
+                      <a href="<?php echo base_url('video/view/'. $video_info->video_id); ?>" >
+                        <?php echo $video_info->video_name; ?>
+                      </a>
+                    </div>
+                    <div class="video-description">
+                      <?php echo $video_info->description; ?>
+                    </div>
                   </div>
-                  <div class="gallery-caption">
-                    <?php echo $gallery_info->gallery_name; ?>
-                  </div>
-                  <div class="gallery-description">
-                    <?php echo $gallery_info->description; ?>
-                  </div>
+
                 </div>
               <?php endforeach; ?>
             </div>

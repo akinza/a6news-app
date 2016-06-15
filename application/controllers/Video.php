@@ -20,7 +20,7 @@ class Video extends CI_Controller {
     $data['type'] = 'all';
     $data['video_infos'] = $this->video_model->get_videos();
     $data['ads_infos'] = $this->ad_model->get_ads();
-    $this->load->view('video/index', $data);
+    $this->load->view('videos/index', $data);
   }
   public function manage()	{
     if($this->ion_auth->logged_in()){
@@ -116,15 +116,15 @@ class Video extends CI_Controller {
       // View all videos
       $data['type'] = 'all';
       $data['video_infos'] = $this->video_model->get_videos();
-          $data['ads_infos'] = $this->ad_model->get_ads();
-      $this->load->view('gallery/index', $data);
+      $data['ads_infos'] = $this->ad_model->get_ads();
+      $this->load->view('videos/index', $data);
     }
     else {
       // View Single Gallery
       $data['type'] = 'single';
       $data['video_info'] = $this->video_model->get_video($video_id);
                 $data['ads_infos'] = $this->ad_model->get_ads();
-      $this->load->view('gallery/view', $data);
+      $this->load->view('videos/watch', $data);
     }
   }
 
