@@ -7,6 +7,7 @@ class Video_model extends CI_Model {
   public $created_on;
   public $modified_on;
   public $video_link;
+  public $youtube_video_id;
 
   public function __construct() {
     parent::__construct();
@@ -20,6 +21,8 @@ class Video_model extends CI_Model {
     $data = array(
       'video_name' => $this->input->post('video_name'),
       'description' => $this->input->post('video_description'),
+      'video_link' => "https://www.youtube.com/embed/".$this->input->post('video_link'),
+      'youtube_video_id' => $this->input->post('video_link'),
       'author' => $this->ion_auth->user()->row()->user_id,
       'created_on' => $create_date
     );

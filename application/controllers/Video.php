@@ -36,11 +36,11 @@ class Video extends CI_Controller {
   public function create(){
     if($this->ion_auth->logged_in()){
       // Code to list videos
-      $this->form_validation->set_rules('video_name', "Please enter valid gallery name", 'required');
-      $this->form_validation->set_rules('video_description', "Please enter gallery description", 'required');
+      $this->form_validation->set_rules('video_name', "Please enter valid video name", 'required');
+      $this->form_validation->set_rules('video_description', "Please enter video description", 'required');
+      $this->form_validation->set_rules('video_link', "Please enter Video Link", 'required');
 
       if ($this->form_validation->run()){
-        $files = $_FILES;
         // echo "<pre>";
         // print_r($files);
         // echo "</pre>";
@@ -69,12 +69,13 @@ class Video extends CI_Controller {
           'type' => 'text',
           'required' => 'required'
         );
-        $this->data['input_video_link'] = array(
-          'name'  => 'input_video_link',
-          'id'    => 'input-video-link',
+        $this->data['video_link'] = array(
+          'name'  => 'video_link',
+          'id'    => 'video-link',
           'type'  => 'text',
-          'class'  => 'form-control',
-          'required' => 'required'
+          'class'  => '',
+          'required' => 'required',
+          'placeholder' => 'video-id'
         );
         $this->load->view('admin/video/create', $this->data);
       }

@@ -26,9 +26,9 @@
               <?php echo form_input($video_description);?>
             </div>
             <div class="form-group">
-              <label for="input-video-link" class="control-label">Enter Youtube Video LINK</label>
-              <?php echo form_input($input_video_link);?>
-              <p class="help">Please enter youtube video link eg. <code>https://www.youtube.com/watch?v=AhWMOkrzKzs</code>.</p>
+              <label for="video-link" class="control-label">Enter Youtube Video LINK</label>
+              <div class="well well-sm"><code>https://www.youtube.com/embed/</code><?php echo form_input($video_link);?></div>
+              <p class="help">Please enter youtube video id eg. &mdash;<br> <h6 class="text-muted">https://www.youtube.com/watch?v=<b>AhWMOkrzKzs</b></h6>.</p>
             </div>
             <div class="form-group">
               <div class="">

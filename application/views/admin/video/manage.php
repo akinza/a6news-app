@@ -26,13 +26,15 @@
             <tbody>
               <?php foreach ($videos as $video): ?>
               <tr>
-                <td style="width:120px;padding-top:20px;">
-                  <iframe height="200px" width="100px" src="<?php echo $video_info->video_link ; ?>" frameborder="0" allowfullscreen></iframe>
+                <td style="width:200px;padding-top:20px;">
+                  <img width="200" height="150" src="https://img.youtube.com/vi/<?php echo $video->youtube_video_id ; ?>/0.jpg">
+                  <!-- <iframe width="200" height="150" src="<?php echo $video->video_link ; ?>" frameborder="0" allowfullscreen></iframe> -->
                 </td>
                 <td>
                   <div>
                     <h6><?php echo $video->video_name; ?></h6>
                     <div class="help"><?php echo $video->description; ?></div>
+                    <div class="h6"><b><?php echo $video->video_link ; ?></b></div>
                     <div>
                       <a href="#">Edit</a> |
                       <a href="<?php echo base_url('video/delete/' . $video->video_id); ?>" onclick="return confirm('Do you really want to delete this video?');">Delete</a> |
