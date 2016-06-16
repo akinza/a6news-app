@@ -12,11 +12,6 @@
         Login
       </div>
       <div class="f8-login-container">
-        <?php
-        if(!empty($message)){
-          echo '<div class="" role="alert">'.$message.'</div>';
-        }
-        ?>
         <div id="infoMessage"><?php echo $message;?></div>
         <?php echo form_open("auth/login");?>
         <div class="form-group">
