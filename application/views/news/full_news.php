@@ -5,7 +5,15 @@
     <?php $this->load->view('include/css_common'); ?>
   </head>
   <body class="">
-    <?php $this->load->view('include/header'); ?>
+    <?php $this->load->view('include/header');
+      $pageURL = (@$_SERVER["HTTPS"] == "on") ? "https://" : "http://";
+      if ($_SERVER["SERVER_PORT"] != "80") {
+          $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+      }
+      else {
+          $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+      }
+    ?>
     <div class="f8-sec-main container">
       <section class="f8-sec-top">
 
@@ -40,9 +48,9 @@
                       ?>
                         <div class="item <?php if($i === 0 ) echo 'active'; ?>">
                           <img src="<?php echo base_url(UPLOADS  .  $image); ?>" alt="...">
-                          <div class="carousel-caption">
+                          <!-- <div class="carousel-caption">
                              Caption Goes HereCaption Goes HereCaption Goes HereCaption Goes HereCaption Goes HereCaption Goes Here
-                          </div>
+                          </div> -->
                         </div>
                       <?php $i++; endforeach; ?>
                     </div>
@@ -59,6 +67,7 @@
                   </div>
                 </div>
                 <div class="news-body">
+                  <div id="share" data-target-url="<?php echo $pageURL;?>"></div>
                   <?php echo $news['news_full']; ?>
                 </div>
               </div>

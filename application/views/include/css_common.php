@@ -9,5 +9,7 @@
 <!-- <link rel="stylesheet" href="<?php echo base_url(COMPONENTS."/bootstrap/dist/css/journal.bootstrap.min.css"); ?>" > -->
 <link rel="stylesheet" href="<?php echo base_url(COMPONENTS."/bootstrap/dist/css/bootstrap.min.css"); ?>">
 <link rel="stylesheet" href="<?php echo base_url(COMPONENTS."/font-awesome/css/font-awesome.min.css"); ?>">
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.2.1/jssocials.css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.2.1/jssocials-theme-minima.css" />
 <link rel="stylesheet" href="<?php echo base_url(CSS."/metisMenu.min.css"); ?>">
 <link rel="stylesheet" href="<?php echo base_url(CSS."/main.css"); ?>">

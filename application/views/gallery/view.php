@@ -6,7 +6,15 @@
   <link rel="stylesheet" href="<?php echo base_url(COMPONENTS."/lightgallery/dist/css/lightgallery.min.css"); ?>">
 </head>
 <body class="">
-  <?php $this->load->view('include/header'); ?>
+  <?php $this->load->view('include/header');
+    $pageURL = (@$_SERVER["HTTPS"] == "on") ? "https://" : "http://";
+    if ($_SERVER["SERVER_PORT"] != "80") {
+        $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+    }
+    else {
+        $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+    }
+  ?>
   <div class="f8-sec-main container">
     <section class="f8-sec-top"></section>
     <section class="f8-sec-body">
@@ -21,6 +29,7 @@
                 echo "Created on ". date_format($date, 'l g:ia \, jS F Y');
               ?>
             </em>
+            <div id="share" data-target-url="<?php echo $pageURL;?>"></div>
           </div>
 
           <div class="gallery-grid">
