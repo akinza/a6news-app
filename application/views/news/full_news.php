@@ -78,7 +78,7 @@
                   </div>
                 </div>
                 <div class="news-body">
-                  <div id="share" data-target-url="<?php echo $pageURL;?>"></div>
+                  <div id="share" data-target-url="<?php echo $pageURL;?>" data-desc="<?php echo $news['news_short']; ?>"></div>
                   <?php echo $news['news_full']; ?>
                 </div>
               </div>

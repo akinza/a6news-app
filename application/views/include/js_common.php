@@ -15,7 +15,7 @@
     $("#share").jsSocials({
         shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp"],
         url: $('#share').attr('data-target-url'),
-        text: "text to share",
+        text: $('#share').attr('data-desc'),
         showLabel: true,
         showCount: true,
         shareIn: "popup",

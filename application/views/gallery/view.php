@@ -29,7 +29,7 @@
                 echo "Created on ". date_format($date, 'l g:ia \, jS F Y');
               ?>
             </em>
-            <div id="share" data-target-url="<?php echo $pageURL;?>"></div>
+            <div id="share" data-target-url="<?php echo $pageURL;?>" data-desc="<?php echo $gallery_info->description; ?>"></div>
           </div>
 
           <div class="gallery-grid">
