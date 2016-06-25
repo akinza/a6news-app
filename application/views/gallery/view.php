@@ -1,20 +1,30 @@
+<?php $this->load->view('include/header');
+  $pageURL = (@$_SERVER["HTTPS"] == "on") ? "https://" : "http://";
+  if ($_SERVER["SERVER_PORT"] != "80") {
+      $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+  }
+  else {
+      $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+  }
+  $images = explode(',' , $gallery_info->images);
+?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>bharatbhutan | Image Gallery</title>
+  <title>bharatbhutan | <?php echo $gallery_info->description; ?></title>
+  <meta property="fb:app_id" content="1663733640545693" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="<?php echo $pageURL; ?>" />
+  <meta property="og:site_name" content="BharatBhutan" />
+  <meta property="og:title" content="<?php echo $gallery_info->gallery_name; ?>" />
+  <meta property="og:description" content="<?php echo $gallery_info->description; ?>" />
+  <!-- <meta property="og:image:type" content="image/jpeg" /> -->
+  <meta property="og:image" content="<?php echo base_url('assets/uploads/' . $images[0]) ; ?>" />
   <?php $this->load->view('include/css_common'); ?>
   <link rel="stylesheet" href="<?php echo base_url(COMPONENTS."/lightgallery/dist/css/lightgallery.min.css"); ?>">
 </head>
 <body class="">
-  <?php $this->load->view('include/header');
-    $pageURL = (@$_SERVER["HTTPS"] == "on") ? "https://" : "http://";
-    if ($_SERVER["SERVER_PORT"] != "80") {
-        $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-    }
-    else {
-        $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-    }
-  ?>
+
   <div class="f8-sec-main container">
     <section class="f8-sec-top"></section>
     <section class="f8-sec-body">
@@ -35,7 +45,7 @@
           <div class="gallery-grid">
             <div class="row" id="lightgallery">
               <?php
-                $images = explode(',' , $gallery_info->images);
+
                 foreach($images as $image):
               ?>
                 <!-- <div class="gallery-item col-lg-3 col-md-4 col-sm-4 col-xs-12"> -->
