@@ -1,19 +1,31 @@
+<?php $this->load->view('include/header');
+  $pageURL = (@$_SERVER["HTTPS"] == "on") ? "https://" : "http://";
+  if ($_SERVER["SERVER_PORT"] != "80") {
+      $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+  }
+  else {
+      $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+  }
+  $images = explode(',', $news['images']);
+  $count = count($images);
+?>
 <!DOCTYPE html>
 <html>
   <head>
     <title><?php echo $news['title']; ?></title>
+
+    <meta property="fb:app_id" content="1663733640545693" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="<?php echo $pageURL; ?>" />
+    <meta property="og:site_name" content="BharatBhutan" />
+    <meta property="og:title" content="<?php echo $news['title']; ?>" />
+    <meta property="og:description" content="<?php echo $news['news_short']; ?>" />
+    <!-- <meta property="og:image:type" content="image/jpeg" /> -->
+    <meta property="og:image" content="<?php echo base_url('assets/uploads/' . $images[0]) ; ?>" />
     <?php $this->load->view('include/css_common'); ?>
   </head>
   <body class="">
-    <?php $this->load->view('include/header');
-      $pageURL = (@$_SERVER["HTTPS"] == "on") ? "https://" : "http://";
-      if ($_SERVER["SERVER_PORT"] != "80") {
-          $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-      }
-      else {
-          $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-      }
-    ?>
+
     <div class="f8-sec-main container">
       <section class="f8-sec-top">
 
@@ -33,8 +45,7 @@
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
                       <?php
-                        $images = explode(',', $news['images']);
-                        $count = count($images);
+
                         $i = 0; foreach ($images as $image):
                       ?>
                       <!-- <li data-target="#carousel-news-image-gallery" data-slide-to="<?php echo $i; ?>" class="<?php if($i === 0 ) echo 'active'; ?>"></li> -->
